@@ -864,42 +864,84 @@ Hands-On Cyber Labs</span></div>
         <article class="lab-card">
           <div class="card-label">Python Security Tool</div>
           <h3>Password Strength Checker</h3>
-          <p>A simple tool that evaluates password strength using common security checks such as length, complexity, and character variety.</p>
+          <p>A Python tool that evaluates password strength using common security best practices like length, complexity, and character variety.</p>
           <div class="mini-meta">
             <span class="mini-tag">Python</span>
-            <span class="mini-tag">Security Basics</span>
+            <span class="mini-tag">Authentication</span>
             <span class="mini-tag">Input Validation</span>
           </div>
           <div class="lab-actions">
-            <a class="btn btn-secondary" href="https://github.com/johvin4014" target="_blank">View on GitHub</a>
+            <a class="btn btn-secondary" href="https://github.com/johvin4014/password-strength-checker" target="_blank">View Project</a>
           </div>
         </article>
 
         <article class="lab-card">
           <div class="card-label">Networking</div>
           <h3>Basic Port Scanner</h3>
-          <p>A beginner-friendly scanner used to understand open ports, common services, and how systems expose network entry points.</p>
+          <p>A beginner-friendly scanner used to identify open ports and understand how systems expose network services and potential entry points.</p>
           <div class="mini-meta">
             <span class="mini-tag">Python</span>
             <span class="mini-tag">Sockets</span>
             <span class="mini-tag">Recon</span>
           </div>
           <div class="lab-actions">
-            <a class="btn btn-secondary" href="https://github.com/johvin4014" target="_blank">View on GitHub</a>
+            <a class="btn btn-secondary" href="https://github.com/johvin4014/basic-port-scanner" target="_blank">View Project</a>
           </div>
         </article>
 
         <article class="lab-card">
           <div class="card-label">Integrity Checking</div>
           <h3>File Hash Verifier</h3>
-          <p>A project focused on generating and verifying file hashes to support file integrity checks and security awareness around tampering.</p>
+          <p>A project focused on generating and verifying file hashes to support integrity checks and security awareness around tampering.</p>
           <div class="mini-meta">
             <span class="mini-tag">Python</span>
             <span class="mini-tag">Hashing</span>
             <span class="mini-tag">Integrity</span>
           </div>
           <div class="lab-actions">
-            <a class="btn btn-secondary" href="https://github.com/johvin4014" target="_blank">View on GitHub</a>
+            <a class="btn btn-secondary" href="https://github.com/johvin4014/file-hash-verifier" target="_blank">View Project</a>
+          </div>
+        </article>
+
+        <article class="lab-card">
+          <div class="card-label">Web Safety</div>
+          <h3>URL Scanner</h3>
+          <p>A simple security-focused tool that checks URLs for suspicious patterns and helps build awareness around phishing and unsafe links.</p>
+          <div class="mini-meta">
+            <span class="mini-tag">Python</span>
+            <span class="mini-tag">URL Analysis</span>
+            <span class="mini-tag">Phishing Awareness</span>
+          </div>
+          <div class="lab-actions">
+            <a class="btn btn-secondary" href="https://github.com/johvin4014/url-scanner" target="_blank">View Project</a>
+          </div>
+        </article>
+
+        <article class="lab-card">
+          <div class="card-label">Detection</div>
+          <h3>Log Analyzer</h3>
+          <p>A project that reviews log data for patterns, suspicious activity, and useful security events to strengthen analysis skills.</p>
+          <div class="mini-meta">
+            <span class="mini-tag">Python</span>
+            <span class="mini-tag">Logs</span>
+            <span class="mini-tag">Analysis</span>
+          </div>
+          <div class="lab-actions">
+            <a class="btn btn-secondary" href="https://github.com/johvin4014/log-analyzer" target="_blank">View Project</a>
+          </div>
+        </article>
+
+        <article class="lab-card">
+          <div class="card-label">More Coming</div>
+          <h3>Cyber Lab Portfolio</h3>
+          <p>This section will continue growing with new Python security tools, networking labs, cloud security work, and hands-on cybersecurity practice.</p>
+          <div class="mini-meta">
+            <span class="mini-tag">Cyber Labs</span>
+            <span class="mini-tag">Cloud</span>
+            <span class="mini-tag">Growth</span>
+          </div>
+          <div class="lab-actions">
+            <a class="btn btn-secondary" href="https://github.com/johvin4014" target="_blank">View GitHub Profile</a>
           </div>
         </article>
       </div>
@@ -979,6 +1021,24 @@ Hands-On Cyber Labs</span></div>
           <h3>Cloud & Security Roles</h3>
           <p>My goal is to move into cybersecurity, cloud security, and mission-driven technical roles where I can keep learning and contribute long term.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="github-live">
+    <div class="container reveal">
+      <div class="section-head">
+        <div class="label">GitHub Activity</div>
+        <h2>More projects from my GitHub.</h2>
+        <p>This section can automatically show public repositories from GitHub so the site keeps growing as new projects are added.</p>
+      </div>
+
+      <div id="github-projects" class="labs-grid">
+        <article class="lab-card">
+          <div class="card-label">Loading</div>
+          <h3>Fetching GitHub repositories...</h3>
+          <p>Your latest public repositories will appear here automatically.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -1105,6 +1165,70 @@ Hands-On Cyber Labs</span></div>
       requestAnimationFrame(animateBg);
     }
 
+    async function loadGitHubProjects() {
+      const container = document.getElementById('github-projects');
+      if (!container) return;
+
+      try {
+        const response = await fetch('https://api.github.com/users/johvin4014/repos?sort=updated&per_page=6');
+        if (!response.ok) throw new Error('GitHub API request failed');
+        const repos = await response.json();
+
+        const filtered = repos
+          .filter(repo => !repo.fork)
+          .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+          .slice(0, 6);
+
+        if (!filtered.length) {
+          container.innerHTML = `
+            <article class="lab-card">
+              <div class="card-label">GitHub</div>
+              <h3>No public repositories found yet.</h3>
+              <p>Create public repos on GitHub and they can appear here automatically.</p>
+            </article>
+          `;
+          return;
+        }
+
+        container.innerHTML = filtered.map(repo => {
+          const language = repo.language || 'Project';
+          const description = repo.description || 'Public GitHub repository from my cybersecurity and technical learning journey.';
+          const updated = new Date(repo.updated_at).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          });
+
+          return `
+            <article class="lab-card">
+              <div class="card-label">${language}</div>
+              <h3>${repo.name}</h3>
+              <p>${description}</p>
+              <div class="mini-meta">
+                <span class="mini-tag">${language}</span>
+                <span class="mini-tag">Updated ${updated}</span>
+                <span class="mini-tag">${repo.visibility || 'public'}</span>
+              </div>
+              <div class="lab-actions">
+                <a class="btn btn-secondary" href="${repo.html_url}" target="_blank" rel="noreferrer">View Repository</a>
+              </div>
+            </article>
+          `;
+        }).join('');
+      } catch (error) {
+        container.innerHTML = `
+          <article class="lab-card">
+            <div class="card-label">GitHub</div>
+            <h3>Unable to load repositories right now.</h3>
+            <p>The GitHub section is set up, but the live API request could not load at the moment.</p>
+            <div class="lab-actions">
+              <a class="btn btn-secondary" href="https://github.com/johvin4014" target="_blank" rel="noreferrer">View GitHub Profile</a>
+            </div>
+          </article>
+        `;
+      }
+    }
+
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -1114,6 +1238,7 @@ Hands-On Cyber Labs</span></div>
 
     reveals.forEach((item) => observer.observe(item));
 
+    loadGitHubProjects();
     resizeCanvas();
     animateBg();
     window.addEventListener('resize', resizeCanvas);
