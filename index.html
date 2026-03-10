@@ -1,40 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Johnson M. Vincent</title>
-<style>
-body {
-font-family: Arial;
-text-align: center;
-background-color: #0a0f1a;
-color: white;
-padding: 50px;
-}
-h1 { font-size: 40px; }
-a { color: #4da3ff; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Johnson M. Vincent | Cybersecurity Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #07111f;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-top: 50px;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .section-text {
+      max-width: 750px;
+      margin: 0 auto;
+      font-size: 19px;
+    }
+
+    .skills,
+    .certifications,
+    .projects,
+    .connect {
+      margin-top: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 15px auto;
+      max-width: 700px;
+    }
+
+    a {
+      color: #4da3ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 16px;
+      color: #b8c4d6;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+
+      p,
+      .section-text {
+        font-size: 18px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="container">
+    <h1>Johnson M. Vincent</h1>
+    <p class="subtitle">Cybersecurity Professional | U.S. Navy Veteran</p>
+    <p class="subtitle">CompTIA Security+ | BS Information & Cybersecurity Operations</p>
 
-<h1>Johnson M. Vincent</h1>
+    <h2>About Me</h2>
+    <p class="section-text">
+      Cybersecurity student and U.S. Navy veteran with experience in systems administration,
+      database support, network security, and cloud technologies. Passionate about defending
+      systems, analyzing threats, and building secure infrastructure while continuing to grow
+      in cybersecurity, cloud security, and DevSecOps.
+    </p>
 
-<p>Cybersecurity Professional | U.S. Navy Veteran</p>
-<p>CompTIA Security+ | BS Cybersecurity Operations</p>
+    <h2>Certifications</h2>
+    <div class="certifications">
+      <div class="card">
+        <p>CompTIA Security+ (SY0-701)</p>
+      </div>
+    </div>
 
-<h2>Skills</h2>
-<p>Network Security • AWS Cloud • Python Security Tools • Vulnerability Analysis</p>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card">
+        <p>Network Security</p>
+        <p>AWS Cloud</p>
+        <p>Python Security Tools</p>
+        <p>Vulnerability Analysis</p>
+        <p>Linux & Windows Administration</p>
+        <p>Security Monitoring</p>
+      </div>
+    </div>
 
-<h2>Projects</h2>
-<p>Password Strength Checker</p>
-<p>File Hash Integrity Verifier</p>
-<p>Python Port Scanner</p>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <p><strong>Password Strength Checker</strong></p>
+        <p>A Python tool that evaluates password complexity and helps identify weak passwords.</p>
+      </div>
 
-<h2>Connect</h2>
-<p>
-<a href="https://github.com/YOURUSERNAME">GitHub</a> |
-<a href="https://linkedin.com">LinkedIn</a>
-</p>
+      <div class="card">
+        <p><strong>File Hash Integrity Verifier</strong></p>
+        <p>A security script used to generate and compare file hashes to detect unauthorized changes.</p>
+      </div>
 
+      <div class="card">
+        <p><strong>Python Port Scanner</strong></p>
+        <p>A basic scanner built with Python to identify open ports and better understand network exposure.</p>
+      </div>
+    </div>
+
+    <h2>Connect</h2>
+    <div class="connect">
+      <div class="card">
+        <p><a href="https://github.com/johvin4014" target="_blank">GitHub</a></p>
+        <p><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
+        <p><a href="https://johnsonvincent.com" target="_blank">Website</a></p>
+        <p><a href="resume.pdf" target="_blank">Resume</a></p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© 2026 Johnson M. Vincent | Cybersecurity Portfolio</p>
+    </div>
+  </div>
 </body>
 </html>
