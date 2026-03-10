@@ -12,19 +12,17 @@
       --bg-2: #07111d;
       --bg-3: #0b1828;
       --panel: rgba(255,255,255,0.05);
-      --panel-2: rgba(8,15,25,0.86);
       --line: rgba(255,255,255,0.08);
-      --line-strong: rgba(0,229,255,0.18);
       --text: #eef6ff;
       --muted: #9fb2c9;
-      --soft: #cfe9ff;
+      --soft: #d9ecff;
       --cyan: #00e5ff;
-      --cyan-2: #5bd6ff;
+      --cyan-2: #56d2ff;
       --blue: #1f6feb;
       --glow: 0 0 28px rgba(0,229,255,0.18);
       --shadow: 0 20px 48px rgba(0,0,0,0.34);
       --radius: 28px;
-      --max: 1220px;
+      --max: 1180px;
     }
 
     * { box-sizing: border-box; }
@@ -35,9 +33,9 @@
       font-family: Inter, Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 82% 8%, rgba(0,229,255,0.12), transparent 18%),
-        radial-gradient(circle at 18% 0%, rgba(31,111,235,0.16), transparent 18%),
-        radial-gradient(circle at 50% 35%, rgba(0,229,255,0.04), transparent 30%),
+        radial-gradient(circle at 85% 10%, rgba(0,229,255,0.12), transparent 18%),
+        radial-gradient(circle at 15% 0%, rgba(31,111,235,0.16), transparent 18%),
+        radial-gradient(circle at 60% 30%, rgba(0,229,255,0.05), transparent 26%),
         linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
       line-height: 1.6;
       overflow-x: hidden;
@@ -53,25 +51,11 @@
         linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
       background-size: 42px 42px;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.06));
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.58), rgba(0,0,0,0.06));
       z-index: 0;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06) 0 1px, transparent 2px),
-        radial-gradient(circle at 60% 80%, rgba(255,255,255,0.05) 0 1px, transparent 2px),
-        radial-gradient(circle at 85% 30%, rgba(255,255,255,0.04) 0 1px, transparent 2px);
-      background-size: 220px 220px, 260px 260px, 300px 300px;
-      opacity: 0.45;
-      z-index: 0;
-    }
-
-    a { text-decoration: none; color: inherit; }
+    a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
     .container { width: min(var(--max), 92%); margin: 0 auto; position: relative; z-index: 1; }
 
@@ -80,7 +64,7 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(16px);
-      background: rgba(5,10,16,0.76);
+      background: rgba(5,10,16,0.78);
       border-bottom: 1px solid var(--line);
     }
 
@@ -110,10 +94,10 @@
       background: linear-gradient(135deg, #0f1a28, #09111a);
       border: 1px solid rgba(0,229,255,0.22);
       box-shadow: var(--glow);
-      flex-shrink: 0;
       color: var(--cyan);
       font-weight: 900;
       font-size: 14px;
+      flex-shrink: 0;
     }
 
     .brand-icon img {
@@ -123,7 +107,6 @@
     }
 
     .brand-text {
-      min-width: 0;
       line-height: 1.05;
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -148,24 +131,8 @@
       font-size: 14px;
     }
 
-    .nav-links a {
-      position: relative;
-      transition: .2s ease;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--cyan), transparent);
-      transition: .2s ease;
-    }
-
+    .nav-links a { transition: .2s ease; }
     .nav-links a:hover { color: var(--text); }
-    .nav-links a:hover::after { width: 100%; }
 
     .btn {
       display: inline-flex;
@@ -176,7 +143,7 @@
       border-radius: 999px;
       border: 1px solid transparent;
       font-weight: 700;
-      transition: 0.2s ease;
+      transition: .2s ease;
       cursor: pointer;
     }
 
@@ -197,17 +164,15 @@
     .btn-secondary:hover {
       color: var(--cyan);
       border-color: rgba(0,229,255,0.38);
-      box-shadow: 0 0 16px rgba(0,229,255,0.1) inset;
     }
 
     .hero {
-      padding: 92px 0 70px;
-      position: relative;
+      padding: 90px 0 72px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 34px;
       align-items: center;
     }
@@ -228,25 +193,30 @@
     }
 
     h1 {
-      margin: 18px 0 14px;
-      font-size: clamp(3rem, 6vw, 5.6rem);
+      margin: 18px 0 12px;
+      font-size: clamp(3rem, 6vw, 5.4rem);
       line-height: 0.96;
       letter-spacing: -0.05em;
     }
 
+    .hero-title-line {
+      color: var(--soft);
+      font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+      margin-bottom: 16px;
+    }
+
     .hero-sub {
-      max-width: 760px;
+      max-width: 720px;
       color: var(--muted);
-      font-size: clamp(1.04rem, 2vw, 1.2rem);
+      font-size: clamp(1.03rem, 2vw, 1.17rem);
     }
 
     .typing-wrap {
-      margin-top: 18px;
-      min-height: 34px;
+      margin-top: 16px;
+      min-height: 32px;
       color: var(--cyan);
       font-weight: 700;
-      font-size: 1.04rem;
-      letter-spacing: 0.02em;
+      font-size: 1.02rem;
     }
 
     .typing-cursor {
@@ -283,13 +253,11 @@
 
     .hero-card,
     .panel,
-    .project-card,
     .stat,
     .link-card,
     .terminal-box,
     .cta-box,
-    .stats-widget,
-    .timeline-card {
+    .bio-photo {
       border: 1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
       box-shadow: var(--shadow);
@@ -300,22 +268,11 @@
       padding: 24px;
       overflow: hidden;
       position: relative;
-      min-height: 580px;
+      min-height: 560px;
       background:
         radial-gradient(circle at 82% 16%, rgba(0,229,255,0.18), transparent 18%),
         radial-gradient(circle at 80% 80%, rgba(31,111,235,0.22), transparent 22%),
         linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      right: -70px;
-      top: -70px;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(0,229,255,0.14), transparent 68%);
-      pointer-events: none;
     }
 
     .hero-card-top {
@@ -371,7 +328,7 @@
       overflow: hidden;
       border: 1px solid rgba(0,229,255,0.15);
       background: linear-gradient(135deg, rgba(0,229,255,0.08), rgba(31,111,235,0.08));
-      min-height: 320px;
+      min-height: 340px;
       position: relative;
     }
 
@@ -379,16 +336,16 @@
       content: "";
       position: absolute;
       inset: auto 0 0 0;
-      height: 38%;
+      height: 40%;
       background: linear-gradient(180deg, transparent, rgba(4,10,18,0.82));
       pointer-events: none;
     }
 
     .profile-shot img {
       width: 100%;
-      height: 340px;
+      height: 360px;
       object-fit: cover;
-      object-position: center 22%;
+      object-position: center 18%;
     }
 
     .profile-caption {
@@ -437,7 +394,7 @@
     section { padding: 84px 0; }
 
     .section-head {
-      max-width: 800px;
+      max-width: 780px;
       margin-bottom: 28px;
     }
 
@@ -451,7 +408,7 @@
 
     .section-head h2 {
       margin: 10px 0 12px;
-      font-size: clamp(2rem, 4vw, 3.3rem);
+      font-size: clamp(2rem, 4vw, 3.2rem);
       line-height: 1.04;
       letter-spacing: -0.03em;
     }
@@ -462,21 +419,13 @@
     }
 
     .stats-grid,
-    .projects-grid,
-    .links-grid,
-    .widgets-grid,
-    .timeline-grid,
-    .feature-grid {
+    .focus-grid {
       display: grid;
       gap: 22px;
     }
 
     .stats-grid { grid-template-columns: repeat(4, 1fr); }
-    .projects-grid,
-    .links-grid,
-    .feature-grid { grid-template-columns: repeat(3, 1fr); }
-    .widgets-grid,
-    .timeline-grid { grid-template-columns: 1fr 1fr; }
+    .focus-grid { grid-template-columns: repeat(3, 1fr); }
 
     .about-grid,
     .cta-box,
@@ -488,15 +437,14 @@
     }
 
     .panel,
-    .project-card,
-    .link-card,
     .cta-box,
     .stat,
-    .stats-widget,
-    .timeline-card {
+    .bio-photo {
       border-radius: var(--radius);
       padding: 26px;
     }
+
+    .bio-photo { padding: 0; }
 
     .stat { text-align: center; }
     .stat strong {
@@ -508,11 +456,7 @@
 
     .stat span,
     .panel p,
-    .project-card p,
-    .link-card p,
-    .cta-box p,
-    .stats-widget p,
-    .timeline-card p { color: var(--muted); }
+    .cta-box p { color: var(--muted); }
 
     .chips {
       display: flex;
@@ -531,11 +475,7 @@
       font-size: 14px;
     }
 
-    .project-card h3,
-    .link-card h3,
-    .panel h3,
-    .stats-widget h3,
-    .timeline-card h3 {
+    .panel h3 {
       margin: 8px 0 8px;
       font-size: 1.25rem;
     }
@@ -548,7 +488,6 @@
       background: rgba(255,255,255,0.02);
     }
 
-    .project-links,
     .connect-links {
       display: flex;
       gap: 12px;
@@ -556,12 +495,23 @@
       margin-top: 18px;
     }
 
-    .stats-widget img {
+    .focus-card {
+      border-radius: var(--radius);
+      padding: 26px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      box-shadow: var(--shadow);
+    }
+
+    .focus-card h3 { margin: 8px 0; font-size: 1.2rem; }
+    .focus-card p { color: var(--muted); margin: 0; }
+
+    .bio-photo img {
       width: 100%;
-      border-radius: 16px;
-      margin-top: 12px;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.02);
+      height: 100%;
+      min-height: 300px;
+      object-fit: cover;
+      object-position: center;
     }
 
     .terminal-box {
@@ -569,54 +519,6 @@
       overflow: hidden;
       background: #030912;
     }
-
-    .bio-photo {
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid rgba(0,229,255,0.14);
-      min-height: 260px;
-      background: rgba(255,255,255,0.02);
-    }
-
-    .bio-photo img {
-      width: 100%;
-      height: 100%;
-      min-height: 260px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 22px;
-      margin-top: 16px;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 7px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 12px rgba(0,229,255,0.45);
-    }
-
-    .timeline-item::after {
-      content: "";
-      position: absolute;
-      left: 4px;
-      top: 22px;
-      bottom: -16px;
-      width: 2px;
-      background: linear-gradient(180deg, rgba(0,229,255,0.25), transparent);
-    }
-
-    .timeline-item:last-child::after { display: none; }
-    .timeline-item strong { display: block; color: var(--soft); }
-    .timeline-item span { color: var(--muted); font-size: 0.96rem; }
 
     .footer {
       padding: 30px 0 56px;
@@ -632,18 +534,14 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1024px) {
       .hero-grid,
       .about-grid,
       .cta-box,
-      .widgets-grid,
       .bio-grid,
-      .resume-grid,
-      .timeline-grid { grid-template-columns: 1fr; }
+      .resume-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .projects-grid,
-      .links-grid,
-      .feature-grid { grid-template-columns: 1fr; }
+      .focus-grid { grid-template-columns: 1fr; }
       .hero-card { min-height: auto; }
     }
 
@@ -654,13 +552,10 @@
       .hero { padding-top: 56px; }
       .brand-text { font-size: 0.82rem; }
       .panel,
-      .project-card,
-      .link-card,
       .cta-box,
       .stat,
-      .stats-widget,
       .hero-card,
-      .timeline-card { padding: 20px; }
+      .focus-card { padding: 20px; }
       .profile-shot img { height: 300px; }
     }
   </style>
@@ -677,10 +572,9 @@
 
       <nav class="nav-links">
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#labs">Labs</a>
-        <a href="#stats">Stats</a>
-        <a href="#journey">Journey</a>
+        <a href="#skills">Skills</a>
+        <a href="#focus">Current Focus</a>
+        <a href="#veteran">Veteran</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -693,24 +587,24 @@
       <div>
         <span class="eyebrow">Cybersecurity · Cloud · Veteran</span>
         <h1>Johnson M. Vincent</h1>
-        <p class="hero-sub">Cybersecurity professional, U.S. Navy veteran, and cloud-focused builder creating a serious online brand around technical growth, real projects, and hands-on security labs.</p>
+        <div class="hero-title-line">Cybersecurity Professional | U.S. Navy Veteran | CompTIA Security+</div>
+        <p class="hero-sub">I am building a career in cybersecurity through discipline, hands-on labs, security-focused learning, and a mission-driven mindset shaped by military service and technical growth.</p>
 
         <div class="typing-wrap">
           <span id="typed-text"></span><span class="typing-cursor">|</span>
         </div>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-primary" href="resume.pdf" target="_blank">View Resume</a>
           <a class="btn btn-secondary" href="https://github.com/johvin4014" target="_blank">GitHub</a>
           <a class="btn btn-secondary" href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank">LinkedIn</a>
-          <a class="btn btn-secondary" href="resume.pdf" target="_blank">Resume</a>
         </div>
 
         <div class="hero-pills">
           <span class="pill">CompTIA Security+</span>
           <span class="pill">BS Cybersecurity Operations</span>
-          <span class="pill">Python Security Tools</span>
-          <span class="pill">AWS Security Labs</span>
+          <span class="pill">Cloud Security Focus</span>
+          <span class="pill">Hands-On Labs</span>
         </div>
       </div>
 
@@ -727,7 +621,7 @@
 
         <div class="profile-shot">
           <img src="images/profile-photo.jpg" alt="Johnson M. Vincent professional portrait" />
-          <div class="profile-caption">Cybersecurity Professional</div>
+          <div class="profile-caption">Employer-Ready Portfolio</div>
         </div>
 
         <div class="terminal-preview">
@@ -746,13 +640,10 @@
 <span>CompTIA Security+</span>
 
 > focus
-<span>Network Security
-Cloud Security
-Security Engineering
-Python Security Projects</span>
-
-> status
-<span>Building skills. Building projects. Building a career.</span></div>
+<span>Cloud Security
+Security Operations
+Python Security Tools
+Hands-On Cyber Labs</span></div>
         </div>
       </aside>
     </div>
@@ -760,9 +651,9 @@ Python Security Projects</span>
 
   <section>
     <div class="container stats-grid">
-      <div class="stat"><strong>10+</strong><span>Cybersecurity starter repos</span></div>
       <div class="stat"><strong>Security+</strong><span>Industry certification earned</span></div>
       <div class="stat"><strong>Veteran</strong><span>Mission-ready mindset</span></div>
+      <div class="stat"><strong>Cyber</strong><span>Focused professional growth</span></div>
       <div class="stat"><strong>2026</strong><span>Degree completion track</span></div>
     </div>
   </section>
@@ -771,26 +662,19 @@ Python Security Projects</span>
     <div class="container">
       <div class="section-head">
         <div class="label">About Me</div>
-        <h2>A cyber-first personal brand that feels like a real professional site.</h2>
-        <p>This site is built to show more than interest. It shows direction, discipline, and a growing body of technical work that recruiters can actually open, review, and verify.</p>
+        <h2>A clean, professional site employers can view right now.</h2>
+        <p>This site is designed to present a polished cybersecurity identity even while my portfolio continues to grow. It highlights my background, certification, current direction, and professional links in one place.</p>
       </div>
 
       <div class="about-grid">
         <div class="panel">
-          <h3>My Story</h3>
-          <p>I am a U.S. Navy veteran and cybersecurity student focused on security operations, cloud, systems administration, and hands-on technical growth. My goal is to build a strong portfolio that shows discipline, practical skill, and long-term value in cyber and cloud roles.</p>
-          <div class="chips">
-            <span class="chip">Network Defense</span>
-            <span class="chip">Cloud Security</span>
-            <span class="chip">Linux</span>
-            <span class="chip">Windows</span>
-            <span class="chip">Python</span>
-          </div>
+          <h3>Professional Summary</h3>
+          <p>I am a U.S. Navy veteran transitioning into cybersecurity with a focus on security operations, cloud security, systems administration, and hands-on technical growth. I bring discipline, accountability, and a mission-first mindset into everything I build and learn.</p>
         </div>
 
-        <div class="panel">
+        <div class="panel" id="skills">
           <h3>Core Skills</h3>
-          <p>My focus areas include vulnerability analysis, security monitoring, network scanning, cloud security, access control, technical documentation, and portfolio-driven learning through labs and projects.</p>
+          <p>My current strengths and growth areas include network security, Linux and Windows administration, Python security tools, access control, vulnerability analysis, and cloud security fundamentals.</p>
           <div class="tech-row">
             <img src="https://skillicons.dev/icons?i=python,linux,aws,git,github,bash,vscode" alt="Technology icons for Python, Linux, AWS, Git, GitHub, Bash, and VS Code" />
           </div>
@@ -799,204 +683,71 @@ Python Security Projects</span>
     </div>
   </section>
 
-  <section id="resume-highlights">
+  <section id="certifications">
     <div class="container">
       <div class="section-head">
-        <div class="label">Career Snapshot</div>
-        <h2>A recruiter-friendly overview built for fast scanning.</h2>
-        <p>This section helps hiring managers understand your value quickly by combining your veteran background, certification, education, and focus areas into one clear snapshot.</p>
+        <div class="label">Certifications</div>
+        <h2>Industry-recognized foundation in cybersecurity.</h2>
+        <p>This section keeps the site employer-ready while more labs and projects are still being added.</p>
       </div>
 
       <div class="resume-grid">
         <div class="panel">
-          <h3>Professional Summary</h3>
-          <p>U.S. Navy veteran and cybersecurity professional in training with hands-on experience in technical administration, systems support, security-focused coursework, and real-world operational discipline. CompTIA Security+ certified and actively building a portfolio in network security, cloud security, Python security tools, and cybersecurity lab analysis.</p>
+          <h3>CompTIA Security+</h3>
+          <p>Security+ validates core knowledge in network security, risk management, access control, threats, vulnerabilities, and security operations. It shows a strong baseline for entry-level cybersecurity roles and DoD-aligned environments.</p>
         </div>
 
         <div class="panel">
-          <h3>Quick Resume Highlights</h3>
+          <h3>Career Snapshot</h3>
           <div class="chips">
             <span class="chip">CompTIA Security+</span>
             <span class="chip">U.S. Navy Veteran</span>
             <span class="chip">Cybersecurity Student</span>
-            <span class="chip">GitHub Portfolio</span>
             <span class="chip">Cloud Security Focus</span>
             <span class="chip">Hands-On Labs</span>
+            <span class="chip">GitHub Presence</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="projects">
+  <section id="focus">
     <div class="container">
       <div class="section-head">
-        <div class="label">Featured Projects</div>
-        <h2>Professional project cards with real GitHub links.</h2>
-        <p>These cards connect your website directly to your repos so everything feels unified, intentional, and easy to verify.</p>
+        <div class="label">Current Focus</div>
+        <h2>What I am actively building right now.</h2>
+        <p>Instead of listing unfinished projects, this section shows the work I am currently developing and documenting.</p>
       </div>
 
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="card-label">Python Tool</div>
-          <h3>Password Strength Checker</h3>
-          <p>A Python-based security tool that evaluates password strength using length, complexity, and character variety.</p>
-          <div class="project-links">
-            <a class="btn btn-secondary" href="https://github.com/johvin4014/password-strength-checker" target="_blank">View Repo</a>
-            <a class="btn btn-secondary" href="https://github.com/johvin4014/password-strength-checker/blob/main/README.md" target="_blank">Read More</a>
-          </div>
+      <div class="focus-grid">
+        <div class="focus-card">
+          <div class="card-label">Hands-On Learning</div>
+          <h3>Cybersecurity Labs</h3>
+          <p>I am building practical experience through network scanning, packet analysis, vulnerability review, Linux hardening, and cloud security exercises.</p>
         </div>
 
-        <div class="project-card">
-          <div class="card-label">Python Tool</div>
-          <h3>File Hash Integrity Verifier</h3>
-          <p>A script that generates and compares hashes to help verify integrity and detect unauthorized changes.</p>
-          <div class="project-links">
-            <a class="btn btn-secondary" href="https://github.com/johvin4014/file-hash-integrity-verifier" target="_blank">View Repo</a>
-            <a class="btn btn-secondary" href="https://github.com/johvin4014/file-hash-integrity-verifier/blob/main/README.md" target="_blank">Read More</a>
-          </div>
+        <div class="focus-card">
+          <div class="card-label">Technical Growth</div>
+          <h3>Python Security Tools</h3>
+          <p>I am developing small security-focused tools that reinforce scripting, logic, and problem-solving in a cybersecurity context.</p>
         </div>
 
-        <div class="project-card">
-          <div class="card-label">Python Tool</div>
-          <h3>Python Port Scanner</h3>
-          <p>A basic scanner that identifies open ports and helps build hands-on understanding of network exposure.</p>
-          <div class="project-links">
-            <a class="btn btn-secondary" href="https://github.com/johvin4014/python-port-scanner" target="_blank">View Repo</a>
-            <a class="btn btn-secondary" href="https://github.com/johvin4014/python-port-scanner/blob/main/README.md" target="_blank">Read More</a>
-          </div>
+        <div class="focus-card">
+          <div class="card-label">Career Direction</div>
+          <h3>Cloud & Security Roles</h3>
+          <p>My goal is to move into cybersecurity, cloud security, and mission-driven technical roles where I can keep learning and contribute long term.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="labs">
-    <div class="container">
-      <div class="section-head">
-        <div class="label">Cybersecurity Labs</div>
-        <h2>Lab write-ups that make your portfolio stronger.</h2>
-        <p>This section is where your hands-on learning becomes visible proof of skill.</p>
-      </div>
-
-      <div class="links-grid">
-        <a class="link-card" href="https://github.com/johvin4014/nmap-network-scanning-lab" target="_blank">
-          <div class="card-label">Lab</div>
-          <h3>Nmap Network Scanning</h3>
-          <p>Reconnaissance, scan commands, results, and interpretation in a clean report format.</p>
-        </a>
-
-        <a class="link-card" href="https://github.com/johvin4014/wireshark-packet-analysis" target="_blank">
-          <div class="card-label">Lab</div>
-          <h3>Wireshark Packet Analysis</h3>
-          <p>Packet inspection, protocol review, and analyst-style documentation.</p>
-        </a>
-
-        <a class="link-card" href="https://github.com/johvin4014/aws-security-lab" target="_blank">
-          <div class="card-label">Lab</div>
-          <h3>AWS Security Lab</h3>
-          <p>Cloud IAM, least privilege, logging, and access control documentation.</p>
-        </a>
-
-        <a class="link-card" href="https://github.com/johvin4014/linux-security-hardening" target="_blank">
-          <div class="card-label">Lab</div>
-          <h3>Linux Security Hardening</h3>
-          <p>System hardening notes, checklists, and security-focused administration work.</p>
-        </a>
-
-        <a class="link-card" href="https://github.com/johvin4014/vulnerability-assessment-report" target="_blank">
-          <div class="card-label">Report</div>
-          <h3>Vulnerability Assessment</h3>
-          <p>A professional-style report with findings, risk summary, and recommendations.</p>
-        </a>
-
-        <a class="link-card" href="https://github.com/johvin4014/siem-log-analysis-lab" target="_blank">
-          <div class="card-label">SOC Lab</div>
-          <h3>SIEM Log Analysis</h3>
-          <p>Security monitoring, alert review, event analysis, and analyst-style notes.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="stats">
-    <div class="container">
-      <div class="section-head">
-        <div class="label">GitHub Stats</div>
-        <h2>Live GitHub activity and language breakdown.</h2>
-        <p>These widgets update from your GitHub account and make the site feel active, technical, and current.</p>
-      </div>
-
-      <div class="widgets-grid">
-        <div class="stats-widget">
-          <h3>Profile Stats</h3>
-          <p>Live pull from your GitHub profile.</p>
-          <img src="https://github-readme-stats.vercel.app/api?username=johvin4014&show_icons=true&theme=tokyonight" alt="GitHub stats for johvin4014" />
-        </div>
-
-        <div class="stats-widget">
-          <h3>Top Languages</h3>
-          <p>A quick view of your current language mix.</p>
-          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=johvin4014&layout=compact&theme=tokyonight" alt="Top languages for johvin4014" />
-        </div>
-      </div>
-
-      <div class="stats-widget" style="margin-top:22px;">
-        <h3>Contribution Activity</h3>
-        <p>Your GitHub activity graph gives recruiters a visual sign that you are actively building.</p>
-        <img src="https://github-readme-activity-graph.vercel.app/graph?username=johvin4014&theme=tokyo-night" alt="GitHub activity graph for johvin4014" />
-      </div>
-    </div>
-  </section>
-
-  <section id="journey">
-    <div class="container">
-      <div class="section-head">
-        <div class="label">My Journey</div>
-        <h2>The story behind the résumé.</h2>
-        <p>This section shows progression, not just credentials — and that makes a portfolio more memorable.</p>
-      </div>
-
-      <div class="timeline-grid">
-        <div class="timeline-card">
-          <h3>Progress Timeline</h3>
-          <div class="timeline-item">
-            <strong>U.S. Navy Service</strong>
-            <span>Built discipline, accountability, and experience in technical and operational environments.</span>
-          </div>
-          <div class="timeline-item">
-            <strong>CompTIA Security+</strong>
-            <span>Established a recognized baseline in cybersecurity fundamentals and industry knowledge.</span>
-          </div>
-          <div class="timeline-item">
-            <strong>Cybersecurity Degree Path</strong>
-            <span>Expanded skills in systems, cloud, scripting, networking, and hands-on labs.</span>
-          </div>
-          <div class="timeline-item">
-            <strong>Portfolio Buildout</strong>
-            <span>Documenting labs, tools, screenshots, and technical write-ups to show real progress.</span>
-          </div>
-        </div>
-
-        <div class="timeline-card">
-          <h3>Current Focus</h3>
-          <p>I am focused on building a portfolio that supports roles in cybersecurity operations, cloud security, system administration, and entry-level security engineering. Every repo, screenshot, and write-up on this site is designed to show growth in public.</p>
-          <div class="chips">
-            <span class="chip">SOC Readiness</span>
-            <span class="chip">Cloud Skills</span>
-            <span class="chip">Python Growth</span>
-            <span class="chip">Hands-On Evidence</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="veteran-story">
+  <section id="veteran">
     <div class="container">
       <div class="section-head">
         <div class="label">Veteran Background</div>
-        <h2>Service, discipline, and leadership.</h2>
-        <p>Your military experience adds credibility, discipline, and trust to your professional brand.</p>
+        <h2>Service, discipline, and accountability.</h2>
+        <p>My military background is one of the strongest parts of my professional identity.</p>
       </div>
 
       <div class="bio-grid">
@@ -1005,12 +756,12 @@ Python Security Projects</span>
         </div>
         <div class="panel">
           <h3>Navy Experience</h3>
-          <p>My Navy background shaped how I approach responsibility, technical work, teamwork, and mission execution. It also gave me real-world experience with accountability, structure, and performance under pressure — qualities I now bring into cybersecurity and cloud-focused roles.</p>
+          <p>My service in the U.S. Navy shaped how I approach responsibility, structure, teamwork, and mission execution. It gave me a level of discipline and professionalism that translates directly into cybersecurity and technical operations.</p>
           <div class="chips">
             <span class="chip">Leadership</span>
             <span class="chip">Discipline</span>
             <span class="chip">Accountability</span>
-            <span class="chip">Technical Operations</span>
+            <span class="chip">Mission Focus</span>
           </div>
         </div>
       </div>
@@ -1021,14 +772,14 @@ Python Security Projects</span>
     <div class="container">
       <div class="section-head">
         <div class="label">Personal Side</div>
-        <h2>Professional, but still human.</h2>
-        <p>This section is optional, but when kept tasteful and brief it can make the site feel more real and memorable.</p>
+        <h2>Professional, grounded, and growth-driven.</h2>
+        <p>This section helps the site feel authentic and complete without taking away from your professional brand.</p>
       </div>
 
       <div class="bio-grid">
         <div class="panel">
           <h3>Beyond Work</h3>
-          <p>I care about growth, family, discipline, and building a better future. My personal life keeps me grounded and reminds me why I’m working so hard to grow in cybersecurity, cloud, and technical leadership.</p>
+          <p>I care deeply about growth, family, and building a better future. That perspective keeps me motivated and grounded as I continue working toward a long-term career in cybersecurity and cloud-focused roles.</p>
         </div>
         <div class="bio-photo">
           <img src="images/family-photo.jpg" alt="Johnson M. Vincent with spouse" />
@@ -1041,8 +792,8 @@ Python Security Projects</span>
     <div class="container">
       <div class="section-head">
         <div class="label">Terminal Section</div>
-        <h2>A cyber-style block that gives the homepage more personality.</h2>
-        <p>This section makes the site feel more like a security engineer brand.</p>
+        <h2>A cyber-style block that adds personality.</h2>
+        <p>This keeps the site feeling technical without relying on unfinished project cards.</p>
       </div>
 
       <div class="terminal-box">
@@ -1057,18 +808,11 @@ Python Security Projects</span>
 > background
 <span>U.S. Navy Veteran | Cybersecurity Student</span>
 
-> certifications
+> certification
 <span>CompTIA Security+</span>
 
-> active focus
-<span>Python Security Tools
-Nmap Labs
-Wireshark Analysis
-AWS Security
-Linux Hardening</span>
-
-> mission
-<span>Build a portfolio that shows real growth and real capability.</span></div>
+> current mission
+<span>Build a portfolio that shows discipline, growth, and real capability.</span></div>
       </div>
     </div>
   </section>
@@ -1078,22 +822,18 @@ Linux Hardening</span>
       <div>
         <div class="card-label">Contact</div>
         <h2 style="margin:10px 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.04;">Let’s connect.</h2>
-        <p>Use this section for recruiters, hiring managers, collaborators, or future clients. Your GitHub, LinkedIn, resume, and website all work together here.</p>
+        <p>This website is ready to be viewed by employers now. My LinkedIn, GitHub, and resume are all connected here in one place.</p>
         <div class="connect-links">
           <a class="btn btn-primary" href="mailto:johnson.m.vincent17@gmail.com">Email Me</a>
+          <a class="btn btn-secondary" href="resume.pdf" target="_blank">Download Resume</a>
           <a class="btn btn-secondary" href="https://github.com/johvin4014" target="_blank">GitHub</a>
           <a class="btn btn-secondary" href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank">LinkedIn</a>
         </div>
       </div>
 
       <div class="panel">
-        <h3>Final Setup Checklist</h3>
-        <p>1. Upload <strong>images/jmv-logo.png</strong> and <strong>images/favicon.png</strong>.<br>
-           2. Upload your resume as <strong>resume.pdf</strong>.<br>
-           3. Add screenshots to each GitHub repo.<br>
-           4. Upload the three photos into the <strong>images</strong> folder.<br>
-           5. Keep building your GitHub so the stats widgets update over time.<br>
-           6. Connect the finished site to <strong>johnsonvincent.com</strong>.</p>
+        <h3>Employer-Ready Website</h3>
+        <p>This version is intentionally clean and complete. It gives employers a clear picture of who I am, what I bring, and where I am headed — without needing unfinished project sections to fill the page.</p>
       </div>
     </div>
   </section>
@@ -1110,8 +850,8 @@ Linux Hardening</span>
       "Cybersecurity Professional",
       "U.S. Navy Veteran",
       "CompTIA Security+ Certified",
-      "Cloud & Security Builder",
-      "Hands-On Lab Portfolio"
+      "Cloud Security Focused",
+      "Mission-Driven Builder"
     ];
 
     const typedText = document.getElementById("typed-text");
@@ -1121,7 +861,6 @@ Linux Hardening</span>
 
     function typeEffect() {
       const current = roles[roleIndex];
-
       if (!deleting) {
         typedText.textContent = current.slice(0, charIndex + 1);
         charIndex++;
@@ -1138,7 +877,6 @@ Linux Hardening</span>
           roleIndex = (roleIndex + 1) % roles.length;
         }
       }
-
       setTimeout(typeEffect, deleting ? 45 : 85);
     }
 
