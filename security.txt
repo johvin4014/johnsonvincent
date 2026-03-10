@@ -1,0 +1,5 @@
+Contact: mailto:johnson.m.vincent17@gmail.com
+Expires: 2027-01-01T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://johnsonvincent.com/security.txt
+Policy: https://johnsonvincent.com
