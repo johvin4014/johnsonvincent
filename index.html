@@ -59,6 +59,66 @@
     img { max-width: 100%; display: block; }
     .container { width: min(var(--max), 92%); margin: 0 auto; position: relative; z-index: 1; }
 
+    .trust-bar,
+    .feature-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      box-shadow: var(--shadow);
+    }
+
+    .trust-bar {
+      margin-top: 26px;
+      border-radius: 22px;
+      padding: 14px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      color: var(--soft);
+    }
+
+    .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .trust-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 12px rgba(0,229,255,.45);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature-card {
+      border-radius: var(--radius);
+      padding: 26px;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0,229,255,.22);
+      box-shadow: 0 22px 56px rgba(0,0,0,.38), 0 0 0 1px rgba(0,229,255,.08) inset;
+    }
+
+    .feature-card h3 { margin: 8px 0; font-size: 1.2rem; }
+    .feature-card p { margin: 0; color: var(--muted); }
+
     .topbar {
       position: sticky;
       top: 0;
@@ -541,7 +601,7 @@
       .bio-grid,
       .resume-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .focus-grid { grid-template-columns: 1fr; }
+      .focus-grid, .feature-grid { grid-template-columns: 1fr; }
       .hero-card { min-height: auto; }
     }
 
@@ -561,6 +621,7 @@
   </style>
 </head>
 <body>
+  <canvas id="bg-canvas" aria-hidden="true" style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;"></canvas>
   <div class="topbar">
     <div class="container nav">
       <a href="#home" class="brand">
@@ -600,11 +661,13 @@
           <a class="btn btn-secondary" href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank">LinkedIn</a>
         </div>
 
-        <div class="hero-pills">
-          <span class="pill">CompTIA Security+</span>
-          <span class="pill">BS Cybersecurity Operations</span>
-          <span class="pill">Cloud Security Focus</span>
-          <span class="pill">Hands-On Labs</span>
+        <div class="hero-pills">$1</div>
+
+        <div class="trust-bar">
+          <span class="trust-item"><span class="trust-dot"></span> CompTIA Security+</span>
+          <span class="trust-item"><span class="trust-dot"></span> U.S. Navy Veteran</span>
+          <span class="trust-item"><span class="trust-dot"></span> LinkedIn Active</span>
+          <span class="trust-item"><span class="trust-dot"></span> GitHub Portfolio</span>
         </div>
       </div>
 
@@ -678,6 +741,34 @@ Hands-On Cyber Labs</span></div>
           <div class="tech-row">
             <img src="https://skillicons.dev/icons?i=python,linux,aws,git,github,bash,vscode" alt="Technology icons for Python, Linux, AWS, Git, GitHub, Bash, and VS Code" />
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="advantages">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Why Me</div>
+        <h2>Three qualities that make me stand out.</h2>
+        <p>This section gives employers a fast reason to keep reading by showing the value behind the résumé.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="card-label">Discipline</div>
+          <h3>Military mindset</h3>
+          <p>I bring accountability, consistency, and mission focus from my Navy background into technical work and professional growth.</p>
+        </div>
+        <div class="feature-card">
+          <div class="card-label">Learning</div>
+          <h3>Hands-on growth</h3>
+          <p>I am actively building real capability through labs, security tools, cloud study, and continuous technical practice.</p>
+        </div>
+        <div class="feature-card">
+          <div class="card-label">Direction</div>
+          <h3>Clear cybersecurity path</h3>
+          <p>My focus is intentional: security operations, cloud security, and long-term technical roles where I can contribute and keep improving.</p>
         </div>
       </div>
     </div>
@@ -881,6 +972,56 @@ Hands-On Cyber Labs</span></div>
     }
 
     typeEffect();
+
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      particles = Array.from({ length: Math.min(70, Math.floor(window.innerWidth / 20)) }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.8 + 0.6,
+        dx: (Math.random() - 0.5) * 0.35,
+        dy: (Math.random() - 0.5) * 0.35
+      }));
+    }
+
+    function animateBg() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (const p of particles) {
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0,229,255,0.28)';
+        ctx.fill();
+      }
+
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const a = particles[i], b = particles[j];
+          const dist = Math.hypot(a.x - b.x, a.y - b.y);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = `rgba(31,111,235,${(1 - dist / 120) * 0.14})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateBg);
+    }
+
+    resizeCanvas();
+    animateBg();
+    window.addEventListener('resize', resizeCanvas);
   </script>
 </body>
 </html>
