@@ -1,290 +1,839 @@
-import { Github, Linkedin, Mail, Download, Shield, ChevronRight } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Johnson M. Vincent | Cybersecurity Professional, U.S. Navy Veteran, CompTIA Security+, and BS Cybersecurity student." />
+  <title>Johnson M. Vincent | Cybersecurity Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-1: #03070d;
+      --bg-2: #07111d;
+      --bg-3: #0b1828;
+      --panel: rgba(255,255,255,0.05);
+      --line: rgba(255,255,255,0.08);
+      --text: #eef6ff;
+      --muted: #9fb2c9;
+      --soft: #d9ecff;
+      --cyan: #00e5ff;
+      --cyan-2: #56d2ff;
+      --blue: #1f6feb;
+      --glow: 0 0 28px rgba(0,229,255,0.18);
+      --shadow: 0 20px 48px rgba(0,0,0,0.34);
+      --radius: 28px;
+      --max: 1180px;
+    }
 
-export default function JohnsonPortfolioHomepage() {
-  return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_85%_12%,rgba(34,211,238,0.18),transparent_18%),radial-gradient(circle_at_15%_0%,rgba(59,130,246,0.16),transparent_18%),radial-gradient(circle_at_60%_30%,rgba(34,211,238,0.06),transparent_26%),linear-gradient(180deg,#03070d_0%,#07111d_45%,#0b1828_100%)] text-white">
-      <div className="fixed inset-0 pointer-events-none opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:42px_42px]" />
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 85% 10%, rgba(0,229,255,0.12), transparent 18%),
+        radial-gradient(circle at 15% 0%, rgba(31,111,235,0.16), transparent 18%),
+        radial-gradient(circle at 60% 30%, rgba(0,229,255,0.05), transparent 26%),
+        linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
 
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050a10]/80 backdrop-blur-xl">
-        <div className="mx-auto flex w-[min(1180px,92%)] items-center justify-between gap-6 py-4">
-          <a href="#home" className="flex items-center gap-4 min-w-0">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/25 bg-gradient-to-br from-slate-900 to-[#09111a] shadow-[0_0_28px_rgba(0,229,255,0.18)]">
-              <span className="text-sm font-black tracking-widest text-cyan-300">JMV</span>
-            </div>
-            <div className="leading-tight">
-              <div className="text-[0.95rem] font-extrabold uppercase tracking-[0.08em]">Johnson Vincent</div>
-              <div className="mt-1 text-[0.62rem] uppercase tracking-[0.18em] text-slate-400">Cybersecurity Portfolio</div>
-            </div>
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.58), rgba(0,0,0,0.06));
+      z-index: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), 92%); margin: 0 auto; position: relative; z-index: 1; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(5,10,16,0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      padding: 6px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #0f1a28, #09111a);
+      border: 1px solid rgba(0,229,255,0.22);
+      box-shadow: var(--glow);
+      color: var(--cyan);
+      font-weight: 900;
+      font-size: 14px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .brand-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .brand-text small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a { transition: .2s ease; }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--cyan); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: .2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      color: #041019;
+      background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
+      box-shadow: 0 0 26px rgba(0,229,255,0.24);
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.12);
+    }
+
+    .btn-secondary:hover {
+      color: var(--cyan);
+      border-color: rgba(0,229,255,0.38);
+    }
+
+    .icon-btn {
+      width: 50px;
+      height: 50px;
+      padding: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: .2s ease;
+    }
+
+    .icon-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(0,229,255,0.4);
+      background: rgba(0,229,255,0.08);
+      box-shadow: 0 0 20px rgba(0,229,255,0.14);
+    }
+
+    .icon-btn svg {
+      width: 21px;
+      height: 21px;
+      fill: currentColor;
+    }
+
+    .hero {
+      padding: 90px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(0,229,255,0.08);
+      border: 1px solid rgba(0,229,255,0.16);
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      margin: 18px 0 12px;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+    }
+
+    .hero-title-line {
+      color: var(--soft);
+      font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+      margin-bottom: 16px;
+    }
+
+    .hero-sub {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(1.03rem, 2vw, 1.17rem);
+    }
+
+    .typing-wrap {
+      margin-top: 16px;
+      min-height: 32px;
+      color: var(--cyan);
+      font-weight: 700;
+      font-size: 1.02rem;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 10px;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+      align-items: center;
+    }
+
+    .trust-bar {
+      margin-top: 26px;
+      border-radius: 22px;
+      padding: 14px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      color: var(--soft);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      box-shadow: var(--shadow);
+    }
+
+    .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .trust-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 12px rgba(0,229,255,.45);
+    }
+
+    .hero-card,
+    .panel,
+    .stat,
+    .focus-card,
+    .terminal-box,
+    .cta-box,
+    .resume-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    .hero-card {
+      padding: 24px;
+      overflow: hidden;
+      position: relative;
+      min-height: 560px;
+      background:
+        radial-gradient(circle at 82% 16%, rgba(0,229,255,0.18), transparent 18%),
+        radial-gradient(circle at 80% 80%, rgba(31,111,235,0.22), transparent 22%),
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
+    }
+
+    .hero-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .mini-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.9rem;
+    }
+
+    .mini-brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      padding: 5px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #0f1826, #09111a);
+      border: 1px solid rgba(0,229,255,0.2);
+      box-shadow: var(--glow);
+      color: var(--cyan);
+      font-weight: 900;
+      font-size: 12px;
+      overflow: hidden;
+    }
+
+    .mini-brand-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .card-label {
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .profile-shot {
+      margin-top: 18px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(0,229,255,0.15);
+      background: linear-gradient(135deg, rgba(0,229,255,0.08), rgba(31,111,235,0.08));
+      min-height: 340px;
+      position: relative;
+    }
+
+    .profile-shot::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 40%;
+      background: linear-gradient(180deg, transparent, rgba(4,10,18,0.82));
+      pointer-events: none;
+    }
+
+    .profile-shot img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      object-position: center 18%;
+    }
+
+    .profile-caption {
+      position: absolute;
+      left: 18px;
+      bottom: 16px;
+      z-index: 1;
+      font-size: 13px;
+      color: var(--soft);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .terminal-preview,
+    .terminal-box {
+      margin-top: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(0,229,255,0.14);
+      background: #030a13;
+    }
+
+    .terminal-bar {
+      display: flex;
+      gap: 8px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: #09131e;
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot.red { background: #ff5f56; }
+    .dot.yellow { background: #ffbd2e; }
+    .dot.green { background: #27c93f; }
+
+    .terminal-text {
+      padding: 22px;
+      color: var(--cyan);
+      font-family: "Courier New", monospace;
+      font-size: 1rem;
+      white-space: pre-line;
+    }
+
+    .terminal-text span { color: #d7ecff; }
+    section { padding: 84px 0; }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 28px;
+    }
+
+    .section-head .label {
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      margin: 10px 0 12px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p,
+    .panel p,
+    .stat span,
+    .focus-card p,
+    .resume-card p,
+    .cta-box p { color: var(--muted); }
+
+    .stats-grid,
+    .focus-grid,
+    .feature-grid,
+    .contact-grid,
+    .about-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    .feature-grid,
+    .focus-grid { grid-template-columns: repeat(3, 1fr); }
+    .about-grid,
+    .contact-grid { grid-template-columns: 1.2fr .8fr; }
+
+    .panel,
+    .stat,
+    .focus-card,
+    .resume-card,
+    .cta-box {
+      padding: 26px;
+    }
+
+    .stat { text-align: center; }
+    .stat strong {
+      display: block;
+      color: var(--cyan);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .tech-row {
+      margin-top: 18px;
+      border: 1px solid rgba(0,229,255,0.14);
+      border-radius: 22px;
+      padding: 18px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .focus-card h3,
+    .panel h3,
+    .resume-card h3 { margin: 8px 0; font-size: 1.2rem; }
+
+    .contact-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .resume-card .download-btn {
+      margin-top: 18px;
+    }
+
+    .footer {
+      padding: 30px 0 56px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .focus-grid, .feature-grid { grid-template-columns: 1fr; }
+      .hero-card { min-height: auto; }
+    }
+
+    @media (max-width: 680px) {
+      .nav { align-items: flex-start; }
+      .nav-links { gap: 12px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 56px; }
+      .brand-text { font-size: 0.82rem; }
+      .panel,
+      .cta-box,
+      .stat,
+      .hero-card,
+      .focus-card,
+      .resume-card { padding: 20px; }
+      .profile-shot img { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true" style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;"></canvas>
+
+  <div class="topbar">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <span class="brand-icon">
+          <img src="images/jmv-logo.png" alt="JMV logo" onerror="this.style.display='none'; this.parentNode.innerHTML='JMV';" />
+        </span>
+        <span class="brand-text">Johnson Vincent<small>Cybersecurity Portfolio</small></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#labs">Labs</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn-primary" href="#contact">Connect</a>
+    </div>
+  </div>
+
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Cybersecurity · Cloud · Veteran</span>
+        <h1>Johnson M. Vincent</h1>
+        <div class="hero-title-line">Cybersecurity Professional | U.S. Navy Veteran | CompTIA Security+</div>
+        <p class="hero-sub">I defend, secure, and innovate in tech. My mission is to protect digital assets, strengthen security operations, and continue building real capability through labs, cloud learning, and disciplined technical growth.</p>
+
+        <div class="typing-wrap">
+          <span id="typed-text"></span><span class="typing-cursor">|</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#labs">View Labs</a>
+
+          <a class="icon-btn" href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6A2.5 2.5 0 0 1 0 3.5C0 2.12 1.11 1 2.49 1a2.5 2.5 0 0 1 2.49 2.5ZM.5 8h4V24h-4V8Zm7 0h3.83v2.19h.05c.53-1.01 1.84-2.08 3.79-2.08 4.05 0 4.8 2.67 4.8 6.14V24h-4v-6.96c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.8-2.66 3.67V24h-4V8Z"></path></svg>
           </a>
 
-          <nav className="hidden items-center gap-8 text-sm text-slate-300 md:flex">
-            <a href="#home" className="text-cyan-300">Home</a>
-            <a href="#about" className="hover:text-white transition">About</a>
-            <a href="#labs" className="hover:text-white transition">Labs</a>
-            <a href="#journey" className="hover:text-white transition">Journey</a>
-            <a href="#contact" className="hover:text-white transition">Contact</a>
-          </nav>
-
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-sky-300 px-5 py-3 text-sm font-bold text-slate-950 shadow-[0_0_26px_rgba(0,229,255,0.24)] transition hover:-translate-y-0.5"
-          >
-            Connect
+          <a class="icon-btn" href="https://github.com/johvin4014" target="_blank" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.46-2.37 1.22-3.2-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.22A11.5 11.5 0 0 1 12 6.32c1.02 0 2.05.14 3.01.42 2.29-1.54 3.29-1.22 3.29-1.22.66 1.65.25 2.87.12 3.17.76.83 1.22 1.9 1.22 3.2 0 4.58-2.8 5.59-5.48 5.88.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.69.83.57A12.02 12.02 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"></path></svg>
           </a>
         </div>
-      </header>
 
-      <main id="home" className="relative z-10">
-        <section className="mx-auto grid min-h-[72vh] w-[min(1180px,92%)] items-center gap-10 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.08em] text-cyan-300">
-              <Shield className="h-4 w-4" />
-              Cybersecurity · Cloud · Veteran
-            </div>
+        <div class="trust-bar">
+          <span class="trust-item"><span class="trust-dot"></span> CompTIA Security+</span>
+          <span class="trust-item"><span class="trust-dot"></span> U.S. Navy Veteran</span>
+          <span class="trust-item"><span class="trust-dot"></span> LinkedIn Active</span>
+          <span class="trust-item"><span class="trust-dot"></span> GitHub Portfolio</span>
+        </div>
+      </div>
 
-            <h1 className="mt-6 text-5xl font-black leading-none tracking-[-0.05em] sm:text-6xl lg:text-[5.4rem]">
-              Johnson M. Vincent
-            </h1>
-
-            <p className="mt-4 text-lg text-slate-200 sm:text-[1.35rem]">
-              Cybersecurity Professional <span className="text-cyan-300">|</span> U.S. Navy Veteran <span className="text-cyan-300">|</span> CompTIA Security+
-            </p>
-
-            <p className="mt-5 max-w-3xl text-[1.06rem] leading-8 text-slate-400 sm:text-[1.12rem]">
-              I defend, secure, and innovate in tech. My mission is to protect digital assets, strengthen security operations, and continue building real capability through labs, cloud learning, and disciplined technical growth.
-            </p>
-
-            <div className="mt-8 min-h-8 text-base font-bold text-cyan-300">
-              Cybersecurity Enthusiast · Cloud Security Focused · Mission-Driven Builder
-            </div>
-
-            <div className="mt-8 space-y-3 text-lg text-slate-200">
-              {[
-                "Cybersecurity Enthusiast",
-                "Cloud Security Engineer",
-                "CTF & Labs Explorer",
-                "Network Defender",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <span className="h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(0,229,255,0.45)]" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href="#labs"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-sky-300 px-7 py-3.5 font-bold text-slate-950 shadow-[0_0_26px_rgba(0,229,255,0.24)] transition hover:-translate-y-0.5"
-              >
-                View Labs
-                <ChevronRight className="h-4 w-4" />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/johnson-vincent-cyber"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/5 text-slate-100 transition hover:border-cyan-300/50 hover:bg-cyan-400/10 hover:text-cyan-300"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-
-              <a
-                href="https://github.com/johvin4014"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/5 text-slate-100 transition hover:border-cyan-300/50 hover:bg-cyan-400/10 hover:text-cyan-300"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              {[
-                "CompTIA Security+",
-                "U.S. Navy Veteran",
-                "LinkedIn Active",
-                "GitHub Portfolio",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-bold text-slate-200"
-                >
-                  <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(0,229,255,0.45)]" />
-                  {item}
-                </span>
-              ))}
-            </div>
+      <aside class="hero-card">
+        <div class="hero-card-top">
+          <div class="mini-brand">
+            <span class="mini-brand-icon">
+              <img src="images/jmv-logo.png" alt="JMV small logo" onerror="this.style.display='none'; this.parentNode.innerHTML='JMV';" />
+            </span>
+            <span>Johnson M. Vincent</span>
           </div>
+          <span class="card-label">Cyber Theme</span>
+        </div>
 
-          <aside className="rounded-[30px] border border-white/10 bg-[radial-gradient(circle_at_82%_16%,rgba(0,229,255,0.18),transparent_18%),radial-gradient(circle_at_80%_80%,rgba(31,111,235,0.22),transparent_22%),linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.025))] p-6 shadow-[0_20px_48px_rgba(0,0,0,0.34)]">
-            <div className="mb-5 flex items-center justify-between gap-4">
-              <div className="flex items-center gap-3 font-extrabold uppercase tracking-[0.06em] text-sm">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/20 bg-gradient-to-br from-slate-900 to-[#09111a] text-cyan-300 shadow-[0_0_28px_rgba(0,229,255,0.18)]">
-                  JMV
-                </div>
-                <span>Johnson M. Vincent</span>
-              </div>
-              <span className="text-xs font-extrabold uppercase tracking-[0.12em] text-cyan-300">Cyber Theme</span>
-            </div>
+        <div class="profile-shot">
+          <img src="images/profile-photo.jpg" alt="Johnson M. Vincent professional portrait" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80';" />
+          <div class="profile-caption">Johnson M. Vincent</div>
+        </div>
 
-            <div className="relative overflow-hidden rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-cyan-400/10 to-blue-500/10">
-              <img
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80"
-                alt="Johnson M. Vincent professional portrait placeholder"
-                className="h-[360px] w-full object-cover object-top"
-              />
-              <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-b from-transparent to-[#040a12]/85" />
-              <div className="absolute bottom-4 left-4 text-sm font-bold uppercase tracking-[0.06em] text-slate-100">
-                Johnson M. Vincent
-              </div>
-            </div>
-
-            <div className="mt-5 overflow-hidden rounded-3xl border border-cyan-400/15 bg-[#030a13]">
-              <div className="flex gap-2 border-b border-white/10 bg-[#09131e] px-4 py-3">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
-                <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
-                <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
-              </div>
-              <div className="whitespace-pre-line px-5 py-6 font-mono text-[0.98rem] text-cyan-300">
-                {`> whoami\n`}<span className="text-slate-100">Johnson M. Vincent</span>
-                {`\n\n> role\n`}<span className="text-slate-100">Cybersecurity Professional</span>
-                {`\n\n> certification\n`}<span className="text-slate-100">CompTIA Security+</span>
-                {`\n\n> focus\n`}<span className="text-slate-100">Cloud Security\nSecurity Operations\nPython Security Tools\nHands-On Cyber Labs</span>
-              </div>
-            </div>
-          </aside>
-        </section>
-
-        <section id="about" className="mx-auto w-[min(1180px,92%)] py-6 lg:py-12">
-          <div className="grid gap-6 md:grid-cols-4">
-            {[
-              ["Security+", "Industry certification earned"],
-              ["Veteran", "Mission-ready mindset"],
-              ["Cyber", "Focused professional growth"],
-              ["2026", "Degree completion track"],
-            ].map(([title, desc]) => (
-              <div key={title} className="rounded-[28px] border border-white/10 bg-white/[0.04] p-7 text-center shadow-[0_20px_48px_rgba(0,0,0,0.34)]">
-                <div className="mb-2 text-3xl font-extrabold text-cyan-300">{title}</div>
-                <div className="text-slate-400">{desc}</div>
-              </div>
-            ))}
+        <div class="terminal-preview">
+          <div class="terminal-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
           </div>
-        </section>
+          <div class="terminal-text">> whoami
+<span>Johnson M. Vincent</span>
 
-        <section id="journey" className="mx-auto w-[min(1180px,92%)] py-12 lg:py-20">
-          <div className="max-w-3xl">
-            <div className="text-[13px] font-extrabold uppercase tracking-[0.14em] text-cyan-300">About Me</div>
-            <h2 className="mt-3 text-4xl font-black tracking-[-0.03em] sm:text-5xl">Cybersecurity, discipline, and mission-driven growth.</h2>
-            <p className="mt-4 text-slate-400">
-              This site is built to give employers a strong first impression with a clean professional layout, clear technical direction, trusted links, and an easy way to download your resume.
-            </p>
-          </div>
+> role
+<span>Cybersecurity Professional</span>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-7 shadow-[0_20px_48px_rgba(0,0,0,0.34)]">
-              <h3 className="text-xl font-bold">Professional Summary</h3>
-              <p className="mt-3 leading-8 text-slate-400">
-                I am a U.S. Navy veteran transitioning into cybersecurity with a focus on security operations, cloud security, systems administration, and hands-on technical growth. I bring discipline, accountability, and a mission-first mindset into everything I build and learn.
-              </p>
-            </div>
+> certification
+<span>CompTIA Security+</span>
 
-            <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-7 shadow-[0_20px_48px_rgba(0,0,0,0.34)]">
-              <h3 className="text-xl font-bold">Core Skills</h3>
-              <p className="mt-3 leading-8 text-slate-400">
-                Network security, Linux and Windows administration, Python security tools, access control, vulnerability analysis, cloud security fundamentals, and cybersecurity lab practice.
-              </p>
-              <div className="mt-5 rounded-3xl border border-cyan-400/15 bg-white/[0.03] p-4 text-sm font-semibold text-slate-200">
-                Python · Linux · AWS · Git · GitHub · Bash · VS Code
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="labs" className="mx-auto w-[min(1180px,92%)] py-12 lg:py-20">
-          <div className="max-w-3xl">
-            <div className="text-[13px] font-extrabold uppercase tracking-[0.14em] text-cyan-300">Current Focus</div>
-            <h2 className="mt-3 text-4xl font-black tracking-[-0.03em] sm:text-5xl">Current technical direction.</h2>
-            <p className="mt-4 text-slate-400">
-              Your projects can stay hidden for now, while your labs, growth, and readiness still show employers that you are active and serious about cybersecurity.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-6 lg:grid-cols-3">
-            {[
-              ["Hands-On Learning", "Cybersecurity Labs", "I am building practical experience through network scanning, packet analysis, vulnerability review, Linux hardening, and cloud security exercises."],
-              ["Technical Growth", "Python Security Tools", "I am developing small security-focused tools that strengthen scripting, logic, and problem-solving in a cybersecurity context."],
-              ["Career Direction", "Cloud & Security Roles", "My goal is to move into cybersecurity, cloud security, and mission-driven technical roles where I can keep learning and contribute long term."],
-            ].map(([label, title, desc]) => (
-              <div key={title} className="rounded-[28px] border border-white/10 bg-white/[0.04] p-7 shadow-[0_20px_48px_rgba(0,0,0,0.34)]">
-                <div className="text-xs font-extrabold uppercase tracking-[0.12em] text-cyan-300">{label}</div>
-                <h3 className="mt-2 text-xl font-bold">{title}</h3>
-                <p className="mt-3 text-slate-400">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="contact" className="mx-auto w-[min(1180px,92%)] pb-16 pt-8 lg:pb-24">
-          <div className="grid gap-6 lg:grid-cols-2">
-            <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-8 shadow-[0_20px_48px_rgba(0,0,0,0.34)]">
-              <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-                <div className="flex h-28 w-28 items-center justify-center rounded-[1.75rem] border border-cyan-400/20 bg-gradient-to-br from-slate-900 to-[#09111a] text-3xl font-black text-cyan-300 shadow-[0_0_28px_rgba(0,229,255,0.18)]">
-                  JMV
-                </div>
-                <div>
-                  <div className="text-xs font-extrabold uppercase tracking-[0.12em] text-cyan-300">Contact</div>
-                  <h2 className="mt-2 text-4xl font-black tracking-tight">Let’s work together.</h2>
-                  <p className="mt-3 max-w-2xl text-lg leading-8 text-slate-400">
-                    Reach out for job opportunities, collaborations, or cybersecurity-related conversations. Download my resume or connect with me online.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6 flex flex-wrap gap-4">
-                <a href="mailto:johnson.m.vincent17@gmail.com" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-sky-300 px-6 py-3 font-bold text-slate-950 transition hover:-translate-y-0.5">
-                  <Mail className="h-4 w-4" />
-                  Email Me
-                </a>
-                <a href="https://github.com/johvin4014" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-bold transition hover:border-cyan-300/50 hover:bg-cyan-400/10">
-                  <Github className="h-4 w-4" />
-                  GitHub
-                </a>
-              </div>
-            </div>
-
-            <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-8 shadow-[0_20px_48px_rgba(0,0,0,0.34)]">
-              <div className="text-sm font-extrabold uppercase tracking-[0.3em] text-cyan-300">Resume</div>
-              <h3 className="mt-4 text-4xl font-bold tracking-tight">Download My Resume</h3>
-              <p className="mt-3 text-lg text-slate-400">PDF format</p>
-              <a
-                href="/resume.pdf"
-                download
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-sky-300 px-6 py-3 text-base font-bold text-slate-950 shadow-[0_0_30px_rgba(34,211,238,0.25)] transition hover:-translate-y-0.5"
-              >
-                <Download className="h-4 w-4" />
-                Download PDF
-              </a>
-
-              <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.03] p-5">
-                <p className="text-sm leading-7 text-slate-400">
-                  This section is built exactly for what you liked in the reference image: clean call-to-action, quick resume access, and a professional look employers can understand right away.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <footer className="border-t border-white/10 py-10 text-sm text-slate-400">
-          <div className="mx-auto flex w-[min(1180px,92%)] flex-wrap items-center justify-between gap-4">
-            <div>© 2026 Johnson M. Vincent. All Rights Reserved.</div>
-            <div>Cybersecurity · Cloud · Veteran Brand</div>
-          </div>
-        </footer>
-      </main>
+> focus
+<span>Cloud Security
+Security Operations
+Python Security Tools
+Hands-On Cyber Labs</span></div>
+        </div>
+      </aside>
     </div>
-  );
-}
+  </header>
+
+  <section id="about">
+    <div class="container stats-grid">
+      <div class="stat"><strong>Security+</strong><span>Industry certification earned</span></div>
+      <div class="stat"><strong>Veteran</strong><span>Mission-ready mindset</span></div>
+      <div class="stat"><strong>Cyber</strong><span>Focused professional growth</span></div>
+      <div class="stat"><strong>2026</strong><span>Degree completion track</span></div>
+    </div>
+  </section>
+
+  <section id="journey">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">About Me</div>
+        <h2>Cybersecurity, discipline, and mission-driven growth.</h2>
+        <p>This site is built to give employers a strong first impression with a clean professional layout, clear technical direction, trusted links, and easy resume access.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="panel">
+          <h3>Professional Summary</h3>
+          <p>I am a U.S. Navy veteran transitioning into cybersecurity with a focus on security operations, cloud security, systems administration, and hands-on technical growth. I bring discipline, accountability, and a mission-first mindset into everything I build and learn.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Core Skills</h3>
+          <p>Network security, Linux and Windows administration, Python security tools, access control, vulnerability analysis, cloud security fundamentals, and cybersecurity lab practice.</p>
+          <div class="tech-row">Python · Linux · AWS · Git · GitHub · Bash · VS Code</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="labs">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Current Focus</div>
+        <h2>Current technical direction.</h2>
+        <p>Your projects can stay hidden for now while your labs, growth, and readiness still show employers that you are active and serious about cybersecurity.</p>
+      </div>
+
+      <div class="focus-grid">
+        <div class="focus-card">
+          <div class="card-label">Hands-On Learning</div>
+          <h3>Cybersecurity Labs</h3>
+          <p>I am building practical experience through network scanning, packet analysis, vulnerability review, Linux hardening, and cloud security exercises.</p>
+        </div>
+
+        <div class="focus-card">
+          <div class="card-label">Technical Growth</div>
+          <h3>Python Security Tools</h3>
+          <p>I am developing small security-focused tools that strengthen scripting, logic, and problem-solving in a cybersecurity context.</p>
+        </div>
+
+        <div class="focus-card">
+          <div class="card-label">Career Direction</div>
+          <h3>Cloud & Security Roles</h3>
+          <p>My goal is to move into cybersecurity, cloud security, and mission-driven technical roles where I can keep learning and contribute long term.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container contact-grid">
+      <div class="cta-box">
+        <div class="card-label">Contact</div>
+        <h2 style="margin:10px 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.04;">Let’s work together.</h2>
+        <p>Reach out for job opportunities, collaborations, or cybersecurity-related conversations. Download my resume or connect with me online.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:johnson.m.vincent17@gmail.com">Email Me</a>
+          <a class="btn btn-secondary" href="https://github.com/johvin4014" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="resume-card">
+        <div class="card-label">Resume</div>
+        <h3 style="font-size: 2rem; margin-top: 10px;">Download My Resume</h3>
+        <p>PDF format</p>
+        <a class="btn btn-primary download-btn" href="resume.pdf" target="_blank">Download PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>© 2026 Johnson M. Vincent. All Rights Reserved.</div>
+      <div>Cybersecurity · Cloud · Veteran Brand</div>
+    </div>
+  </footer>
+
+  <script>
+    const roles = [
+      "Cybersecurity Professional",
+      "U.S. Navy Veteran",
+      "CompTIA Security+ Certified",
+      "Cloud Security Focused",
+      "Mission-Driven Builder"
+    ];
+
+    const typedText = document.getElementById("typed-text");
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+      const current = roles[roleIndex];
+      if (!deleting) {
+        typedText.textContent = current.slice(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(typeEffect, 1400);
+          return;
+        }
+      } else {
+        typedText.textContent = current.slice(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+      }
+      setTimeout(typeEffect, deleting ? 45 : 85);
+    }
+
+    typeEffect();
+
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      particles = Array.from({ length: Math.min(70, Math.floor(window.innerWidth / 20)) }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.8 + 0.6,
+        dx: (Math.random() - 0.5) * 0.35,
+        dy: (Math.random() - 0.5) * 0.35
+      }));
+    }
+
+    function animateBg() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (const p of particles) {
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0,229,255,0.28)';
+        ctx.fill();
+      }
+
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const a = particles[i], b = particles[j];
+          const dist = Math.hypot(a.x - b.x, a.y - b.y);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = `rgba(31,111,235,${(1 - dist / 120) * 0.14})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateBg);
+    }
+
+    resizeCanvas();
+    animateBg();
+    window.addEventListener('resize', resizeCanvas);
+  </script>
+</body>
+</html>
