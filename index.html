@@ -100,6 +100,20 @@
       font-size: 14px;
       flex-shrink: 0;
       overflow: hidden;
+      position: relative;
+    }
+
+    .brand-icon::after,
+    .mini-brand-icon::after,
+    .resume-card::before,
+    .focus-card::before,
+    .panel::before,
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.10), transparent 38%);
+      pointer-events: none;
     }
 
     .brand-icon img {
@@ -133,9 +147,20 @@
       font-size: 14px;
     }
 
-    .nav-links a { transition: .2s ease; }
+    .nav-links a { transition: .2s ease; position: relative; }
     .nav-links a:hover,
     .nav-links a.active { color: var(--cyan); }
+    .nav-links a.active::after,
+    .nav-links a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    }
 
     .btn {
       display: inline-flex;
@@ -146,7 +171,7 @@
       border-radius: 999px;
       border: 1px solid transparent;
       font-weight: 700;
-      transition: .2s ease;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, color .2s ease, background .2s ease;
       cursor: pointer;
     }
 
@@ -156,7 +181,10 @@
       box-shadow: 0 0 26px rgba(0,229,255,0.24);
     }
 
-    .btn-primary:hover { transform: translateY(-1px); }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,229,255,0.20), 0 0 30px rgba(0,229,255,0.16);
+    }
 
     .btn-secondary {
       color: var(--text);
@@ -167,6 +195,7 @@
     .btn-secondary:hover {
       color: var(--cyan);
       border-color: rgba(0,229,255,0.38);
+      transform: translateY(-2px);
     }
 
     .icon-btn {
@@ -183,10 +212,11 @@
     }
 
     .icon-btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-2px) scale(1.04);
       border-color: rgba(0,229,255,0.4);
       background: rgba(0,229,255,0.08);
       box-shadow: 0 0 20px rgba(0,229,255,0.14);
+      color: var(--cyan);
     }
 
     .icon-btn svg {
@@ -197,6 +227,16 @@
 
     .hero {
       padding: 90px 0 72px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 160px;
+      background: linear-gradient(180deg, transparent, rgba(3,7,13,0.55));
+      pointer-events: none;
     }
 
     .hero-grid {
@@ -219,6 +259,7 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
     }
 
     h1 {
@@ -226,6 +267,7 @@
       font-size: clamp(3rem, 6vw, 5.4rem);
       line-height: 0.96;
       letter-spacing: -0.05em;
+      text-shadow: 0 4px 24px rgba(0,0,0,.28);
     }
 
     .hero-title-line {
@@ -255,6 +297,10 @@
     }
 
     @keyframes blink { 50% { opacity: 0; } }
+    @keyframes floatCard {
+      0%,100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
 
     .hero-actions {
       display: flex;
@@ -305,22 +351,24 @@
     .focus-card,
     .terminal-box,
     .cta-box,
-    .resume-card {
+    .resume-card,
+    .feature-card {
       border: 1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
       box-shadow: var(--shadow);
       border-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
     }
 
     .hero-card {
       padding: 24px;
-      overflow: hidden;
-      position: relative;
       min-height: 560px;
       background:
         radial-gradient(circle at 82% 16%, rgba(0,229,255,0.18), transparent 18%),
         radial-gradient(circle at 80% 80%, rgba(31,111,235,0.22), transparent 22%),
         linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
+      animation: floatCard 6s ease-in-out infinite;
     }
 
     .hero-card-top {
@@ -355,6 +403,7 @@
       font-weight: 900;
       font-size: 12px;
       overflow: hidden;
+      position: relative;
     }
 
     .mini-brand-icon img {
@@ -395,6 +444,7 @@
       height: 360px;
       object-fit: cover;
       object-position: center 18%;
+      transform: scale(1.02);
     }
 
     .profile-caption {
@@ -412,7 +462,6 @@
     .terminal-preview,
     .terminal-box {
       margin-top: 18px;
-      overflow: hidden;
       border: 1px solid rgba(0,229,255,0.14);
       background: #030a13;
     }
@@ -466,7 +515,8 @@
     .stat span,
     .focus-card p,
     .resume-card p,
-    .cta-box p { color: var(--muted); }
+    .cta-box p,
+    .feature-card p { color: var(--muted); }
 
     .stats-grid,
     .focus-grid,
@@ -487,11 +537,20 @@
     .stat,
     .focus-card,
     .resume-card,
-    .cta-box {
-      padding: 26px;
+    .cta-box,
+    .feature-card { padding: 26px; }
+
+    .panel:hover,
+    .focus-card:hover,
+    .feature-card:hover,
+    .resume-card:hover,
+    .stat:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,229,255,.22);
+      box-shadow: 0 22px 56px rgba(0,0,0,.38), 0 0 0 1px rgba(0,229,255,.08) inset;
     }
 
-    .stat { text-align: center; }
+    .stat { text-align: center; transition: .2s ease; }
     .stat strong {
       display: block;
       color: var(--cyan);
@@ -505,11 +564,14 @@
       border-radius: 22px;
       padding: 18px;
       background: rgba(255,255,255,0.02);
+      color: var(--soft);
+      font-weight: 600;
     }
 
     .focus-card h3,
     .panel h3,
-    .resume-card h3 { margin: 8px 0; font-size: 1.2rem; }
+    .resume-card h3,
+    .feature-card h3 { margin: 8px 0; font-size: 1.2rem; }
 
     .contact-actions {
       display: flex;
@@ -520,6 +582,17 @@
 
     .resume-card .download-btn {
       margin-top: 18px;
+      width: 100%;
+    }
+
+    .resume-note {
+      margin-top: 20px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .footer {
@@ -536,13 +609,24 @@
       flex-wrap: wrap;
     }
 
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @media (max-width: 1024px) {
       .hero-grid,
       .about-grid,
       .contact-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .focus-grid, .feature-grid { grid-template-columns: 1fr; }
-      .hero-card { min-height: auto; }
+      .hero-card { min-height: auto; animation: none; }
     }
 
     @media (max-width: 680px) {
@@ -556,7 +640,8 @@
       .stat,
       .hero-card,
       .focus-card,
-      .resume-card { padding: 20px; }
+      .resume-card,
+      .feature-card { padding: 20px; }
       .profile-shot img { height: 300px; }
     }
   </style>
@@ -586,7 +671,8 @@
   </div>
 
   <header class="hero" id="home">
-    <div class="container hero-grid">
+    <div class="container reveal">
+    <div class="hero-grid">
       <div>
         <span class="eyebrow">Cybersecurity · Cloud · Veteran</span>
         <h1>Johnson M. Vincent</h1>
@@ -656,19 +742,22 @@ Hands-On Cyber Labs</span></div>
         </div>
       </aside>
     </div>
+      </div>
   </header>
 
   <section id="about">
-    <div class="container stats-grid">
+    <div class="container reveal">
+    <div class="stats-grid">
       <div class="stat"><strong>Security+</strong><span>Industry certification earned</span></div>
       <div class="stat"><strong>Veteran</strong><span>Mission-ready mindset</span></div>
       <div class="stat"><strong>Cyber</strong><span>Focused professional growth</span></div>
       <div class="stat"><strong>2026</strong><span>Degree completion track</span></div>
     </div>
+      </div>
   </section>
 
   <section id="journey">
-    <div class="container">
+    <div class="container reveal">
       <div class="section-head">
         <div class="label">About Me</div>
         <h2>Cybersecurity, discipline, and mission-driven growth.</h2>
@@ -687,12 +776,36 @@ Hands-On Cyber Labs</span></div>
           <div class="tech-row">Python · Linux · AWS · Git · GitHub · Bash · VS Code</div>
         </div>
       </div>
+
+      <div class="section-head" style="margin-top:56px;">
+        <div class="label">Why Me</div>
+        <h2>Three qualities that make me stand out.</h2>
+        <p>This helps employers quickly understand the value behind the resume.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="card-label">Discipline</div>
+          <h3>Military mindset</h3>
+          <p>I bring accountability, consistency, and mission focus from my Navy background into technical work and professional growth.</p>
+        </div>
+        <div class="feature-card">
+          <div class="card-label">Learning</div>
+          <h3>Hands-on growth</h3>
+          <p>I am actively building real capability through labs, security tools, cloud study, and continuous technical practice.</p>
+        </div>
+        <div class="feature-card">
+          <div class="card-label">Direction</div>
+          <h3>Clear cybersecurity path</h3>
+          <p>My focus is intentional: security operations, cloud security, and long-term technical roles where I can contribute and keep improving.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="labs">
-    <div class="container">
-      <div class="section-head">
+    <div class="container reveal">
+    <div class="section-head">
         <div class="label">Current Focus</div>
         <h2>Current technical direction.</h2>
         <p>Your projects can stay hidden for now while your labs, growth, and readiness still show employers that you are active and serious about cybersecurity.</p>
@@ -718,10 +831,12 @@ Hands-On Cyber Labs</span></div>
         </div>
       </div>
     </div>
+      </div>
   </section>
 
   <section id="contact">
-    <div class="container contact-grid">
+    <div class="container reveal">
+    <div class="contact-grid">
       <div class="cta-box">
         <div class="card-label">Contact</div>
         <h2 style="margin:10px 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.04;">Let’s work together.</h2>
@@ -737,6 +852,7 @@ Hands-On Cyber Labs</span></div>
         <h3 style="font-size: 2rem; margin-top: 10px;">Download My Resume</h3>
         <p>PDF format</p>
         <a class="btn btn-primary download-btn" href="resume.pdf" target="_blank">Download PDF</a>
+        <div class="resume-note">Clean, quick, and recruiter-friendly. This keeps your resume one click away without making the page feel crowded.</div>
       </div>
     </div>
   </section>
@@ -830,6 +946,15 @@ Hands-On Cyber Labs</span></div>
       }
       requestAnimationFrame(animateBg);
     }
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.14 });
+
+    reveals.forEach((item) => observer.observe(item));
 
     resizeCanvas();
     animateBg();
