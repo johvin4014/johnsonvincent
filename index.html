@@ -24,6 +24,7 @@
       --glow: 0 0 28px rgba(0,229,255,0.18);
       --shadow: 0 20px 48px rgba(0,0,0,0.34);
       --radius: 28px;
+      --radius-sm: 20px;
       --max: 1180px;
     }
 
@@ -85,6 +86,11 @@
       min-width: 0;
     }
 
+    .brand-icon, .mini-brand-icon {
+      overflow: hidden;
+      position: relative;
+    }
+
     .brand-icon {
       width: 54px;
       height: 54px;
@@ -99,24 +105,25 @@
       font-weight: 900;
       font-size: 14px;
       flex-shrink: 0;
-      overflow: hidden;
-      position: relative;
     }
 
     .brand-icon::after,
     .mini-brand-icon::after,
-    .resume-card::before,
+    .glass::before,
+    .hero-card::before,
     .focus-card::before,
+    .feature-card::before,
+    .resume-card::before,
     .panel::before,
-    .hero-card::before {
+    .stat::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.10), transparent 38%);
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent 38%);
       pointer-events: none;
     }
 
-    .brand-icon img {
+    .brand-icon img, .mini-brand-icon img {
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -219,10 +226,11 @@
       color: var(--cyan);
     }
 
-    .icon-btn svg {
+    .icon-btn svg, .inline-icon {
       width: 21px;
       height: 21px;
       fill: currentColor;
+      flex-shrink: 0;
     }
 
     .hero {
@@ -246,13 +254,12 @@
       align-items: center;
     }
 
-    .eyebrow {
+    .eyebrow, .opportunity-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(0,229,255,0.08);
       border: 1px solid rgba(0,229,255,0.16);
       color: var(--cyan);
       font-size: 13px;
@@ -260,6 +267,14 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+    }
+
+    .eyebrow { background: rgba(0,229,255,0.08); }
+    .opportunity-badge {
+      margin-top: 14px;
+      background: rgba(31,111,235,0.12);
+      color: #9bddff;
+      border-color: rgba(31,111,235,0.18);
     }
 
     h1 {
@@ -280,6 +295,13 @@
       max-width: 720px;
       color: var(--muted);
       font-size: clamp(1.03rem, 2vw, 1.17rem);
+    }
+
+    .hero-value-line {
+      margin-top: 16px;
+      color: var(--soft);
+      font-weight: 700;
+      font-size: 1rem;
     }
 
     .typing-wrap {
@@ -324,7 +346,7 @@
       box-shadow: var(--shadow);
     }
 
-    .trust-item {
+    .trust-item, .skill-chip {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -352,7 +374,9 @@
     .terminal-box,
     .cta-box,
     .resume-card,
-    .feature-card {
+    .feature-card,
+    .lab-card,
+    .skill-strip {
       border: 1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
       box-shadow: var(--shadow);
@@ -402,14 +426,6 @@
       color: var(--cyan);
       font-weight: 900;
       font-size: 12px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .mini-brand-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
     }
 
     .card-label {
@@ -428,6 +444,16 @@
       background: linear-gradient(135deg, rgba(0,229,255,0.08), rgba(31,111,235,0.08));
       min-height: 340px;
       position: relative;
+      box-shadow: 0 0 40px rgba(0,229,255,0.12);
+    }
+
+    .profile-shot::before {
+      content: "";
+      position: absolute;
+      inset: -20px;
+      background: radial-gradient(circle at center, rgba(0,229,255,0.18), transparent 56%);
+      z-index: 0;
+      pointer-events: none;
     }
 
     .profile-shot::after {
@@ -437,9 +463,12 @@
       height: 40%;
       background: linear-gradient(180deg, transparent, rgba(4,10,18,0.82));
       pointer-events: none;
+      z-index: 1;
     }
 
     .profile-shot img {
+      position: relative;
+      z-index: 0;
       width: 100%;
       height: 360px;
       object-fit: cover;
@@ -451,7 +480,7 @@
       position: absolute;
       left: 18px;
       bottom: 16px;
-      z-index: 1;
+      z-index: 2;
       font-size: 13px;
       color: var(--soft);
       letter-spacing: 0.06em;
@@ -516,20 +545,24 @@
     .focus-card p,
     .resume-card p,
     .cta-box p,
-    .feature-card p { color: var(--muted); }
+    .feature-card p,
+    .lab-card p,
+    .skill-strip p { color: var(--muted); }
 
     .stats-grid,
     .focus-grid,
     .feature-grid,
     .contact-grid,
-    .about-grid {
+    .about-grid,
+    .labs-grid {
       display: grid;
       gap: 22px;
     }
 
     .stats-grid { grid-template-columns: repeat(4, 1fr); }
     .feature-grid,
-    .focus-grid { grid-template-columns: repeat(3, 1fr); }
+    .focus-grid,
+    .labs-grid { grid-template-columns: repeat(3, 1fr); }
     .about-grid,
     .contact-grid { grid-template-columns: 1.2fr .8fr; }
 
@@ -538,19 +571,27 @@
     .focus-card,
     .resume-card,
     .cta-box,
-    .feature-card { padding: 26px; }
+    .feature-card,
+    .lab-card,
+    .skill-strip { padding: 26px; }
 
     .panel:hover,
     .focus-card:hover,
     .feature-card:hover,
     .resume-card:hover,
-    .stat:hover {
+    .stat:hover,
+    .lab-card:hover,
+    .skill-strip:hover {
       transform: translateY(-4px);
       border-color: rgba(0,229,255,.22);
       box-shadow: 0 22px 56px rgba(0,0,0,.38), 0 0 0 1px rgba(0,229,255,.08) inset;
     }
 
-    .stat { text-align: center; transition: .2s ease; }
+    .stat, .panel, .focus-card, .feature-card, .resume-card, .lab-card, .skill-strip {
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .stat { text-align: center; }
     .stat strong {
       display: block;
       color: var(--cyan);
@@ -571,21 +612,46 @@
     .focus-card h3,
     .panel h3,
     .resume-card h3,
-    .feature-card h3 { margin: 8px 0; font-size: 1.2rem; }
+    .feature-card h3,
+    .lab-card h3,
+    .skill-strip h3 { margin: 8px 0; font-size: 1.2rem; }
 
-    .contact-actions {
+    .mini-meta {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .mini-tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(31,111,235,0.12);
+      border: 1px solid rgba(31,111,235,0.22);
+      color: #dbe9ff;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .contact-actions,
+    .lab-actions,
+    .footer-links,
+    .skill-chips {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 18px;
     }
+
+    .contact-actions,
+    .lab-actions { margin-top: 18px; }
 
     .resume-card .download-btn {
       margin-top: 18px;
       width: 100%;
     }
 
-    .resume-note {
+    .resume-note,
+    .resume-meta {
       margin-top: 20px;
       padding: 16px 18px;
       border-radius: 18px;
@@ -607,7 +673,10 @@
       justify-content: space-between;
       gap: 20px;
       flex-wrap: wrap;
+      align-items: center;
     }
+
+    .footer-links a:hover { color: var(--cyan); }
 
     .reveal {
       opacity: 0;
@@ -625,7 +694,7 @@
       .about-grid,
       .contact-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .focus-grid, .feature-grid { grid-template-columns: 1fr; }
+      .focus-grid, .feature-grid, .labs-grid { grid-template-columns: 1fr; }
       .hero-card { min-height: auto; animation: none; }
     }
 
@@ -641,7 +710,9 @@
       .hero-card,
       .focus-card,
       .resume-card,
-      .feature-card { padding: 20px; }
+      .feature-card,
+      .lab-card,
+      .skill-strip { padding: 20px; }
       .profile-shot img { height: 300px; }
     }
   </style>
@@ -661,8 +732,8 @@
       <nav class="nav-links">
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
-        <a href="#labs">Labs</a>
-        <a href="#journey">Journey</a>
+        <a href="#featured-labs">Featured Labs</a>
+        <a href="#journey">Why Me</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -672,60 +743,63 @@
 
   <header class="hero" id="home">
     <div class="container reveal">
-    <div class="hero-grid">
-      <div>
-        <span class="eyebrow">Cybersecurity · Cloud · Veteran</span>
-        <h1>Johnson M. Vincent</h1>
-        <div class="hero-title-line">Cybersecurity Professional | U.S. Navy Veteran | CompTIA Security+</div>
-        <p class="hero-sub">I defend, secure, and innovate in tech. My mission is to protect digital assets, strengthen security operations, and continue building real capability through labs, cloud learning, and disciplined technical growth.</p>
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Cybersecurity · Cloud · Veteran</span>
+          <div class="opportunity-badge">Open to cybersecurity & cloud opportunities</div>
+          <h1>Johnson M. Vincent</h1>
+          <div class="hero-title-line">Cybersecurity Professional | U.S. Navy Veteran | CompTIA Security+</div>
+          <p class="hero-sub">I defend, secure, and innovate in tech. My mission is to protect digital assets, strengthen security operations, and continue building real capability through labs, cloud learning, and disciplined technical growth.</p>
+          <div class="hero-value-line">Protecting systems. Building skills. Growing into cloud and cybersecurity leadership.</div>
 
-        <div class="typing-wrap">
-          <span id="typed-text"></span><span class="typing-cursor">|</span>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#labs">View Labs</a>
-
-          <a class="icon-btn" href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6A2.5 2.5 0 0 1 0 3.5C0 2.12 1.11 1 2.49 1a2.5 2.5 0 0 1 2.49 2.5ZM.5 8h4V24h-4V8Zm7 0h3.83v2.19h.05c.53-1.01 1.84-2.08 3.79-2.08 4.05 0 4.8 2.67 4.8 6.14V24h-4v-6.96c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.8-2.66 3.67V24h-4V8Z"></path></svg>
-          </a>
-
-          <a class="icon-btn" href="https://github.com/johvin4014" target="_blank" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.46-2.37 1.22-3.2-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.22A11.5 11.5 0 0 1 12 6.32c1.02 0 2.05.14 3.01.42 2.29-1.54 3.29-1.22 3.29-1.22.66 1.65.25 2.87.12 3.17.76.83 1.22 1.9 1.22 3.2 0 4.58-2.8 5.59-5.48 5.88.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.69.83.57A12.02 12.02 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"></path></svg>
-          </a>
-        </div>
-
-        <div class="trust-bar">
-          <span class="trust-item"><span class="trust-dot"></span> CompTIA Security+</span>
-          <span class="trust-item"><span class="trust-dot"></span> U.S. Navy Veteran</span>
-          <span class="trust-item"><span class="trust-dot"></span> LinkedIn Active</span>
-          <span class="trust-item"><span class="trust-dot"></span> GitHub Portfolio</span>
-        </div>
-      </div>
-
-      <aside class="hero-card">
-        <div class="hero-card-top">
-          <div class="mini-brand">
-            <span class="mini-brand-icon">
-              <img src="images/jmv-logo.png" alt="JMV small logo" onerror="this.style.display='none'; this.parentNode.innerHTML='JMV';" />
-            </span>
-            <span>Johnson M. Vincent</span>
+          <div class="typing-wrap">
+            <span id="typed-text"></span><span class="typing-cursor">|</span>
           </div>
-          <span class="card-label">Cyber Theme</span>
-        </div>
 
-        <div class="profile-shot">
-          <img src="images/profile-photo.jpg" alt="Johnson M. Vincent professional portrait" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80';" />
-          <div class="profile-caption">Johnson M. Vincent</div>
-        </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#featured-labs">View Featured Labs</a>
+            <a class="btn btn-secondary" href="resume.pdf" target="_blank">Download Resume</a>
 
-        <div class="terminal-preview">
-          <div class="terminal-bar">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
+            <a class="icon-btn" href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6A2.5 2.5 0 0 1 0 3.5C0 2.12 1.11 1 2.49 1a2.5 2.5 0 0 1 2.49 2.5ZM.5 8h4V24h-4V8Zm7 0h3.83v2.19h.05c.53-1.01 1.84-2.08 3.79-2.08 4.05 0 4.8 2.67 4.8 6.14V24h-4v-6.96c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.8-2.66 3.67V24h-4V8Z"></path></svg>
+            </a>
+
+            <a class="icon-btn" href="https://github.com/johvin4014" target="_blank" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.46-2.37 1.22-3.2-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.22A11.5 11.5 0 0 1 12 6.32c1.02 0 2.05.14 3.01.42 2.29-1.54 3.29-1.22 3.29-1.22.66 1.65.25 2.87.12 3.17.76.83 1.22 1.9 1.22 3.2 0 4.58-2.8 5.59-5.48 5.88.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.69.83.57A12.02 12.02 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"></path></svg>
+            </a>
           </div>
-          <div class="terminal-text">> whoami
+
+          <div class="trust-bar">
+            <span class="trust-item"><span class="trust-dot"></span> CompTIA Security+</span>
+            <span class="trust-item"><span class="trust-dot"></span> U.S. Navy Veteran</span>
+            <span class="trust-item"><span class="trust-dot"></span> LinkedIn Active</span>
+            <span class="trust-item"><span class="trust-dot"></span> GitHub Portfolio</span>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-top">
+            <div class="mini-brand">
+              <span class="mini-brand-icon">
+                <img src="images/jmv-logo.png" alt="JMV small logo" onerror="this.style.display='none'; this.parentNode.innerHTML='JMV';" />
+              </span>
+              <span>Johnson M. Vincent</span>
+            </div>
+            <span class="card-label">Cyber Theme</span>
+          </div>
+
+          <div class="profile-shot">
+            <img src="images/profile-photo.jpg" alt="Johnson M. Vincent professional portrait" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80';" />
+            <div class="profile-caption">Johnson M. Vincent</div>
+          </div>
+
+          <div class="terminal-preview">
+            <div class="terminal-bar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="terminal-text">> whoami
 <span>Johnson M. Vincent</span>
 
 > role
@@ -739,21 +813,97 @@
 Security Operations
 Python Security Tools
 Hands-On Cyber Labs</span></div>
-        </div>
-      </aside>
-    </div>
+          </div>
+        </aside>
       </div>
+    </div>
   </header>
 
   <section id="about">
     <div class="container reveal">
-    <div class="stats-grid">
-      <div class="stat"><strong>Security+</strong><span>Industry certification earned</span></div>
-      <div class="stat"><strong>Veteran</strong><span>Mission-ready mindset</span></div>
-      <div class="stat"><strong>Cyber</strong><span>Focused professional growth</span></div>
-      <div class="stat"><strong>2026</strong><span>Degree completion track</span></div>
-    </div>
+      <div class="stats-grid">
+        <div class="stat"><strong>Security+</strong><span>Industry certification earned</span></div>
+        <div class="stat"><strong>Veteran</strong><span>Mission-ready mindset</span></div>
+        <div class="stat"><strong>Cyber</strong><span>Focused professional growth</span></div>
+        <div class="stat"><strong>2026</strong><span>Degree completion track</span></div>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container reveal">
+      <div class="skill-strip">
+        <div class="section-head" style="margin-bottom:18px; max-width:none;">
+          <div class="label">Certifications & Tools</div>
+          <h2 style="font-size:clamp(1.6rem,3vw,2.3rem); margin-bottom:6px;">What I work with</h2>
+          <p>Fast recruiter-friendly view of my current technical stack and focus areas.</p>
+        </div>
+        <div class="skill-chips">
+          <span class="skill-chip">CompTIA Security+</span>
+          <span class="skill-chip">AWS</span>
+          <span class="skill-chip">Linux</span>
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">GitHub</span>
+          <span class="skill-chip">Networking</span>
+          <span class="skill-chip">Security Operations</span>
+          <span class="skill-chip">Windows Administration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured-labs">
+    <div class="container reveal">
+      <div class="section-head">
+        <div class="label">Featured Labs</div>
+        <h2>Hands-on work that shows real growth.</h2>
+        <p>This section gives employers direct proof that you are actively building cybersecurity skills, not just studying them.</p>
+      </div>
+
+      <div class="labs-grid">
+        <article class="lab-card">
+          <div class="card-label">Python Security Tool</div>
+          <h3>Password Strength Checker</h3>
+          <p>A simple tool that evaluates password strength using common security checks such as length, complexity, and character variety.</p>
+          <div class="mini-meta">
+            <span class="mini-tag">Python</span>
+            <span class="mini-tag">Security Basics</span>
+            <span class="mini-tag">Input Validation</span>
+          </div>
+          <div class="lab-actions">
+            <a class="btn btn-secondary" href="https://github.com/johvin4014" target="_blank">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="lab-card">
+          <div class="card-label">Networking</div>
+          <h3>Basic Port Scanner</h3>
+          <p>A beginner-friendly scanner used to understand open ports, common services, and how systems expose network entry points.</p>
+          <div class="mini-meta">
+            <span class="mini-tag">Python</span>
+            <span class="mini-tag">Sockets</span>
+            <span class="mini-tag">Recon</span>
+          </div>
+          <div class="lab-actions">
+            <a class="btn btn-secondary" href="https://github.com/johvin4014" target="_blank">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="lab-card">
+          <div class="card-label">Integrity Checking</div>
+          <h3>File Hash Verifier</h3>
+          <p>A project focused on generating and verifying file hashes to support file integrity checks and security awareness around tampering.</p>
+          <div class="mini-meta">
+            <span class="mini-tag">Python</span>
+            <span class="mini-tag">Hashing</span>
+            <span class="mini-tag">Integrity</span>
+          </div>
+          <div class="lab-actions">
+            <a class="btn btn-secondary" href="https://github.com/johvin4014" target="_blank">View on GitHub</a>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
 
   <section id="journey">
@@ -803,9 +953,9 @@ Hands-On Cyber Labs</span></div>
     </div>
   </section>
 
-  <section id="labs">
+  <section id="focus">
     <div class="container reveal">
-    <div class="section-head">
+      <div class="section-head">
         <div class="label">Current Focus</div>
         <h2>Current technical direction.</h2>
         <p>Your projects can stay hidden for now while your labs, growth, and readiness still show employers that you are active and serious about cybersecurity.</p>
@@ -831,28 +981,31 @@ Hands-On Cyber Labs</span></div>
         </div>
       </div>
     </div>
-      </div>
   </section>
 
   <section id="contact">
     <div class="container reveal">
-    <div class="contact-grid">
-      <div class="cta-box">
-        <div class="card-label">Contact</div>
-        <h2 style="margin:10px 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.04;">Let’s work together.</h2>
-        <p>Reach out for job opportunities, collaborations, or cybersecurity-related conversations. Download my resume or connect with me online.</p>
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:johnson.m.vincent17@gmail.com">Email Me</a>
-          <a class="btn btn-secondary" href="https://github.com/johvin4014" target="_blank">GitHub</a>
+      <div class="contact-grid">
+        <div class="cta-box">
+          <div class="card-label">Contact</div>
+          <h2 style="margin:10px 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.04;">Let’s work together.</h2>
+          <p>Reach out for job opportunities, collaborations, or cybersecurity-related conversations. Based in Chesapeake / Hampton Roads, Virginia.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:johnson.m.vincent17@gmail.com">Email Me</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank">LinkedIn</a>
+            <a class="btn btn-secondary" href="https://github.com/johvin4014" target="_blank">GitHub</a>
+            <a class="btn btn-secondary" href="resume.pdf" target="_blank">Resume</a>
+          </div>
         </div>
-      </div>
 
-      <div class="resume-card">
-        <div class="card-label">Resume</div>
-        <h3 style="font-size: 2rem; margin-top: 10px;">Download My Resume</h3>
-        <p>PDF format</p>
-        <a class="btn btn-primary download-btn" href="resume.pdf" target="_blank">Download PDF</a>
-        <div class="resume-note">Clean, quick, and recruiter-friendly. This keeps your resume one click away without making the page feel crowded.</div>
+        <div class="resume-card">
+          <div class="card-label">Resume</div>
+          <h3 style="font-size: 2rem; margin-top: 10px;">Download My Resume</h3>
+          <p>Recruiter-ready PDF</p>
+          <a class="btn btn-primary download-btn" href="resume.pdf" target="_blank">Download PDF</a>
+          <div class="resume-note">Includes military, cybersecurity, cloud, and technical experience in a clean format built for quick review.</div>
+          <div class="resume-meta">Fast access for employers who want your background in one click.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -860,7 +1013,12 @@ Hands-On Cyber Labs</span></div>
   <footer class="footer">
     <div class="container footer-row">
       <div>© 2026 Johnson M. Vincent. All Rights Reserved.</div>
-      <div>Cybersecurity · Cloud · Veteran Brand</div>
+      <div class="footer-links">
+        <a href="https://github.com/johvin4014" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank">LinkedIn</a>
+        <a href="resume.pdf" target="_blank">Resume</a>
+      </div>
+      <div>Cybersecurity · Cloud · Veteran</div>
     </div>
   </footer>
 
