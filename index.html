@@ -4,20 +4,20 @@
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <meta name="theme-color" content="#050a12"/>
 <title>Johnson Vincent | Cybersecurity &amp; Cloud Security | Active Secret Clearance | Hampton Roads VA</title>
-<meta name="description" content="Johnson Vincent — U.S. Navy Veteran, Active Secret Clearance, CompTIA Security+ IAT Level II. Targeting SOC Analyst, Cybersecurity Engineer, and Cloud Security roles with DoD contractors in Hampton Roads, VA."/>
-<meta name="keywords" content="Johnson Vincent, cybersecurity analyst, SOC analyst, cloud security engineer, CompTIA Security+, Active Secret Clearance, DoD 8570, IAT Level II, U.S. Navy veteran, Wazuh SIEM, incident response, threat detection, NIST, Norfolk Virginia, Hampton Roads, ManTech, Leidos, CACI, SAIC, AWS security, Python security, Wireshark, Nmap, Kali Linux"/>
+<meta name="description" content="Johnson Vincent — U.S. Navy Veteran with Active Secret Clearance and CompTIA Security+ (IAT Level II). Completed BS in Cybersecurity (May 2026). Showcasing a live SOC home lab, Python security tools, detailed case studies, blog posts and an AI portfolio assistant. Targeting SOC Analyst, Cybersecurity Engineer and Cloud Security roles in Hampton Roads, VA and remote."/>
+<meta name="keywords" content="Johnson Vincent, cybersecurity analyst, SOC analyst, cloud security engineer, CompTIA Security+, Active Secret Clearance, DoD 8570, IAT Level II, U.S. Navy veteran, Wazuh SIEM, incident response, threat detection, NIST, Norfolk Virginia, Hampton Roads, ManTech, Leidos, CACI, SAIC, AWS security, Python security, Wireshark, Nmap, Kali Linux, AWS Cloud Practitioner"/>
 <meta name="author" content="Johnson Vincent"/>
 <meta name="robots" content="index,follow,max-image-preview:large"/>
 <link rel="canonical" href="https://johnsonvincent.com/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Johnson Vincent | Cybersecurity &amp; Cloud Security Professional"/>
-<meta property="og:description" content="U.S. Navy Veteran, Active Secret Clearance, CompTIA Security+ IAT Level II. Building Wazuh SOC labs, Python security tools, and cloud security expertise."/>
+<meta property="og:description" content="U.S. Navy Veteran with Active Secret Clearance and CompTIA Security+ (IAT Level II). Completed BS in Cybersecurity (May 2026). Showcases a live SOC home lab, Python security tools, detailed case studies, blog posts and an AI assistant."/>
 <meta property="og:url" content="https://johnsonvincent.com/"/>
 <meta property="og:image" content="https://johnsonvincent.com/images/profile-photo.jpg"/>
 <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Johnson Vincent | Cybersecurity | Active Secret Clearance"/>
-<meta name="twitter:description" content="Navy Veteran, Active Secret Clearance, Security+ certified. Building real SOC environments and security tools in Hampton Roads, VA."/>
+<meta name="twitter:description" content="Navy Veteran with Active Secret Clearance and CompTIA Security+ (IAT Level II). Completed BS in Cybersecurity (May 2026). Showcases a live SOC lab, Python security tools, case studies, blog posts and an AI assistant for recruiters."/>
 <meta name="twitter:image" content="https://johnsonvincent.com/images/profile-photo.jpg"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Johnson Vincent","url":"https://johnsonvincent.com/","image":"https://johnsonvincent.com/images/profile-photo.jpg","jobTitle":"Cybersecurity & Cloud Security Professional","description":"U.S. Navy Veteran with Active Secret Clearance and CompTIA Security+ IAT Level II. Targeting SOC Analyst and Cloud Security roles with DoD contractors in Hampton Roads, VA.","sameAs":["https://www.linkedin.com/in/johnson-vincent-cyber","https://github.com/johvin4014"],"worksFor":{"@type":"Organization","name":"Children's Hospital of The King's Daughters"},"alumniOf":{"@type":"CollegeOrUniversity","name":"ECPI University"},"knowsAbout":["Cybersecurity","SOC Operations","SIEM","Wazuh","Cloud Security","AWS","Python","Linux","Threat Detection","Incident Response","NIST","Wireshark","Nmap","Kali Linux","DoD 8570"],"address":{"@type":"PostalAddress","addressLocality":"Chesapeake","addressRegion":"VA","addressCountry":"US"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -34,6 +34,22 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;back
 a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 .wrap{width:min(var(--max),92%);margin:0 auto;position:relative;z-index:1}
 
+/* Light theme overrides */
+body.light{
+  --bg:#f7fafc;
+  --bg2:#ffffff;
+  --panel:rgba(0,0,0,0.035);
+  --panel2:rgba(0,0,0,0.06);
+  --line:rgba(0,0,0,0.08);
+  --text:#09213c;
+  --muted:#607792;
+  --soft:#305280;
+  --cyan:#007fa3;
+  --cyan2:#00a7c9;
+  --green:#008a4b;
+  --amber:#b26700;
+  --red:#ac2646;
+}
 /* OTW Banner */
 .otw{background:linear-gradient(135deg,rgba(0,255,136,0.12),rgba(0,229,255,0.07));border-bottom:1px solid rgba(0,255,136,0.18);padding:9px 20px;text-align:center;font-size:13px;font-weight:600;color:var(--green);letter-spacing:0.04em;position:relative;z-index:201}
 .otw span{color:var(--soft);font-weight:400;margin-left:8px}
@@ -268,10 +284,14 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
       <div class="bname">Johnson Vincent<small>Cybersecurity Portfolio</small></div>
     </a>
     <nav class="nlinks" aria-label="Main navigation">
-      <a href="#home">Home</a><a href="#projects">Projects</a><a href="#homelab">Home Lab</a>
+      <a href="#home">Home</a><a href="#projects">Projects</a><a href="#homelab">Home Lab</a><a href="#blog">Blog</a>
       <a href="#certs">Certs</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
     <a href="resume.pdf" target="_blank" rel="noopener" class="ncta">Download Resume ↓</a>
+    <!-- Theme toggle button -->
+    <button id="themeToggle" class="ibtn" aria-label="Toggle light/dark theme" style="width:36px;height:36px">
+      <span id="themeIcon" style="font-size:16px;line-height:1">🌙</span>
+    </button>
     <button class="hamburger" id="hbg" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </div>
@@ -280,7 +300,7 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
 <div class="mmenu" id="mmenu" role="dialog" aria-label="Mobile navigation">
   <a href="#home" class="mml">Home</a><a href="#projects" class="mml">Projects</a>
   <a href="#homelab" class="mml">Home Lab</a><a href="#certs" class="mml">Certs</a>
-  <a href="#about" class="mml">About</a><a href="#contact" class="mml">Contact</a>
+  <a href="#blog" class="mml">Blog</a><a href="#about" class="mml">About</a><a href="#contact" class="mml">Contact</a>
   <a href="resume.pdf" target="_blank" class="btn btnp">Download Resume ↓</a>
 </div>
 
@@ -310,10 +330,10 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
           <span class="titem"><span class="tdot g"></span>Active Secret Clearance</span>
           <span class="titem"><span class="tdot"></span>Security+ IAT Level II</span>
           <span class="titem"><span class="tdot"></span>9 Yrs U.S. Navy</span>
-          <span class="titem"><span class="tdot a"></span>BS Cybersecurity May 2026</span>
+          <span class="titem"><span class="tdot a"></span>BS in Cybersecurity (Completed May 2026)</span>
           <span class="titem"><span class="tdot"></span>Chesapeake / Norfolk VA</span>
         </div>
-        <div class="sbar"><span class="sdot"></span><p><strong>Currently studying:</strong> AWS Cloud Practitioner (CLF-C02) · Target: July 2025</p></div>
+        <div class="sbar"><span class="sdot"></span><p><strong>Currently studying:</strong> AWS Cloud Practitioner (CLF-C02) · Target: July 2026</p></div>
       </div>
       <aside class="hcard">
         <div class="ctopbar">
@@ -443,9 +463,9 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
 <section id="projects">
   <div class="wrap">
     <div class="reveal">
-      <div class="lbl">Featured Projects</div>
-      <h2>Python Security Tools</h2>
-      <p class="sub">Real security tools demonstrating threat detection, network analysis, integrity verification, and authentication hardening — all directly relevant to SOC analyst and cybersecurity engineer workflows.</p>
+      <div class="lbl">Featured Projects &amp; Case Studies</div>
+      <h2>Python Security Tools &amp; SOC Write‑ups</h2>
+      <p class="sub">Real security tools and documented case studies demonstrating threat detection, network analysis, integrity verification, and authentication hardening — each accompanied by detailed write‑ups using the Situation–Task–Action–Result methodology to showcase my problem‑solving approach.</p>
     </div>
     <div class="g3" style="margin-top:30px">
       <div class="card reveal d1">
@@ -505,10 +525,10 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
         <h2>Cert Roadmap</h2>
         <p class="sub" style="margin-bottom:26px">Structured progression from DoD 8570 compliance through full cloud security expertise.</p>
         <div class="citem"><div class="cico dn">✅</div><div style="flex:1"><div class="cnm">CompTIA Security+ (SY0-701)</div><div class="cdt">Completed · DoD 8570 IAT Level II · Active</div></div><span class="cbadge dn">COMPLETE</span></div>
-        <div class="citem"><div class="cico ac">📚</div><div style="flex:1"><div class="cnm">AWS Cloud Practitioner (CLF-C02)</div><div class="cdt">In Progress · Target: July 2025</div></div><span class="cbadge ac">STUDYING</span></div>
-        <div class="citem"><div class="cico ac">🎯</div><div style="flex:1"><div class="cnm">CompTIA CySA+</div><div class="cdt">Planned · Target: Oct 2025</div></div><span class="cbadge ac">NEXT UP</span></div>
-        <div class="citem"><div class="cico pl">☁️</div><div style="flex:1"><div class="cnm">AWS Solutions Architect Associate</div><div class="cdt">Planned · Target: Dec 2025</div></div><span class="cbadge pl">PLANNED</span></div>
-        <div class="citem"><div class="cico pl">🔐</div><div style="flex:1"><div class="cnm">CEH — Certified Ethical Hacker</div><div class="cdt">Planned · Target: Q1 2026</div></div><span class="cbadge pl">PLANNED</span></div>
+        <div class="citem"><div class="cico ac">📚</div><div style="flex:1"><div class="cnm">AWS Cloud Practitioner (CLF-C02)</div><div class="cdt">In Progress · Target: July 2026</div></div><span class="cbadge ac">STUDYING</span></div>
+        <div class="citem"><div class="cico ac">🎯</div><div style="flex:1"><div class="cnm">CompTIA CySA+</div><div class="cdt">Planned · Target: Oct 2026</div></div><span class="cbadge ac">NEXT UP</span></div>
+        <div class="citem"><div class="cico pl">☁️</div><div style="flex:1"><div class="cnm">AWS Solutions Architect Associate</div><div class="cdt">Planned · Target: Dec 2026</div></div><span class="cbadge pl">PLANNED</span></div>
+        <div class="citem"><div class="cico pl">🔐</div><div style="flex:1"><div class="cnm">CEH — Certified Ethical Hacker</div><div class="cdt">Planned · Target: Q2 2027</div></div><span class="cbadge pl">PLANNED</span></div>
       </div>
       <div>
         <div class="lbl" style="margin-bottom:16px">Skill Levels</div>
@@ -557,7 +577,7 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
       <div class="apanel">
         <div class="clbl" style="margin-bottom:10px">Professional Summary</div>
         <p style="color:var(--muted);line-height:1.82;font-size:0.96rem">I am a U.S. Navy veteran with an Active Secret Clearance transitioning into cybersecurity and cloud security engineering. With 9 years of military service in systems administration, database management, and operational security, I bring mission-critical discipline and accountability to every technical challenge.</p>
-        <p style="color:var(--muted);line-height:1.82;font-size:0.96rem;margin-top:12px">Currently completing my BS in Cybersecurity at ECPI University (May 2026) while building a home SOC environment, earning cloud certifications, and targeting SOC Analyst and Cloud Security roles with DoD contractors throughout Hampton Roads and remotely.</p>
+        <p style="color:var(--muted);line-height:1.82;font-size:0.96rem;margin-top:12px">Completed my BS in Cybersecurity at ECPI University (May 2026) while building a home SOC environment, earning cloud certifications, and targeting SOC Analyst and Cloud Security roles with DoD contractors throughout Hampton Roads and remotely.</p>
         <div class="trow">Python · Wazuh · Nmap · Wireshark · Linux · AWS · Bash · Git · VS Code</div>
       </div>
       <div class="apanel">
@@ -605,6 +625,37 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
 
 <div class="div"></div>
 
+<!-- BLOG / LAB NOTES -->
+<section id="blog">
+  <div class="wrap reveal">
+    <div class="lbl a">Blog &amp; Lab Notes</div>
+    <h2>Recent Posts</h2>
+    <p class="sub" style="margin-bottom:26px">Insights, tutorials, and lab write‑ups documenting my journey, challenges, and discoveries. Regular updates show continuous learning and reflection.</p>
+    <div class="g3" style="margin-top:30px">
+      <div class="card">
+        <div class="clbl">SIEM &amp; Detection</div>
+        <h3>Detecting SSH Brute Force Attacks with Wazuh</h3>
+        <p>A step‑by‑step write‑up of my Wazuh home lab simulation where I executed a brute force attack from Kali Linux and tuned Wazuh rules to detect it.</p>
+        <div style="margin-top:18px"><a href="posts/ssh-brute-force.html" class="btn btns" style="font-size:12.5px;padding:9px 17px">Read More →</a></div>
+      </div>
+      <div class="card">
+        <div class="clbl g">Python Tooling</div>
+        <h3>Building a Log Parser for Incident Response</h3>
+        <p>How I developed a Python script to parse Linux auth logs, extract failed SSH attempts, and generate threat intelligence reports.</p>
+        <div style="margin-top:18px"><a href="posts/log-parser.html" class="btn btns" style="font-size:12.5px;padding:9px 17px">Read More →</a></div>
+      </div>
+      <div class="card">
+        <div class="clbl a">Career Reflections</div>
+        <h3>From Navy Veteran to Cybersecurity Engineer</h3>
+        <p>My transition story from military service to cybersecurity, lessons learned, and advice for other veterans entering the field.</p>
+        <div style="margin-top:18px"><a href="posts/veteran-to-cyber.html" class="btn btns" style="font-size:12.5px;padding:9px 17px">Read More →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="wrap reveal">
@@ -613,7 +664,7 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
         <div class="lbl">Contact</div>
         <h2 style="margin-bottom:12px">Let's work together.</h2>
         <p style="color:var(--muted);font-size:1rem;line-height:1.78;max-width:480px">Reach out for cybersecurity and cloud security opportunities, technical collaborations, or conversations. Based in Chesapeake / Hampton Roads — open to remote roles nationwide.</p>
-        <form id="cform" class="fgrid" novalidate>
+        <form id="cform" class="fgrid" novalidate action="https://formspree.io/f/your-form-id" method="POST">
           <div class="ff"><label for="fn">Your Name *</label><input type="text" id="fn" name="name" placeholder="Jane Smith" required autocomplete="name"/></div>
           <div class="ff"><label for="fe">Email Address *</label><input type="email" id="fe" name="email" placeholder="jane@company.com" required autocomplete="email"/></div>
           <div class="ff"><label for="fc">Company</label><input type="text" id="fc" name="company" placeholder="ManTech, Leidos, etc." autocomplete="organization"/></div>
@@ -667,7 +718,7 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
         <div class="bname" style="font-size:0.85rem">Johnson Vincent<small>Cybersecurity Portfolio</small></div>
       </div>
       <nav class="flinks" aria-label="Footer navigation">
-        <a href="#home">Home</a><a href="#projects">Projects</a><a href="#homelab">Home Lab</a>
+        <a href="#home">Home</a><a href="#projects">Projects</a><a href="#homelab">Home Lab</a><a href="#blog">Blog</a>
         <a href="#certs">Certs</a><a href="#about">About</a><a href="#contact">Contact</a>
         <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
       </nav>
@@ -686,6 +737,17 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
 
 <button class="btt" id="btt" aria-label="Back to top">↑</button>
 
+<!-- AI Chatbot Widget -->
+<div id="chat-widget" style="position:fixed;bottom:80px;right:22px;z-index:150;max-width:320px;font-family:var(--fb);">
+  <button id="chatToggle" class="btn btnp" style="padding:10px 16px;font-size:12px">Ask My AI →</button>
+  <div id="chatWindow" style="display:none;margin-top:10px;border:1px solid var(--line);border-radius:12px;background:var(--panel);max-height:400px;overflow:auto">
+    <div id="chatMessages" style="padding:12px;font-size:13px;color:var(--text);max-height:300px;overflow-y:auto"></div>
+    <div style="display:flex;border-top:1px solid var(--line)">
+      <input id="chatInput" type="text" placeholder="Ask a question..." style="flex:1;border:none;background:transparent;padding:10px;color:var(--text);font-size:13px;outline:none">
+      <button id="chatSend" style="border:none;background:transparent;padding:10px 12px;color:var(--cyan);font-size:16px;cursor:pointer">➤</button>
+    </div>
+  </div>
+</div>
 <script>
 /* PARTICLES */
 const cv=document.getElementById('cv'),ctx=cv.getContext('2d');let pts=[];
@@ -720,7 +782,105 @@ btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
 /* CONTACT FORM */
 const frm=document.getElementById('cform'),fok=document.getElementById('fsuccess');
-if(frm){frm.addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('fn').value.trim(),em=document.getElementById('fe').value.trim(),msg=document.getElementById('fm').value.trim();if(!n||!em||!msg){alert('Please fill in your name, email, and message.');return}const ml=`mailto:johnson.m.vincent17@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(n)}&body=${encodeURIComponent(`Name: ${n}\nEmail: ${em}\nCompany: ${document.getElementById('fc').value}\nType: ${document.getElementById('ft').value}\n\nMessage:\n${msg}`)}`;window.location.href=ml;fok.style.display='block';frm.reset();setTimeout(()=>fok.style.display='none',5000)})}
+if(frm){
+  frm.addEventListener('submit',e=>{
+    e.preventDefault();
+    // simple form validation
+    const data=new FormData(frm);
+    if(!data.get('name') || !data.get('email') || !data.get('message')){
+      alert('Please fill in your name, email, and message.');
+      return;
+    }
+    // send via Formspree or your preferred endpoint
+    fetch(frm.action,{method:frm.method,body:data,headers:{'Accept':'application/json'}})
+      .then(res=>{
+        if(res.ok){
+          fok.style.display='block';
+          frm.reset();
+          setTimeout(()=>fok.style.display='none',5000);
+        } else {
+          res.json().then(d=>{alert(d.error || 'There was an error sending your message.');});
+        }
+      })
+      .catch(()=>alert('There was an error sending your message. Please try again later.'));
+  });
+}
+
+/* THEME TOGGLE */
+const themeToggle=document.getElementById('themeToggle');
+const themeIcon=document.getElementById('themeIcon');
+function applyTheme(t){
+  document.body.classList.toggle('light',t==='light');
+  localStorage.setItem('theme',t);
+  themeIcon.textContent=t==='light'?'☀️':'🌙';
+}
+// initial theme based on saved pref or OS setting
+(()=>{
+  let t=localStorage.getItem('theme');
+  if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}
+  applyTheme(t);
+})();
+if(themeToggle){
+  themeToggle.addEventListener('click',()=>{
+    const current=document.body.classList.contains('light')?'light':'dark';
+    applyTheme(current==='light'?'dark':'light');
+  });
+}
+
+/* SIMPLE AI CHATBOT */
+const chatToggle=document.getElementById('chatToggle');
+const chatWindow=document.getElementById('chatWindow');
+const chatMessages=document.getElementById('chatMessages');
+const chatInput=document.getElementById('chatInput');
+const chatSend=document.getElementById('chatSend');
+if(chatToggle){
+  chatToggle.addEventListener('click',()=>{
+    const visible=chatWindow.style.display==='block';
+    chatWindow.style.display=visible?'none':'block';
+    if(!visible){chatInput.focus();}
+  });
+}
+function appendMessage(msg,isUser){
+  const div=document.createElement('div');
+  div.style.marginBottom='8px';
+  div.style.color=isUser?getComputedStyle(document.documentElement).getPropertyValue('--cyan'):getComputedStyle(document.documentElement).getPropertyValue('--muted');
+  div.textContent=(isUser?'You: ':'AI: ')+msg;
+  chatMessages.appendChild(div);
+  chatWindow.scrollTop=chatWindow.scrollHeight;
+}
+function getChatResponse(msg){
+  const pairs=[
+    {p:/clearance|secret/i,a:'I hold an Active Secret Clearance (DoD/IC Eligible).'},
+    {p:/security\+|sy0|cert/i,a:'My current certification is CompTIA Security+ (SY0‑701), IAT Level II compliant.'},
+    {p:/projects?|tools?|lab|home\s?lab/i,a:'You can view my projects and home lab details in the Projects and Home Lab sections above.'},
+    {p:/experience|background|military/i,a:'I served 9 years in the U.S. Navy performing systems administration and security duties.'},
+    {p:/location|where|based/i,a:'I am based in Chesapeake/Norfolk, Virginia, and open to remote roles.'},
+    {p:/contact|reach/i,a:'You can contact me via the form on this page or email me directly at johnson.m.vincent17@gmail.com.'},
+    {p:/blog|posts|write/i,a:'I periodically share lab notes and articles in the Blog section below to document my learning journey.'},
+    {p:/certs?|certifications|roadmap/i,a:'Check the Certifications section to see my completed and upcoming certifications.'}
+  ];
+  for(const item of pairs){
+    if(item.p.test(msg)) return item.a;
+  }
+  return 'I can answer questions about my clearance, certifications, experience, projects, location, or contact information. Try asking me about those!';
+}
+function sendChat(){
+  const msg=(chatInput.value||'').trim();
+  if(!msg) return;
+  appendMessage(msg,true);
+  chatInput.value='';
+  const reply=getChatResponse(msg);
+  setTimeout(()=>appendMessage(reply,false),400);
+}
+if(chatSend){
+  chatSend.addEventListener('click',sendChat);
+  chatInput.addEventListener('keypress',e=>{
+    if(e.key==='Enter'){
+      e.preventDefault();
+      sendChat();
+    }
+  });
+}
 </script>
 </body>
 </html>
