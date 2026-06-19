@@ -1,17 +1,14 @@
-// Typewriter effect for the homepage
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.getElementById('typedText');
   if (!el) return;
   const phrases = [
-    'Cybersecurity Professional',
+    'Cybersecurity Professional and Navy Veteran',
     'Security Operations Specialist',
     'Incident Response Analyst',
     'Digital Forensics Enthusiast',
-    'Threat Hunter & Researcher',
+    'Threat Hunter and Researcher'
   ];
-  let index = 0;
-  let charIndex = 0;
-  let deleting = false;
+  let index = 0, charIndex = 0, deleting = false;
 
   function type() {
     const phrase = phrases[index];
@@ -25,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
       el.textContent = phrase.substring(0, charIndex++);
       if (charIndex > phrase.length) {
         deleting = true;
-        setTimeout(type, 900);
+        setTimeout(type, 800);
         return;
       }
     }
-    setTimeout(type, deleting ? 60 : 110);
+    setTimeout(type, deleting ? 50 : 120);
   }
   type();
 });
