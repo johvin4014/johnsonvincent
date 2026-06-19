@@ -1,7 +1,7 @@
 // AI Chat widget with fallback responses and OpenAI API integration
 (() => {
   // Use the bear image from the images/ directory
-  const avatar = 'images/bear.png';
+  const avatar = 'images/jmv-logo.png';
 
   // Restore history
   let history = [];
