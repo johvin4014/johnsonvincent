@@ -1,22 +1,27 @@
-// AI chat widget with persistence and bear avatar
+// AI Chat widget using OpenAI API, with a bear avatar
 (() => {
-  const avatar = 'data:image/png;base64,iVBORw0K ... (base64 string for bear.png) ...'; // embed full base64 here
+  // base64-encoded bear image (embed your own base64 string if you prefer)
+  const avatar = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEU...'; // abbreviated; insert full base64 for your bear icon
+  
+  // Restore chat history from localStorage
   let history = [];
   try {
     history = JSON.parse(localStorage.getItem('chatHistory') || '[]');
     if (!Array.isArray(history)) history = [];
-  } catch (e) {
+  } catch {
     history = [];
   }
+
+  // Append message to chat window
   function appendMessage(text, isUser) {
-    const chatMessages = document.getElementById('chatMessages');
-    if (!chatMessages) return;
+    const container = document.getElementById('chatMessages');
+    if (!container) return;
     const line = document.createElement('div');
     line.className = 'chat-line ' + (isUser ? 'user' : 'ai');
     if (!isUser) {
       const img = document.createElement('img');
       img.src = avatar;
-      img.alt = 'AI Avatar';
+      img.alt = 'AI';
       img.loading = 'lazy';
       line.appendChild(img);
     }
@@ -24,99 +29,101 @@
     bubble.className = 'bubble';
     bubble.textContent = text;
     line.appendChild(bubble);
-    chatMessages.appendChild(line);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+    container.appendChild(line);
+    container.scrollTop = container.scrollHeight;
   }
+
   function saveMessage(text, isUser) {
     history.push({ text, isUser });
-    if (history.length > 100) history = history.slice(history.length - 100);
+    if (history.length > 100) history = history.slice(-100);
     localStorage.setItem('chatHistory', JSON.stringify(history));
   }
-  function getStaticResponse(msg) {
+
+  // Fallback response patterns
+  function fallbackResponse(msg) {
     const pairs = [
-      { p: /clearance|secret/i, a: 'I hold an Active Secret Clearance with DoD eligibility.' },
-      { p: /security\+|cert/i, a: 'I have CompTIA Security+ and plan to obtain more certifications like CySA+ and CEH.' },
-      { p: /projects?/i, a: 'See the Projects page for detailed write‑ups and Python tools.' },
-      { p: /lab|siem/i, a: 'My Home Lab page covers the 4‑VM SIEM environment with metrics and screenshots.' },
-      { p: /skills?/i, a: 'Check out the Skills & Certs page for my technical stack and progress indicators.' },
-      { p: /experience|navy/i, a: 'I served 9 years in the U.S. Navy before pivoting into cybersecurity.' },
-      { p: /location|where/i, a: 'I’m based in Chesapeake/Norfolk, Virginia and open to remote or hybrid roles.' },
-      { p: /contact|connect/i, a: 'Use the Contact page to send a message or email me at johnson.m.vincent17@gmail.com.' },
-      { p: /blog|notes/i, a: 'Read my latest posts on the Blog page, including lab notes and tutorials.' },
-      { p: /recruiters?/i, a: 'Visit the Recruiters page for clearance, location, availability and resume highlights.' },
+      { p: /clearance|secret/i, a: 'I hold an Active Secret Clearance (DoD eligibility).' },
+      { p: /security\+|cert/i, a: 'I have CompTIA Security+ and plan to obtain additional certs such as CySA+ and CEH.' },
+      { p: /projects?/i, a: 'Check out my Projects page for detailed write-ups and GitHub links.' },
+      { p: /lab|siem/i, a: 'Visit my Home Lab page for build steps, metrics and screenshots.' },
+      { p: /skills?/i, a: 'My Skills & Certs page lists my tech stack and experience metrics.' },
+      { p: /experience|navy/i, a: 'I served 9 years in the U.S. Navy and have hands-on SOC experience.' },
+      { p: /location/i, a: 'I’m based in Chesapeake/Norfolk, VA and open to remote or hybrid roles.' },
+      { p: /contact/i, a: 'Head to the Contact page or email me directly at johnson.m.vincent17@gmail.com.' },
       { p: /joke/i, a: 'Why did the hacker stay healthy? Because he had lots of anti‑viruses!' },
-      { p: /fact|random/i, a: 'Did you know? The first computer virus, “Creeper,” appeared in the early 1970s and simply displayed “I’m the creeper: catch me if you can.”' },
-      { p: /hello|hi/i, a: 'Hello! Feel free to ask about my lab, projects or skills.' },
-      { p: /help/i, a: 'I can answer questions about my portfolio sections or provide fun facts and tips.' },
-      { p: /quote|motivation/i, a: () => {
-        const quotes = [
-          'Keep learning—every packet tells a story!',
-          'Cybersecurity is a journey, not a destination.',
-          'Perseverance pays off—keep hacking away!',
-          'Your passion for security will open doors.'
-        ];
-        return quotes[Math.floor(Math.random() * quotes.length)];
-      }},
-      { p: /tip/i, a: () => {
-        const tips = [
-          'Always use multi‑factor authentication.',
-          'Keep your software patched to reduce vulnerabilities.',
-          'Use strong, unique passwords and a password manager.',
-          'Monitor your logs regularly to detect anomalies.'
-        ];
-        return tips[Math.floor(Math.random() * tips.length)];
-      }}
+      { p: /fact/i, a: 'Did you know? The first computer virus “Creeper” appeared in the early 1970s and just displayed: “I’m the creeper: catch me if you can.”' },
+      { p: /hello|hi/i, a: 'Hello! Ask me about my lab, projects or anything cybersecurity-related.' }
     ];
     for (const item of pairs) {
-      if (item.p.test(msg)) {
-        return typeof item.a === 'function' ? item.a() : item.a;
-      }
+      if (item.p.test(msg)) return item.a;
     }
-    return 'I can answer questions about my lab, projects, skills, or provide tips and quotes. Try asking me about those!';
+    return 'I can answer questions about my portfolio, share security tips or provide fun facts. Try asking me about my lab or projects!';
   }
-  async function fetchResponse(message) {
+
+  // OpenAI call
+  async function fetchReply(message) {
+    // Insert your API key here or manage it server-side
+    const apiKey = 'YOUR_OPENAI_API_KEY';
     try {
-      const res = await fetch('/api/chat', {
+      const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message })
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          model: 'gpt-4o',
+          messages: [
+            { role: 'system', content: 'You are a helpful cybersecurity assistant for a personal portfolio website.' },
+            { role: 'user', content: message }
+          ],
+          temperature: 0.5,
+          max_tokens: 150
+        })
       });
-      if (!res.ok) throw new Error('Server error');
-      const data = await res.json();
-      if (data.reply) return data.reply;
-      if (data.choices && data.choices[0] && data.choices[0].text) return data.choices[0].text;
+      const data = await response.json();
+      if (data.choices && data.choices[0]) {
+        return data.choices[0].message.content.trim();
+      }
       return null;
-    } catch (e) {
+    } catch (error) {
+      console.error('OpenAI API error:', error);
       return null;
     }
   }
+
   async function sendChat() {
-    const chatInput = document.getElementById('chatInput');
-    if (!chatInput) return;
-    const text = (chatInput.value || '').trim();
+    const input = document.getElementById('chatInput');
+    if (!input) return;
+    const text = input.value.trim();
     if (!text) return;
     appendMessage(text, true);
     saveMessage(text, true);
-    chatInput.value = '';
-    let reply = await fetchResponse(text);
-    if (!reply) reply = getStaticResponse(text);
+    input.value = '';
+    // Try OpenAI API first
+    let reply = await fetchReply(text);
+    if (!reply) reply = fallbackResponse(text);
     setTimeout(() => {
       appendMessage(reply, false);
       saveMessage(reply, false);
     }, 300);
   }
+
+  // Event listeners
   document.addEventListener('DOMContentLoaded', () => {
     const chatToggle = document.getElementById('chatToggle');
     const chatWindow = document.getElementById('chatWindow');
-    const chatInput = document.getElementById('chatInput');
     const chatSend = document.getElementById('chatSend');
-    if (chatToggle) {
+    const chatInput = document.getElementById('chatInput');
+
+    if (chatToggle && chatWindow) {
       chatToggle.addEventListener('click', () => {
         const visible = chatWindow.style.display === 'block';
         chatWindow.style.display = visible ? 'none' : 'block';
         if (!visible && chatInput) chatInput.focus();
       });
     }
+
     if (chatSend) chatSend.addEventListener('click', sendChat);
     if (chatInput) {
       chatInput.addEventListener('keypress', (e) => {
@@ -126,11 +133,13 @@
         }
       });
     }
-    const chatMessages = document.getElementById('chatMessages');
-    if (chatMessages && history.length) {
-      for (const item of history) {
-        appendMessage(item.text, item.isUser);
-      }
+
+    // Restore old messages
+    const container = document.getElementById('chatMessages');
+    if (container) {
+      history.forEach(({ text, isUser }) => {
+        appendMessage(text, isUser);
+      });
     }
   });
 })();
