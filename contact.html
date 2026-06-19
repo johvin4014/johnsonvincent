@@ -1,232 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="theme-color" content="#050a12"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Johnson Vincent</title>
-  <meta name="description" content="Get in touch with Johnson Vincent for cybersecurity roles, collaborations or questions. Send a message, download my résumé or connect on social media."/>
-  <meta name="keywords" content="contact, resume download, hire Johnson Vincent, cybersecurity professional"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <style>
-  :root{--bg:#050a12;--bg2:#080f1c;--panel:rgba(255,255,255,0.04);--panel2:rgba(255,255,255,0.07);--line:rgba(255,255,255,0.07);--text:#e6f3ff;--muted:#7090b0;--soft:#b8d8f5;--cyan:#00e5ff;--cyan2:#3dd8f5;--green:#00ff88;--amber:#f5a623;--red:#ff4d6d;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--fm:'JetBrains Mono',monospace;--max:1160px;--r:20px;--rsm:12px;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:#1a2d40 #050a12}
-  ::-webkit-scrollbar{width:5px}
-  ::-webkit-scrollbar-track{background:#050a12}
-  ::-webkit-scrollbar-thumb{background:#1a2d40;border-radius:99px}
-  body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
-  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(0,229,255,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.022) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,rgba(0,0,0,0.65),rgba(0,0,0,0.04))}
-  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.025) 2px,rgba(0,0,0,0.025) 4px)}
-  a{color:inherit;text-decoration:none}
-  .wrap{width:min(var(--max),92%);margin:0 auto;position:relative;z-index:1}
-  /* Navigation */
-  .topbar{position:sticky;top:0;z-index:200;backdrop-filter:blur(22px);background:rgba(5,10,18,0.88);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
-  .brand{display:flex;align-items:center;gap:11px}
-  .blogo{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#0a1828,#060f1a);border:1px solid rgba(0,229,255,0.22);display:grid;place-items:center;flex-shrink:0;box-shadow:0 0 18px rgba(0,229,255,0.15);overflow:hidden;font-family:var(--fh);font-weight:800;font-size:12px;color:var(--cyan)}
-  .blogo img{width:100%;height:100%;object-fit:contain;padding:4px}
-  .bname{font-family:var(--fh);font-weight:700;font-size:0.9rem;letter-spacing:0.04em}
-  .bname small{display:block;color:var(--muted);font-size:0.58rem;letter-spacing:0.2em;margin-top:3px;font-family:var(--fb);text-transform:uppercase}
-  .nlinks{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:13.5px;font-weight:500}
-  .nlinks a{transition:.2s;position:relative;padding-bottom:2px}
-  .nlinks a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1.5px;background:var(--cyan);border-radius:99px;transform:scaleX(0);transition:.2s}
-  .nlinks a:hover,.nlinks a.active{color:var(--cyan)}
-  .nlinks a:hover::after,.nlinks a.active::after{transform:scaleX(1)}
-  /* Contact page styles */
-  .page-title{font-family:var(--fh);font-weight:800;font-size:clamp(2rem,5vw,3.3rem);margin-top:80px;margin-bottom:20px;line-height:1.1}
-  .sub{color:var(--muted);font-size:1rem;max-width:720px;line-height:1.75;margin-bottom:32px}
-  .contact-section{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:28px 32px;max-width:700px;margin-bottom:50px}
-  .contact-section h2{font-family:var(--fh);font-size:1.5rem;font-weight:700;color:var(--cyan);margin-bottom:12px}
-  .contact-form{display:flex;flex-direction:column;gap:14px;margin-top:16px}
-  .contact-form input,.contact-form textarea{padding:12px;border-radius:8px;border:1px solid var(--line);background:var(--bg2);color:var(--text);font-size:0.9rem}
-  .contact-form textarea{resize:vertical;min-height:120px}
-  .contact-form button{align-self:flex-start;padding:12px 24px;border-radius:99px;background:linear-gradient(135deg,var(--cyan),var(--cyan2));color:#020e18;font-weight:700;font-size:14px;border:none;cursor:pointer;transition:.2s}
-  .contact-form button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,229,255,0.35)}
-  .alt-contact{margin-top:26px;font-size:0.9rem;color:var(--muted);line-height:1.6}
-  .alt-contact a{color:var(--cyan);text-decoration:underline}
-  .download-buttons{display:flex;gap:14px;margin-top:30px}
-  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:99px;font-weight:700;font-size:14px;padding:12px 24px;transition:.2s;cursor:pointer;border:none;text-decoration:none}
-  .btn-primary{background:linear-gradient(135deg,var(--cyan),var(--cyan2));color:#020e18}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,229,255,0.25)}
-  .btn-outline{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.11);color:var(--text)}
-  .btn-outline:hover{border-color:rgba(0,229,255,0.3);color:var(--cyan);transform:translateY(-2px)}
-  /* Footer */
-  footer{padding:40px 0;border-top:1px solid var(--line);margin-top:60px}
-  footer .frow{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:20px}
-  footer .flinks{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
-  footer .flinks a{transition:.2s}
-  footer .flinks a:hover{color:var(--cyan)}
-  footer .fcopy{font-size:12px;color:var(--muted);text-align:center;margin-top:14px}
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <header class="topbar">
-    <div class="wrap nav">
+<header class="topbar">
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="blogo"><img src="assets/images/jmv-logo.png" alt="" onerror="this.style.display='none';this.parentNode.textContent='JMV'"></div>
+      <div class="bname">Johnson Vincent<small>Cybersecurity Portfolio</small></div>
+    </div>
+    <nav class="nlinks">
+      <a href="index.html">Home</a><a href="lab.html">Home Lab</a><a href="projects.html">Projects</a><a href="skills.html">Skills & Certs</a><a href="about.html">About</a><a href="recruiters.html">Recruiters</a><a href="blog.html">Blog</a><a href="contact.html" class="active">Contact</a>
+    </nav>
+    <button id="themeToggle" class="ibtn"><span id="themeIcon">🌙</span></button>
+  </div>
+</header>
+
+<main>
+  <section class="hero small">
+    <div class="wrap">
+      <h1>Contact Me</h1>
+      <p class="hsub">Get in touch for opportunities, collaboration or questions about my work.</p>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <div class="fgrid">
+        <div class="fcard">
+          <h3>Email</h3>
+          <p><a href="mailto:johnson.m.vincent17@gmail.com">johnson.m.vincent17@gmail.com</a></p>
+        </div>
+        <div class="fcard">
+          <h3>LinkedIn</h3>
+          <p><a href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank">Connect on LinkedIn</a></p>
+        </div>
+        <div class="fcard">
+          <h3>GitHub</h3>
+          <p><a href="https://github.com/johvin4014" target="_blank">Follow my GitHub</a></p>
+        </div>
+        <div class="fcard">
+          <h3>Resume</h3>
+          <p><a href="assets/docs/resume.pdf" target="_blank">Download Resume (PDF)</a></p>
+        </div>
+      </div>
+
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+        <h2>Send a Message</h2>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn btnp">Send →</button>
+        <p class="form-note">You can also email me directly or connect via LinkedIn.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <!-- reuse footer markup -->
+  <div class="wrap">
+    <div class="frow">
       <div class="brand">
-        <div class="blogo"><img src="images/jmv-logo.png" alt="JMV logo" onerror="this.style.display='none';this.parentNode.innerHTML='JMV'"></div>
+        <div class="blogo"><img src="assets/images/jmv-logo.png" alt="" onerror="this.style.display='none';this.parentNode.textContent='JMV'"></div>
         <div class="bname">Johnson Vincent<small>Cybersecurity Portfolio</small></div>
       </div>
-      <nav class="nlinks" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="lab.html">Home Lab</a>
-        <a href="projects.html">Projects</a>
-        <a href="skills.html">Skills &amp; Certs</a>
-        <a href="about.html">About</a>
-        <a href="recruiters.html">Recruiters</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html" class="active">Contact</a>
+      <nav class="flinks">
+        <a href="index.html">Home</a><a href="lab.html">Home Lab</a><a href="projects.html">Projects</a><a href="skills.html">Skills</a><a href="about.html">About</a><a href="recruiters.html">Recruiters</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
       </nav>
-      <div style="display:flex;align-items:center;gap:12px">
-        <button id="themeToggle" class="ibtn" style="width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line)"><span id="themeIcon">🌙</span></button>
+      <div class="socials">
+        <a href="https://github.com/johvin4014" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.46-2.37 1.22-3.2-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.22A11.5 11.5 0 0 1 12 6.32c1.02 0 2.05.14 3.01.42 2.29-1.54 3.29-1.22 3.29-1.22.66 1.65.25 2.87.12 3.17.76.83 1.22 1.9 1.22 3.2 0 4.58-2.8 5.59-5.48 5.88.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.69.83.57A12.02 12.02 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg></a>
+        <a href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6A2.5 2.5 0 0 1 0 3.5C0 2.12 1.11 1 2.49 1a2.5 2.5 0 0 1 2.49 2.5ZM.5 8h4V24h-4V8Zm7 0h3.83v2.19h.05c.53-1.01 1.84-2.08 3.79-2.08 4.05 0 4.8 2.67 4.8 6.14V24h-4v-6.96c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.8-2.66 3.67V24h-4V8Z"/></svg></a>
       </div>
     </div>
-  </header>
-
-  <main class="wrap">
-    <h1 class="page-title">Get in Touch</h1>
-    <p class="sub">Whether you have an opportunity, collaboration idea or question, I’d love to hear from you. Use the form below or reach out via email or LinkedIn.</p>
-    <div class="contact-section">
-      <h2>Contact Form</h2>
-      <form class="contact-form" action="https://formspree.io/f/mnqlkjpq" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required/>
-        <input type="email" name="email" placeholder="Your Email" required/>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <p class="alt-contact">Prefer email? Send a message directly to <a href="mailto:johnson.m.vincent17@gmail.com">johnson.m.vincent17@gmail.com</a> or connect on <a href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank" rel="noopener">LinkedIn</a>.</p>
-      <div class="download-buttons">
-        <a href="resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">Download Résumé ↓</a>
-        <a href="projects.html" class="btn btn-outline">View Projects →</a>
-      </div>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="wrap">
-      <div class="frow">
-        <div class="brand">
-          <div class="blogo" style="width:38px;height:38px"><img src="images/jmv-logo.png" alt="" loading="lazy" onerror="this.style.display='none';this.parentNode.innerHTML='JMV'"></div>
-          <div class="bname" style="font-size:0.85rem">Johnson Vincent<small>Cybersecurity Portfolio</small></div>
-        </div>
-        <nav class="flinks" aria-label="Footer navigation">
-          <a href="index.html">Home</a><a href="lab.html">Home Lab</a><a href="projects.html">Projects</a><a href="skills.html">Skills</a><a href="about.html">About</a><a href="recruiters.html">Recruiters</a><a href="blog.html">Blog</a><a href="contact.html" class="active">Contact</a>
-        </nav>
-        <div style="display:flex;gap:9px">
-          <a href="https://github.com/johvin4014" target="_blank" rel="noopener" class="ibtn" aria-label="GitHub" style="width:36px;height:36px"><svg viewBox="0 0 24 24" style="width:16px;height:16px" fill="currentColor"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.46-2.37 1.22-3.2-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.22A11.5 11.5 0 0 1 12 6.32c1.02 0 2.05.14 3.01.42 2.29-1.54 3.29-1.22 3.29-1.22.66 1.65.25 2.87.12 3.17.76.83 1.22 1.9 1.22 3.2 0 4.58-2.8 5.59-5.48 5.88.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.69.83.57A12.02 12.02 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg></a>
-          <a href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank" rel="noopener" class="ibtn" aria-label="LinkedIn" style="width:36px;height:36px"><svg viewBox="0 0 24 24" style="width:16px;height:16px" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6A2.5 2.5 0 0 1 0 3.5C0 2.12 1.11 1 2.49 1a2.5 2.5 0 0 1 2.49 2.5ZM.5 8h4V24h-4V8Zm7 0h3.83v2.19h.05c.53-1.01 1.84-2.08 3.79-2.08 4.05 0 4.8 2.67 4.8 6.14V24h-4v-6.96c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.8-2.66 3.67V24h-4V8Z"/></svg></a>
-        </div>
-      </div>
-      <div class="fcopy">© 2026 Johnson Vincent · Chesapeake, Virginia · Cybersecurity · Cloud · Veteran · All Rights Reserved</div>
-    </div>
-  </footer>
-
-  <!-- AI Chatbot Widget -->
-  <div id="chatToggle" style="position:fixed;bottom:24px;right:24px;z-index:300;background:var(--cyan);color:#020e18;border-radius:50%;width:50px;height:50px;display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,229,255,0.45)">
-    💬
+    <div class="fcopy">© 2026 Johnson Vincent · Chesapeake, Virginia · Cybersecurity · Cloud · Veteran · All Rights Reserved</div>
   </div>
-  <div id="chatWindow" style="display:none;position:fixed;bottom:90px;right:24px;width:300px;height:360px;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:0 6px 20px rgba(0,0,0,0.5);z-index:300;overflow:hidden;display:flex;flex-direction:column">
-    <div id="chatMessages" style="flex:1;overflow-y:auto;margin-bottom:12px;font-size:0.88rem"></div>
-    <div style="display:flex;gap:6px">
-      <input id="chatInput" type="text" placeholder="Ask me anything..." style="flex:1;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:0.88rem"/>
-      <button id="chatSend" style="background:var(--cyan);color:#020e18;border:none;padding:8px 12px;border-radius:8px;font-weight:600;cursor:pointer">Send</button>
+</footer>
+
+<div id="chat-widget">
+  <button id="chatToggle">Ask My AI →</button>
+  <div id="chatWindow">
+    <div id="chatMessages"></div>
+    <div class="chat-input-row">
+      <input id="chatInput" type="text" placeholder="Ask a question...">
+      <button id="chatSend">➤</button>
     </div>
   </div>
+</div>
 
-  <script>
-  // Theme toggle
-  function applyTheme(t){
-    document.body.classList.toggle('light',t==='light');
-    if(themeIcon){themeIcon.textContent=t==='light'?'☀️':'🌙';}
-    localStorage.setItem('theme',t);
-  }
-  (function(){
-    let t=localStorage.getItem('theme');
-    if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}
-    applyTheme(t);
-  })();
-  const themeToggle=document.getElementById('themeToggle');
-  const themeIcon=document.getElementById('themeIcon');
-  if(themeToggle){
-    themeToggle.addEventListener('click',()=>{
-      const current=document.body.classList.contains('light')?'light':'dark';
-      applyTheme(current==='light'?'dark':'light');
-    });
-  }
-  // AI Chatbot
-  const chatToggle=document.getElementById('chatToggle');
-  const chatWindow=document.getElementById('chatWindow');
-  const chatMessages=document.getElementById('chatMessages');
-  const chatInput=document.getElementById('chatInput');
-  const chatSend=document.getElementById('chatSend');
-  if(chatToggle){
-    chatToggle.addEventListener('click',()=>{
-      const vis=chatWindow.style.display==='block';
-      chatWindow.style.display=vis?'none':'block';
-      if(!vis){chatInput.focus();}
-    });
-  }
-  function appendMessage(msg,isUser){
-    const div=document.createElement('div');
-    div.style.marginBottom='8px';
-    div.style.color=isUser?getComputedStyle(document.documentElement).getPropertyValue('--cyan'):getComputedStyle(document.documentElement).getPropertyValue('--muted');
-    div.textContent=(isUser?'You: ':'AI: ')+msg;
-    chatMessages.appendChild(div);
-    chatWindow.scrollTop=chatWindow.scrollHeight;
-  }
-  function getChatResponse(msg){
-    const pairs=[
-      {p:/clearance|secret/i,a:'I hold an Active Secret Clearance with DoD eligibility.'},
-      {p:/security\+|certifications?|cert/i,a:'I currently have CompTIA Security+ (IAT Level II) and I’m planning AWS certs next.'},
-      {p:/projects?|tools?|case studies?/i,a:'You’ll find detailed write‑ups and Python tools on the Projects page.'},
-      {p:/lab|home\s?lab|siem/i,a:'My Home Lab page covers the 4‑VM Wazuh SIEM environment with metrics, steps and screenshots.'},
-      {p:/skills?|tech/i,a:'Check out the Skills & Certs page for my technical stack, progress indicators and certifications.'},
-      {p:/experience|background|navy/i,a:'I served 9 years in the U.S. Navy as a systems and database administrator before pivoting full‑time into cybersecurity.'},
-      {p:/location|where/i,a:'I’m based in Chesapeake/Norfolk, Virginia and open to remote roles.'},
-      {p:/contact|connect|reach/i,a:'This is the Contact page! You can send a message via the form or email me at johnson.m.vincent17@gmail.com.'},
-      {p:/blog|posts?|notes/i,a:'The Blog page contains lab notes and posts documenting my learning journey.'},
-      {p:/recruiters?|hire|availability/i,a:'The Recruiters page lists my clearance, location, availability and resume highlights.'},
-      {p:/joke/i,a:'Why did the hacker stay healthy? Because he had lots of anti‑viruses!'},
-      {p:/fact|random/i,a:'Did you know? The first computer virus, “Creeper,” appeared in the early 1970s and simply displayed the message: “I’m the creeper: catch me if you can.”'},
-      {p:/hello|hi|hey/i,a:'Hello! Feel free to ask about my lab, projects, skills or anything cybersecurity related.'},
-      {p:/help|what can you do/i,a:'I can answer questions about my portfolio sections, tell jokes, share fun facts, give quotes or tips, or direct you to the right page.'},
-      {p:/quote|motiv(e|ation)|inspire/i,a:() => {
-        const quotes=['Keep learning—every packet tells a story!','Cybersecurity is a journey, not a destination.','Perseverance pays off—keep hacking away!','Your passion for security will open doors.'];
-        return quotes[Math.floor(Math.random()*quotes.length)];
-      }},
-      {p:/tip|security tip|best practice/i,a:() => {
-        const tips=['Always use multi‑factor authentication.','Keep your software patched to reduce vulnerabilities.','Use strong, unique passwords for each account and a password manager.','Monitor your logs regularly to detect anomalies.'];
-        return tips[Math.floor(Math.random()*tips.length)];
-      }}
-    ];
-    for(const item of pairs){
-      if(item.p.test(msg)){
-        return typeof item.a==='function'?item.a():item.a;
-      }
-    }
-    return 'I can answer questions about my lab, projects, skills, experience, provide tips or quotes, or share fun facts. Try asking me about those!';
-  }
-  function sendChat(){
-    const text=(chatInput.value||'').trim();
-    if(!text) return;
-    appendMessage(text,true);
-    chatInput.value='';
-    const reply=getChatResponse(text);
-    setTimeout(()=>appendMessage(reply,false),400);
-  }
-  if(chatSend){
-    chatSend.addEventListener('click',sendChat);
-    chatInput.addEventListener('keypress',e=>{
-      if(e.key==='Enter'){
-        e.preventDefault();
-        sendChat();
-      }
-    });
-  }
-  </script>
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/ai.js"></script>
 </body>
 </html>
