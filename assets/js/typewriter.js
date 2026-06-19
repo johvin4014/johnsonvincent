@@ -1,4 +1,4 @@
-// Typewriter effect on the homepage; general cybersecurity roles
+// Typewriter effect for the homepage
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.getElementById('typedText');
   if (!el) return;
