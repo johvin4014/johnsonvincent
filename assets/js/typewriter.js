@@ -7,18 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
     'Security Operations Specialist',
     'Incident Response Analyst',
     'Digital Forensics Enthusiast',
-    'Threat Hunter & Researcher'
+    'Threat Hunter & Researcher',
   ];
-  let idx = 0;
+  let index = 0;
   let charIndex = 0;
   let deleting = false;
+
   function type() {
-    const phrase = phrases[idx];
+    const phrase = phrases[index];
     if (deleting) {
       el.textContent = phrase.substring(0, charIndex--);
       if (charIndex < 0) {
         deleting = false;
-        idx = (idx + 1) % phrases.length;
+        index = (index + 1) % phrases.length;
       }
     } else {
       el.textContent = phrase.substring(0, charIndex++);
