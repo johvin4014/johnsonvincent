@@ -1,11 +1,11 @@
-// Typewriter effect on the homepage
+// Typewriter effect on the homepage; general cybersecurity roles
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.getElementById('typedText');
   if (!el) return;
   const phrases = [
     'Cybersecurity Professional',
-    'SOC & Cloud Security Engineer',
-    'Detection & Incident Response Specialist',
+    'Security Operations Specialist',
+    'Incident Response Analyst',
     'Digital Forensics Enthusiast',
     'Threat Hunter & Researcher'
   ];
