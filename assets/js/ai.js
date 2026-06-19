@@ -1,9 +1,9 @@
-// AI Chat widget using OpenAI API, with a bear avatar
+// AI Chat widget with fallback responses and OpenAI API integration
 (() => {
-  // base64-encoded bear image (embed your own base64 string if you prefer)
-  const avatar = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEU...'; // abbreviated; insert full base64 for your bear icon
-  
-  // Restore chat history from localStorage
+  // Use the bear image from the images/ directory
+  const avatar = 'images/bear.png';
+
+  // Restore history
   let history = [];
   try {
     history = JSON.parse(localStorage.getItem('chatHistory') || '[]');
@@ -12,7 +12,6 @@
     history = [];
   }
 
-  // Append message to chat window
   function appendMessage(text, isUser) {
     const container = document.getElementById('chatMessages');
     if (!container) return;
@@ -39,31 +38,28 @@
     localStorage.setItem('chatHistory', JSON.stringify(history));
   }
 
-  // Fallback response patterns
   function fallbackResponse(msg) {
-    const pairs = [
-      { p: /clearance|secret/i, a: 'I hold an Active Secret Clearance (DoD eligibility).' },
-      { p: /security\+|cert/i, a: 'I have CompTIA Security+ and plan to obtain additional certs such as CySA+ and CEH.' },
-      { p: /projects?/i, a: 'Check out my Projects page for detailed write-ups and GitHub links.' },
-      { p: /lab|siem/i, a: 'Visit my Home Lab page for build steps, metrics and screenshots.' },
-      { p: /skills?/i, a: 'My Skills & Certs page lists my tech stack and experience metrics.' },
-      { p: /experience|navy/i, a: 'I served 9 years in the U.S. Navy and have hands-on SOC experience.' },
+    const rules = [
+      { p: /clearance|secret/i, a: 'I hold an Active Secret Clearance with DoD eligibility.' },
+      { p: /security\+|cert/i, a: 'I have CompTIA Security+ and plan to obtain more certifications (CySA+, CEH).' },
+      { p: /projects?/i, a: 'Visit the Projects page for detailed write-ups and tools.' },
+      { p: /lab|siem/i, a: 'My Home Lab page details the 4‑VM SIEM environment.' },
+      { p: /skills?/i, a: 'The Skills & Certs page lists my tech stack and experience metrics.' },
+      { p: /experience|navy/i, a: 'I served 9 years in the U.S. Navy as a database/systems admin and transitioned to cybersecurity.' },
       { p: /location/i, a: 'I’m based in Chesapeake/Norfolk, VA and open to remote or hybrid roles.' },
-      { p: /contact/i, a: 'Head to the Contact page or email me directly at johnson.m.vincent17@gmail.com.' },
+      { p: /contact/i, a: 'See the Contact page or email me at johnson.m.vincent17@gmail.com.' },
       { p: /joke/i, a: 'Why did the hacker stay healthy? Because he had lots of anti‑viruses!' },
-      { p: /fact/i, a: 'Did you know? The first computer virus “Creeper” appeared in the early 1970s and just displayed: “I’m the creeper: catch me if you can.”' },
-      { p: /hello|hi/i, a: 'Hello! Ask me about my lab, projects or anything cybersecurity-related.' }
+      { p: /fact/i, a: 'Did you know the first computer virus, “Creeper,” appeared in the early 1970s?' },
+      { p: /hello|hi/i, a: 'Hello! Ask me about my lab, projects or other cybersecurity topics.' }
     ];
-    for (const item of pairs) {
-      if (item.p.test(msg)) return item.a;
+    for (const rule of rules) {
+      if (rule.p.test(msg)) return rule.a;
     }
-    return 'I can answer questions about my portfolio, share security tips or provide fun facts. Try asking me about my lab or projects!';
+    return 'I can answer questions about my portfolio or share security tips and fun facts. Try asking me about my lab or projects!';
   }
 
-  // OpenAI call
-  async function fetchReply(message) {
-    // Insert your API key here or manage it server-side
-    const apiKey = 'YOUR_OPENAI_API_KEY';
+  async function callOpenAI(message) {
+    const apiKey = 'YOUR_OPENAI_API_KEY'; // ← Replace with your real API key
     try {
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
@@ -77,17 +73,14 @@
             { role: 'system', content: 'You are a helpful cybersecurity assistant for a personal portfolio website.' },
             { role: 'user', content: message }
           ],
-          temperature: 0.5,
-          max_tokens: 150
+          max_tokens: 150,
+          temperature: 0.5
         })
       });
       const data = await response.json();
-      if (data.choices && data.choices[0]) {
-        return data.choices[0].message.content.trim();
-      }
-      return null;
-    } catch (error) {
-      console.error('OpenAI API error:', error);
+      return data.choices?.[0]?.message?.content?.trim() || null;
+    } catch (err) {
+      console.error('OpenAI error:', err);
       return null;
     }
   }
@@ -100,8 +93,7 @@
     appendMessage(text, true);
     saveMessage(text, true);
     input.value = '';
-    // Try OpenAI API first
-    let reply = await fetchReply(text);
+    let reply = await callOpenAI(text);
     if (!reply) reply = fallbackResponse(text);
     setTimeout(() => {
       appendMessage(reply, false);
@@ -109,13 +101,11 @@
     }, 300);
   }
 
-  // Event listeners
   document.addEventListener('DOMContentLoaded', () => {
     const chatToggle = document.getElementById('chatToggle');
     const chatWindow = document.getElementById('chatWindow');
     const chatSend = document.getElementById('chatSend');
     const chatInput = document.getElementById('chatInput');
-
     if (chatToggle && chatWindow) {
       chatToggle.addEventListener('click', () => {
         const visible = chatWindow.style.display === 'block';
@@ -123,7 +113,6 @@
         if (!visible && chatInput) chatInput.focus();
       });
     }
-
     if (chatSend) chatSend.addEventListener('click', sendChat);
     if (chatInput) {
       chatInput.addEventListener('keypress', (e) => {
@@ -133,13 +122,10 @@
         }
       });
     }
-
-    // Restore old messages
-    const container = document.getElementById('chatMessages');
-    if (container) {
-      history.forEach(({ text, isUser }) => {
-        appendMessage(text, isUser);
-      });
+    // Restore history
+    const messages = document.getElementById('chatMessages');
+    if (messages && history.length) {
+      history.forEach(({ text, isUser }) => appendMessage(text, isUser));
     }
   });
 })();
