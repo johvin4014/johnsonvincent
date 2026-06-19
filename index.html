@@ -1,930 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="theme-color" content="#050a12"/>
-<title>Johnson Vincent | Cybersecurity &amp; Cloud Security | Active Secret Clearance | Hampton Roads VA</title>
-<meta name="description" content="Johnson Vincent — U.S. Navy Veteran with Active Secret Clearance and CompTIA Security+ (IAT Level II). Completed BS in Cybersecurity (May 2026). Showcasing a live SOC home lab, Python security tools, detailed case studies, blog posts and an AI portfolio assistant. Targeting SOC Analyst, Cybersecurity Engineer and Cloud Security roles in Hampton Roads, VA and remote."/>
-<meta name="keywords" content="Johnson Vincent, cybersecurity analyst, SOC analyst, cloud security engineer, CompTIA Security+, Active Secret Clearance, DoD 8570, IAT Level II, U.S. Navy veteran, Wazuh SIEM, incident response, threat detection, NIST, Norfolk Virginia, Hampton Roads, ManTech, Leidos, CACI, SAIC, AWS security, Python security, Wireshark, Nmap, Kali Linux, AWS Cloud Practitioner"/>
-<meta name="author" content="Johnson Vincent"/>
-<meta name="robots" content="index,follow,max-image-preview:large"/>
-<link rel="canonical" href="https://johnsonvincent.com/"/>
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Johnson Vincent | Cybersecurity &amp; Cloud Security Professional"/>
-<meta property="og:description" content="U.S. Navy Veteran with Active Secret Clearance and CompTIA Security+ (IAT Level II). Completed BS in Cybersecurity (May 2026). Showcases a live SOC home lab, Python security tools, detailed case studies, blog posts and an AI assistant."/>
-<meta property="og:url" content="https://johnsonvincent.com/"/>
-<meta property="og:image" content="https://johnsonvincent.com/images/profile-photo.jpg"/>
-<meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Johnson Vincent | Cybersecurity | Active Secret Clearance"/>
-<meta name="twitter:description" content="Navy Veteran with Active Secret Clearance and CompTIA Security+ (IAT Level II). Completed BS in Cybersecurity (May 2026). Showcases a live SOC lab, Python security tools, case studies, blog posts and an AI assistant for recruiters."/>
-<meta name="twitter:image" content="https://johnsonvincent.com/images/profile-photo.jpg"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Johnson Vincent","url":"https://johnsonvincent.com/","image":"https://johnsonvincent.com/images/profile-photo.jpg","jobTitle":"Cybersecurity & Cloud Security Professional","description":"U.S. Navy Veteran with Active Secret Clearance and CompTIA Security+ IAT Level II. Targeting SOC Analyst and Cloud Security roles with DoD contractors in Hampton Roads, VA.","sameAs":["https://www.linkedin.com/in/johnson-vincent-cyber","https://github.com/johvin4014"],"worksFor":{"@type":"Organization","name":"Children's Hospital of The King's Daughters"},"alumniOf":{"@type":"CollegeOrUniversity","name":"ECPI University"},"knowsAbout":["Cybersecurity","SOC Operations","SIEM","Wazuh","Cloud Security","AWS","Python","Linux","Threat Detection","Incident Response","NIST","Wireshark","Nmap","Kali Linux","DoD 8570"],"address":{"@type":"PostalAddress","addressLocality":"Chesapeake","addressRegion":"VA","addressCountry":"US"}}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<style>
-:root{--bg:#050a12;--bg2:#080f1c;--panel:rgba(255,255,255,0.04);--panel2:rgba(255,255,255,0.07);--line:rgba(255,255,255,0.07);--text:#e6f3ff;--muted:#7090b0;--soft:#b8d8f5;--cyan:#00e5ff;--cyan2:#3dd8f5;--green:#00ff88;--amber:#f5a623;--red:#ff4d6d;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--fm:'JetBrains Mono',monospace;--max:1160px;--r:20px;--rsm:12px;}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:#1a2d40 #050a12}
-::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#050a12}::-webkit-scrollbar-thumb{background:#1a2d40;border-radius:99px}
-body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(0,229,255,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.022) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,rgba(0,0,0,0.65),rgba(0,0,0,0.04))}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.025) 2px,rgba(0,0,0,0.025) 4px)}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
-.wrap{width:min(var(--max),92%);margin:0 auto;position:relative;z-index:1}
-
-/* Light theme overrides */
-body.light{
-  --bg:#f7fafc;
-  --bg2:#ffffff;
-  --panel:rgba(0,0,0,0.035);
-  --panel2:rgba(0,0,0,0.06);
-  --line:rgba(0,0,0,0.08);
-  --text:#09213c;
-  --muted:#607792;
-  --soft:#305280;
-  --cyan:#007fa3;
-  --cyan2:#00a7c9;
-  --green:#008a4b;
-  --amber:#b26700;
-  --red:#ac2646;
-}
-/* OTW Banner */
-.otw{background:linear-gradient(135deg,rgba(0,255,136,0.12),rgba(0,229,255,0.07));border-bottom:1px solid rgba(0,255,136,0.18);padding:9px 20px;text-align:center;font-size:13px;font-weight:600;color:var(--green);letter-spacing:0.04em;position:relative;z-index:201}
-.otw span{color:var(--soft);font-weight:400;margin-left:8px}
-
-/* Nav */
-.topbar{position:sticky;top:0;z-index:200;backdrop-filter:blur(22px);background:rgba(5,10,18,0.88);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
-.brand{display:flex;align-items:center;gap:11px}
-.blogo{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#0a1828,#060f1a);border:1px solid rgba(0,229,255,0.22);display:grid;place-items:center;flex-shrink:0;box-shadow:0 0 18px rgba(0,229,255,0.15);overflow:hidden;font-family:var(--fh);font-weight:800;font-size:12px;color:var(--cyan)}
-.blogo img{width:100%;height:100%;object-fit:contain;padding:4px}
-.bname{font-family:var(--fh);font-weight:700;font-size:0.9rem;letter-spacing:0.04em}
-.bname small{display:block;color:var(--muted);font-size:0.58rem;letter-spacing:0.2em;margin-top:3px;font-family:var(--fb);text-transform:uppercase}
-.nlinks{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:13.5px;font-weight:500}
-.nlinks a{transition:.2s;position:relative;padding-bottom:2px}
-.nlinks a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1.5px;background:var(--cyan);border-radius:99px;transform:scaleX(0);transition:.2s}
-.nlinks a:hover,.nlinks a.active{color:var(--cyan)}
-.nlinks a:hover::after,.nlinks a.active::after{transform:scaleX(1)}
-.ncta{display:inline-flex;align-items:center;gap:7px;padding:9px 20px;border-radius:99px;background:linear-gradient(135deg,var(--cyan),var(--cyan2));color:#020e18;font-weight:700;font-size:13px;transition:.2s;white-space:nowrap}
-.ncta:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,229,255,0.22)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
-.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:99px;transition:.3s}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mmenu{display:none;position:fixed;inset:0;z-index:199;background:rgba(5,10,18,0.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:34px}
-.mmenu.open{display:flex}
-.mmenu a{font-family:var(--fh);font-size:1.9rem;font-weight:700;color:var(--text);transition:.2s}
-.mmenu a:hover{color:var(--cyan)}
-
-/* Hero */
-.hero{padding:76px 0 66px;position:relative}
-.hgrid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:44px;align-items:center}
-.cbadge{display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border-radius:99px;margin-bottom:16px;background:linear-gradient(135deg,rgba(0,255,136,0.13),rgba(0,255,136,0.06));border:1px solid rgba(0,255,136,0.28);color:var(--green);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;box-shadow:0 0 26px rgba(0,255,136,0.1);animation:gpulse 3s ease-in-out infinite}
-@keyframes gpulse{0%,100%{box-shadow:0 0 18px rgba(0,255,136,0.1)}50%{box-shadow:0 0 36px rgba(0,255,136,0.24)}}
-.ldot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:lblink 1.8s ease-in-out infinite;flex-shrink:0}
-@keyframes lblink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.82)}}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:99px;margin-bottom:20px;background:rgba(0,229,255,0.07);border:1px solid rgba(0,229,255,0.16);color:var(--cyan);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase}
-h1{font-family:var(--fh);font-weight:800;font-size:clamp(3rem,6.5vw,5.4rem);line-height:0.93;letter-spacing:-0.045em;margin-bottom:14px}
-.hrole{font-family:var(--fh);font-weight:600;font-size:clamp(0.95rem,1.8vw,1.2rem);color:var(--soft);margin-bottom:18px;line-height:1.5}
-.hsub{color:var(--muted);font-size:1.02rem;max-width:560px;line-height:1.8}
-.tline{margin-top:18px;min-height:28px;color:var(--cyan);font-family:var(--fm);font-size:0.87rem;font-weight:500}
-.cur{display:inline-block;animation:cblink 1s step-end infinite}
-@keyframes cblink{50%{opacity:0}}
-.hactions{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px;align-items:center}
-.btn{display:inline-flex;align-items:center;gap:8px;border-radius:99px;font-weight:700;font-size:14px;transition:.2s;cursor:pointer;border:none}
-.btnp{padding:13px 26px;background:linear-gradient(135deg,var(--cyan),var(--cyan2));color:#020e18}
-.btnp:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,229,255,0.25)}
-.btns{padding:12px 22px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.11);color:var(--text)}
-.btns:hover{border-color:rgba(0,229,255,0.3);color:var(--cyan);transform:translateY(-2px)}
-.btng{padding:12px 22px;background:transparent;border:1px solid rgba(0,255,136,0.24);color:var(--green)}
-.btng:hover{background:rgba(0,255,136,0.07);transform:translateY(-2px)}
-.ibtn{width:46px;height:46px;border-radius:50%;flex-shrink:0;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.11);display:inline-flex;align-items:center;justify-content:center;transition:.2s}
-.ibtn:hover{border-color:rgba(0,229,255,0.3);background:rgba(0,229,255,0.07);transform:translateY(-2px)}
-.ibtn svg{width:19px;height:19px;fill:currentColor}
-.tstrip{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
-.titem{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:99px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);font-size:12.5px;font-weight:500;color:var(--soft)}
-.tdot{width:6px;height:6px;border-radius:50%;background:var(--cyan);flex-shrink:0}
-.tdot.g{background:var(--green)}.tdot.a{background:var(--amber)}
-.sbar{display:flex;align-items:center;gap:10px;margin-top:16px;background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.15);border-radius:10px;padding:11px 16px}
-.sdot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber);flex-shrink:0;animation:lblink 2s ease-in-out infinite}
-.sbar p{font-size:12.5px;color:var(--muted)}.sbar strong{color:var(--amber)}
-
-/* Hero card */
-.hcard{border:1px solid rgba(0,229,255,0.12);border-radius:var(--r);background:linear-gradient(155deg,rgba(255,255,255,0.055),rgba(255,255,255,0.02));padding:22px;animation:float 7s ease-in-out infinite;position:relative;overflow:hidden}
-.hcard::before{content:"";position:absolute;top:-80px;right:-80px;width:220px;height:220px;background:radial-gradient(circle,rgba(0,229,255,0.14),transparent 70%);pointer-events:none}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.ctopbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.mbrand{display:flex;align-items:center;gap:9px;font-family:var(--fh);font-weight:700;font-size:0.88rem}
-.mico{width:34px;height:34px;border-radius:9px;flex-shrink:0;background:linear-gradient(135deg,#0a1828,#060f1a);border:1px solid rgba(0,229,255,0.2);display:grid;place-items:center;overflow:hidden;font-family:var(--fh);font-weight:800;font-size:11px;color:var(--cyan)}
-.mico img{width:100%;height:100%;object-fit:contain;padding:3px}
-.cstatus{font-size:11px;font-weight:700;color:var(--green);letter-spacing:0.14em;text-transform:uppercase}
-.pwrap{border-radius:14px;overflow:hidden;border:1px solid rgba(0,229,255,0.13);position:relative}
-.pwrap img{width:100%;height:310px;object-fit:cover;object-position:center 14%;display:block}
-.pwrap::after{content:"";position:absolute;inset:auto 0 0 0;height:42%;background:linear-gradient(transparent,rgba(5,10,18,0.85))}
-.pcap{position:absolute;bottom:13px;left:14px;z-index:2;font-family:var(--fh);font-weight:700;font-size:12px;color:var(--text);letter-spacing:0.06em;text-transform:uppercase}
-.term{margin-top:14px;border:1px solid rgba(0,229,255,0.11);border-radius:11px;background:#02080f;overflow:hidden}
-.tbar{display:flex;gap:7px;padding:11px 14px;background:#050d17;border-bottom:1px solid rgba(255,255,255,0.04)}
-.dot{width:10px;height:10px;border-radius:50%}.dot.r{background:#ff5f56}.dot.y{background:#ffbd2e}.dot.g3{background:#27c93f}
-.tbody{padding:16px 18px;font-family:var(--fm);font-size:0.8rem;line-height:1.9;color:var(--cyan)}
-.tbody .v{color:#cce8ff}.tbody .g{color:var(--green)}.tbody .a{color:var(--amber)}.tbody .d{color:var(--muted)}
-
-/* Layout */
-section{padding:80px 0;position:relative;z-index:1}
-.div{height:1px;background:linear-gradient(90deg,transparent,rgba(0,229,255,0.13),transparent);position:relative;z-index:1}
-.lbl{font-size:10.5px;font-weight:700;color:var(--cyan);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:10px}
-.lbl.g{color:var(--green)}.lbl.a{color:var(--amber)}
-h2{font-family:var(--fh);font-weight:800;font-size:clamp(1.85rem,4vw,3rem);line-height:1.05;letter-spacing:-0.03em;margin-bottom:12px}
-.sub{color:var(--muted);font-size:1rem;max-width:640px;line-height:1.75}
-
-/* Cards */
-.card{border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(155deg,var(--panel2),var(--panel));padding:26px;transition:.25s;position:relative;overflow:hidden}
-.card::before{content:"";position:absolute;inset:0;border-radius:var(--r);background:linear-gradient(135deg,rgba(255,255,255,0.04),transparent 50%);pointer-events:none}
-.card:hover{border-color:rgba(0,229,255,0.2);transform:translateY(-4px);box-shadow:0 22px 55px rgba(0,0,0,0.38),0 0 0 1px rgba(0,229,255,0.06) inset}
-.card h3{font-family:var(--fh);font-weight:700;font-size:1.1rem;margin-bottom:10px}
-.card p{color:var(--muted);font-size:0.93rem;line-height:1.72}
-.clbl{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:8px;color:var(--cyan)}
-.clbl.g{color:var(--green)}.clbl.a{color:var(--amber)}.clbl.r{color:var(--red)}
-.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
-.tag{padding:5px 11px;border-radius:99px;font-size:11.5px;font-weight:600;background:rgba(31,111,235,0.1);border:1px solid rgba(31,111,235,0.18);color:#a8d4ff}
-.tag.g{background:rgba(0,255,136,0.08);border-color:rgba(0,255,136,0.18);color:#7affa8}
-.tag.a{background:rgba(245,166,35,0.08);border-color:rgba(245,166,35,0.18);color:#ffd080}
-.tag.r{background:rgba(255,77,109,0.08);border-color:rgba(255,77,109,0.18);color:#ffaabd}
-
-/* Grids */
-.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.g32{display:grid;grid-template-columns:1.35fr 0.65fr;gap:28px;align-items:start}
-.g21{display:grid;grid-template-columns:1.1fr 0.9fr;gap:28px;align-items:start}
-
-/* Stats */
-.stat{border:1px solid var(--line);border-radius:var(--rsm);background:var(--panel);padding:20px;text-align:center;transition:.2s}
-.stat:hover{border-color:rgba(0,229,255,0.18);transform:translateY(-3px)}
-.sn{font-family:var(--fh);font-weight:800;font-size:2rem;display:block;margin-bottom:5px;color:var(--cyan)}
-.sn.g{color:var(--green)}.sn.a{color:var(--amber)}
-.sl{font-size:10.5px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase}
-
-/* Skills */
-.spanel{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:28px}
-.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
-.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:99px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);font-size:13px;font-weight:500;color:var(--soft);transition:.2s}
-.chip:hover{border-color:rgba(0,229,255,0.25);color:var(--cyan)}
-.cd{width:6px;height:6px;border-radius:50%;background:var(--cyan);flex-shrink:0}
-.cd.g{background:var(--green)}.cd.a{background:var(--amber)}
-
-/* Progress */
-.prog{margin-bottom:16px}
-.ph{display:flex;justify-content:space-between;margin-bottom:7px;font-size:12.5px}
-.pp{font-weight:600;color:var(--cyan)}.pp.g{color:var(--green)}.pp.a{color:var(--amber)}
-.pb{height:5px;border-radius:99px;background:rgba(255,255,255,0.07);overflow:hidden}
-.pf{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--cyan2))}
-.pf.g{background:linear-gradient(90deg,var(--green),#00cc77)}
-.pf.a{background:linear-gradient(90deg,var(--amber),#ffcc44)}
-
-/* Building bar */
-.bbar{border:1px solid rgba(0,255,136,0.2);border-radius:var(--r);background:linear-gradient(135deg,rgba(0,255,136,0.06),rgba(0,229,255,0.03));padding:22px 26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:24px}
-.lring{width:16px;height:16px;border-radius:50%;background:var(--green);flex-shrink:0;animation:sonar 2s ease-in-out infinite}
-@keyframes sonar{0%{box-shadow:0 0 0 0 rgba(0,255,136,0.5)}70%{box-shadow:0 0 0 10px rgba(0,255,136,0)}100%{box-shadow:0 0 0 0 rgba(0,255,136,0)}}
-.btext h3{font-family:var(--fh);font-weight:700;font-size:0.97rem;color:var(--green);margin-bottom:3px}
-.btext p{font-size:12.5px;color:var(--muted)}
-
-/* Lab steps */
-.lstep{display:flex;align-items:flex-start;gap:13px;padding:12px 15px;border-radius:10px;margin-bottom:7px;border:1px solid var(--line);background:rgba(255,255,255,0.02);transition:.2s}
-.lstep:hover{border-color:rgba(0,229,255,0.15)}
-.snum2{width:26px;height:26px;border-radius:50%;flex-shrink:0;background:rgba(0,229,255,0.09);border:1px solid rgba(0,229,255,0.22);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--cyan);font-family:var(--fm)}
-.lstep h4{font-size:12.5px;font-weight:600;margin-bottom:2px}
-.lstep p{font-size:11.5px;color:var(--muted)}
-
-/* Certs */
-.citem{display:flex;align-items:center;gap:13px;padding:13px 16px;border-radius:11px;border:1px solid var(--line);background:rgba(255,255,255,0.02);margin-bottom:9px;transition:.2s}
-.citem:hover{border-color:rgba(0,229,255,0.14)}
-.cico{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
-.cico.dn{background:rgba(0,255,136,0.1)}.cico.ac{background:rgba(0,229,255,0.1)}.cico.pl{background:rgba(255,255,255,0.04)}
-.cnm{font-size:12.5px;font-weight:600}.cdt{font-size:11px;color:var(--muted);margin-top:2px}
-.cbadge{font-size:10px;font-weight:700;padding:4px 10px;border-radius:99px;letter-spacing:0.06em;white-space:nowrap}
-.cbadge.dn{background:rgba(0,255,136,0.1);color:var(--green);border:1px solid rgba(0,255,136,0.2)}
-.cbadge.ac{background:rgba(0,229,255,0.1);color:var(--cyan);border:1px solid rgba(0,229,255,0.2)}
-.cbadge.pl{background:rgba(255,255,255,0.04);color:var(--muted);border:1px solid var(--line)}
-
-/* Companies */
-.cogrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.cocard{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:18px 14px;text-align:center;transition:.2s}
-.cocard:hover{border-color:rgba(0,229,255,0.22);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.3)}
-.coname{font-family:var(--fh);font-weight:700;font-size:1.05rem;color:var(--cyan);margin-bottom:5px}
-.cosub{font-size:11px;color:var(--muted);margin-bottom:10px}
-
-/* About */
-.apanel{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:26px}
-.trow{margin-top:14px;padding:13px 15px;border:1px solid rgba(0,229,255,0.1);border-radius:9px;background:rgba(0,229,255,0.03);font-size:13px;font-weight:500;color:var(--soft);font-family:var(--fm)}
-
-/* Why */
-.wcard{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:26px;transition:.2s}
-.wcard:hover{border-color:rgba(0,229,255,0.18);transform:translateY(-4px)}
-.wnum{font-family:var(--fh);font-weight:800;font-size:2.8rem;color:rgba(0,229,255,0.1);line-height:1;margin-bottom:12px}
-
-/* Contact form */
-.cbox{border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(135deg,rgba(0,229,255,0.05),rgba(0,255,136,0.03));padding:36px}
-.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:22px}
-.ff{display:flex;flex-direction:column;gap:6px}.ff.full{grid-column:1/-1}
-.ff label{font-size:12px;font-weight:600;color:var(--soft);letter-spacing:0.04em}
-.ff input,.ff textarea,.ff select{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:9px;padding:11px 14px;color:var(--text);font-family:var(--fb);font-size:14px;outline:none;transition:.2s;resize:vertical}
-.ff input:focus,.ff textarea:focus,.ff select:focus{border-color:rgba(0,229,255,0.35);background:rgba(0,229,255,0.04)}
-.ff input::placeholder,.ff textarea::placeholder{color:var(--muted)}
-.ff select option{background:#0b1525;color:var(--text)}
-.fsuccess{display:none;padding:14px 18px;border:1px solid rgba(0,255,136,0.25);border-radius:10px;background:rgba(0,255,136,0.07);color:var(--green);font-size:13px;font-weight:600;margin-top:12px;text-align:center}
-.rbox{border:1px solid rgba(0,255,136,0.17);border-radius:var(--r);background:linear-gradient(135deg,rgba(0,255,136,0.06),rgba(0,229,255,0.04));padding:28px}
-.rbox h3{font-family:var(--fh);font-weight:800;font-size:1.65rem;margin-bottom:8px}
-
-/* Back to top */
-.btt{position:fixed;bottom:26px;right:22px;z-index:100;width:42px;height:42px;border-radius:50%;background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.22);display:flex;align-items:center;justify-content:center;color:var(--cyan);font-size:18px;cursor:pointer;transition:.2s;opacity:0;transform:translateY(10px);pointer-events:none}
-.btt.show{opacity:1;transform:translateY(0);pointer-events:all}
-.btt:hover{background:rgba(0,229,255,0.18);transform:translateY(-2px)}
-
-/* Footer */
-footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;position:relative;z-index:1}
-.frow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:16px}
-.flinks{display:flex;gap:18px}.flinks a:hover{color:var(--cyan)}
-.fcopy{padding-top:16px;border-top:1px solid var(--line);text-align:center;font-size:12px;color:rgba(112,144,176,0.55)}
-
-/* Reveal */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-.reveal.show{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
-
-/* Responsive */
-@media(max-width:1024px){
-  .hgrid,.g32,.g21{grid-template-columns:1fr}
-  .hcard{animation:none}.g3{grid-template-columns:repeat(2,1fr)}
-  .cogrid{grid-template-columns:repeat(2,1fr)}.fgrid{grid-template-columns:1fr}.ff.full{grid-column:1}
-}
-@media(max-width:680px){
-  .nlinks,.ncta{display:none}.hamburger{display:flex}
-  .g3,.g2{grid-template-columns:1fr}.g4{grid-template-columns:repeat(2,1fr)}
-  .cogrid{grid-template-columns:repeat(2,1fr)}
-  h1{font-size:2.75rem}section{padding:60px 0}
-  .cbox{padding:22px}.rbox{padding:22px}
-}
-@media print{.topbar,.otw,.btt,canvas,.hcard,.term,footer{display:none!important}body{background:#fff;color:#111}.hero{padding:20px 0}}
-</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="theme-color" content="#050a12"/>
+  <title>Johnson Vincent | Cybersecurity &amp; Cloud Security Professional</title>
+  <!-- Description and SEO -->
+  <meta name="description" content="U.S. Navy veteran and cybersecurity professional with active Secret clearance, Security+ and hands‑on SOC experience. Explore my home lab, projects, skills, certifications, blog and more."/>
+  <meta name="keywords" content="cybersecurity portfolio, SOC analyst, cloud security engineer, Secret clearance, Wazuh SIEM, security projects, incident response, threat detection, Johnson Vincent"/>
+  <meta name="author" content="Johnson Vincent"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Johnson Vincent | Cybersecurity &amp; Cloud Security Professional"/>
+  <meta property="og:description" content="Explore my cybersecurity portfolio: live SOC home lab, Python tools, detailed case studies, blog posts and an AI assistant."/>
+  <meta property="og:url" content="https://johnsonvincent.com/"/>
+  <meta property="og:image" content="https://johnsonvincent.com/images/profile-photo.jpg"/>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Johnson Vincent | Cybersecurity Portfolio"/>
+  <meta name="twitter:description" content="U.S. Navy veteran and cybersecurity professional with active Secret clearance and Security+. Explore my projects, lab and more."/>
+  <meta name="twitter:image" content="https://johnsonvincent.com/images/profile-photo.jpg"/>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <!-- Styles copied from the original site -->
+  <style>
+  :root{
+    --bg:#050a12;
+    --bg2:#080f1c;
+    --panel:rgba(255,255,255,0.04);
+    --panel2:rgba(255,255,255,0.07);
+    --line:rgba(255,255,255,0.07);
+    --text:#e6f3ff;
+    --muted:#7090b0;
+    --soft:#b8d8f5;
+    --cyan:#00e5ff;
+    --cyan2:#3dd8f5;
+    --green:#00ff88;
+    --amber:#f5a623;
+    --red:#ff4d6d;
+    --fh:'Syne',sans-serif;
+    --fb:'DM Sans',sans-serif;
+    --fm:'JetBrains Mono',monospace;
+    --max:1160px;
+    --r:20px;
+    --rsm:12px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:#1a2d40 #050a12}
+  ::-webkit-scrollbar{width:5px}
+  ::-webkit-scrollbar-track{background:#050a12}
+  ::-webkit-scrollbar-thumb{background:#1a2d40;border-radius:99px}
+  body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(0,229,255,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.022) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,rgba(0,0,0,0.65),rgba(0,0,0,0.04))}
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.025) 2px,rgba(0,0,0,0.025) 4px)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(var(--max),92%);margin:0 auto;position:relative;z-index:1}
+  /* Light theme */
+  body.light{
+    --bg:#f7fafc;
+    --bg2:#ffffff;
+    --panel:rgba(0,0,0,0.035);
+    --panel2:rgba(0,0,0,0.06);
+    --line:rgba(0,0,0,0.08);
+    --text:#09213c;
+    --muted:#607792;
+    --soft:#305280;
+    --cyan:#007fa3;
+    --cyan2:#00a7c9;
+    --green:#008a4b;
+    --amber:#b26700;
+    --red:#ac2646;
+  }
+  /* Nav styles */
+  .topbar{position:sticky;top:0;z-index:200;backdrop-filter:blur(22px);background:rgba(5,10,18,0.88);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:11px}
+  .blogo{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#0a1828,#060f1a);border:1px solid rgba(0,229,255,0.22);display:grid;place-items:center;flex-shrink:0;box-shadow:0 0 18px rgba(0,229,255,0.15);overflow:hidden;font-family:var(--fh);font-weight:800;font-size:12px;color:var(--cyan)}
+  .blogo img{width:100%;height:100%;object-fit:contain;padding:4px}
+  .bname{font-family:var(--fh);font-weight:700;font-size:0.9rem;letter-spacing:0.04em}
+  .bname small{display:block;color:var(--muted);font-size:0.58rem;letter-spacing:0.2em;margin-top:3px;font-family:var(--fb);text-transform:uppercase}
+  .nlinks{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:13.5px;font-weight:500}
+  .nlinks a{transition:.2s;position:relative;padding-bottom:2px}
+  .nlinks a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1.5px;background:var(--cyan);border-radius:99px;transform:scaleX(0);transition:.2s}
+  .nlinks a:hover,.nlinks a.active{color:var(--cyan)}
+  .nlinks a:hover::after,.nlinks a.active::after{transform:scaleX(1)}
+  /* Hero */
+  .hero{padding:76px 0 66px;position:relative}
+  .hgrid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:44px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:99px;margin-bottom:20px;background:rgba(0,229,255,0.07);border:1px solid rgba(0,229,255,0.16);color:var(--cyan);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase}
+  h1{font-family:var(--fh);font-weight:800;font-size:clamp(3rem,6.5vw,5.4rem);line-height:0.93;letter-spacing:-0.045em;margin-bottom:14px}
+  .hrole{font-family:var(--fh);font-weight:600;font-size:clamp(0.95rem,1.8vw,1.2rem);color:var(--soft);margin-bottom:18px;line-height:1.5}
+  .hsub{color:var(--muted);font-size:1.02rem;max-width:560px;line-height:1.8}
+  .actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:99px;font-weight:700;font-size:14px;transition:.2s;cursor:pointer;border:none}
+  .btnp{padding:13px 26px;background:linear-gradient(135deg,var(--cyan),var(--cyan2));color:#020e18}
+  .btnp:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,229,255,0.25)}
+  .btns{padding:12px 22px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.11);color:var(--text)}
+  .btns:hover{border-color:rgba(0,229,255,0.3);color:var(--cyan);transform:translateY(-2px)}
+  /* Feature cards grid */
+  .features{padding:60px 0}
+  .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:30px}
+  .fcard{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:28px;transition:.25s;position:relative;overflow:hidden;text-align:left;display:flex;flex-direction:column;gap:12px}
+  .fcard:hover{border-color:rgba(0,229,255,0.2);transform:translateY(-4px);box-shadow:0 22px 55px rgba(0,0,0,0.38),0 0 0 1px rgba(0,229,255,0.06) inset}
+  .fcard h3{font-family:var(--fh);font-weight:700;font-size:1.3rem;margin-bottom:6px;color:var(--cyan)}
+  .fcard p{font-size:0.92rem;color:var(--muted);line-height:1.6}
+  /* Footer */
+  footer{padding:40px 0;border-top:1px solid var(--line);margin-top:60px}
+  footer .frow{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+  footer .flinks{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+  footer .flinks a{transition:.2s}
+  footer .flinks a:hover{color:var(--cyan)}
+  footer .fcopy{font-size:12px;color:var(--muted);text-align:center;margin-top:14px}
+  </style>
 </head>
 <body>
-<canvas id="cv" aria-hidden="true" style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.44"></canvas>
-
-<!-- OTW BANNER -->
-<div class="otw">🟢 Open to Work — Cybersecurity &amp; Cloud Security Roles · Hampton Roads / Remote · Active Secret Clearance<span>Available immediately</span></div>
-
-<!-- NAV -->
-<div class="topbar">
-  <div class="wrap nav">
-    <a href="#home" class="brand" aria-label="Johnson Vincent home">
-      <div class="blogo"><img src="images/jmv-logo.png" alt="JMV" loading="lazy" onerror="this.style.display='none';this.parentNode.innerHTML='JMV'"></div>
-      <div class="bname">Johnson Vincent<small>Cybersecurity Portfolio</small></div>
-    </a>
-    <nav class="nlinks" aria-label="Main navigation">
-      <a href="#home">Home</a><a href="#homelab">Home Lab</a><a href="#projects">Projects</a><a href="#blog">Blog</a>
-      <a href="#about">About</a><a href="#certs">Certs</a><a href="#recruiters">For Recruiters</a><a href="#contact">Contact</a>
-    </nav>
-    <a href="resume.pdf" target="_blank" rel="noopener" class="ncta">Download Resume ↓</a>
-    <!-- Theme toggle button -->
-    <button id="themeToggle" class="ibtn" aria-label="Toggle light/dark theme" style="width:36px;height:36px">
-      <span id="themeIcon" style="font-size:16px;line-height:1">🌙</span>
-    </button>
-    <button class="hamburger" id="hbg" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-</div>
-
-<!-- MOBILE MENU -->
-<div class="mmenu" id="mmenu" role="dialog" aria-label="Mobile navigation">
-  <a href="#home" class="mml">Home</a><a href="#homelab" class="mml">Home Lab</a>
-  <a href="#projects" class="mml">Projects</a><a href="#blog" class="mml">Blog</a>
-  <a href="#about" class="mml">About</a><a href="#certs" class="mml">Certs</a><a href="#recruiters" class="mml">For Recruiters</a><a href="#contact" class="mml">Contact</a>
-  <a href="resume.pdf" target="_blank" class="btn btnp">Download Resume ↓</a>
-</div>
-
-<!-- HERO -->
-<header class="hero" id="home">
-  <div class="wrap">
-    <div class="hgrid reveal">
-      <div>
-        <div class="cbadge"><span class="ldot"></span>🔐 Active Secret Clearance — DoD / IC Eligible</div>
-        <div class="eyebrow">Open to Cybersecurity &amp; Cloud Roles · Hampton Roads / Remote</div>
-        <h1>Johnson<br>Vincent</h1>
-        <div class="hrole">Cybersecurity Analyst | Active Secret Clearance | Security+ | 9‑Year Navy Veteran</div>
-        <p class="hsub">I build detection engineering and cloud security solutions. With nine years of U.S. Navy service, I turn mission‑critical discipline into measurable security outcomes.</p>
-        <div class="tline"><span style="color:var(--muted)">$ </span><span id="typed"></span><span class="cur">_</span></div>
-        <div class="hactions">
-          <a href="#projects" class="btn btnp">View Projects</a>
-          <a href="resume.pdf" target="_blank" rel="noopener" class="btn btns">Resume ↓</a>
-          <a href="#contact" class="btn btng">Hire Me</a>
-          <a href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank" rel="noopener" class="ibtn" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6A2.5 2.5 0 0 1 0 3.5C0 2.12 1.11 1 2.49 1a2.5 2.5 0 0 1 2.49 2.5ZM.5 8h4V24h-4V8Zm7 0h3.83v2.19h.05c.53-1.01 1.84-2.08 3.79-2.08 4.05 0 4.8 2.67 4.8 6.14V24h-4v-6.96c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.8-2.66 3.67V24h-4V8Z"/></svg>
-          </a>
-          <a href="https://github.com/johvin4014" target="_blank" rel="noopener" class="ibtn" aria-label="GitHub">
-            <svg viewBox="0 0 24 24"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.46-2.37 1.22-3.2-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.22A11.5 11.5 0 0 1 12 6.32c1.02 0 2.05.14 3.01.42 2.29-1.54 3.29-1.22 3.29-1.22.66 1.65.25 2.87.12 3.17.76.83 1.22 1.9 1.22 3.2 0 4.58-2.8 5.59-5.48 5.88.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.69.83.57A12.02 12.02 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg>
-          </a>
-        </div>
-        <div class="tstrip">
-          <span class="titem"><span class="tdot g"></span>Active Secret Clearance</span>
-          <span class="titem"><span class="tdot"></span>Security+ IAT Level II</span>
-          <span class="titem"><span class="tdot"></span>9 Yrs U.S. Navy</span>
-          <span class="titem"><span class="tdot a"></span>BS in Cybersecurity (Completed May 2026)</span>
-          <span class="titem"><span class="tdot"></span>Chesapeake / Norfolk VA</span>
-        </div>
-        <div class="sbar"><span class="sdot"></span><p><strong>Recent lab work:</strong> Built AWS IAM, EC2, CloudWatch &amp; S3 security labs (100+ hours hands‑on).</p></div>
-      </div>
-      <aside class="hcard">
-        <div class="ctopbar">
-          <div class="mbrand">
-            <div class="mico"><img src="images/jmv-logo.png" alt="" loading="lazy" onerror="this.style.display='none';this.parentNode.innerHTML='JMV'"></div>
-            Johnson Vincent
-          </div>
-          <span class="cstatus">● Available</span>
-        </div>
-        <div class="pwrap">
-          <img src="images/profile-photo.jpg" alt="Johnson Vincent — Cybersecurity Professional" loading="eager" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80'">
-          <div class="pcap">Johnson M. Vincent</div>
-        </div>
-        <div class="term">
-          <div class="tbar"><span class="dot r"></span><span class="dot y"></span><span class="dot g3"></span></div>
-          <div class="tbody">
-<span class="d">$</span> whoami
-<span class="v">Johnson M. Vincent</span>
-
-<span class="d">$</span> clearance
-<span class="g">Active Secret · DoD/IC Eligible ✓</span>
-
-<span class="d">$</span> cert --active
-<span class="v">Security+ SY0-701 (IAT Level II)</span>
-
-<span class="d">$</span> target_roles
-<span class="v">SOC Analyst · Cloud Security Eng</span>
-
-<span class="d">$</span> status
-<span class="a">Open to opportunities ✓</span></div>
-        </div>
-      </aside>
-    </div>
-  </div>
-</header>
-
-<div class="div"></div>
-
-<!-- HOME LAB -->
-<section id="homelab">
-  <div class="wrap reveal">
-    <div class="lbl g">Hands‑On SOC Lab</div>
-    <h2>Home SOC Lab</h2>
-    <p class="sub" style="margin-bottom:28px">Building a 4‑VM SOC environment powered by Wazuh SIEM to detect real attacks. Simulated 10+ attacks, generated 150+ alerts, and published 8 incident write‑ups.</p>
-    <div class="bbar">
-      <div class="lring"></div>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span style="font-size:12px;font-weight:700;color:var(--green);letter-spacing:0.1em">LIVE BUILD</span>
-      </div>
-      <div class="btext">
-        <h3>Wazuh SIEM Environment — In Progress</h3>
-        <p>Stack: Kali Linux (attacker) · Ubuntu 22.04 + Wazuh 4.x (SIEM) · Windows Server 2022 (endpoint) · Wireshark (analysis)</p>
-      </div>
-    </div>
-    <div class="g2">
-      <div>
-        <div style="font-size:12px;font-weight:700;color:var(--soft);margin-bottom:10px;letter-spacing:0.05em">PHASE 1 — INFRASTRUCTURE</div>
-        <div class="lstep"><div class="snum2">1</div><div><h4>Install VirtualBox + Ubuntu 22.04</h4><p>Wazuh server base environment</p></div></div>
-        <div class="lstep"><div class="snum2">2</div><div><h4>Deploy Wazuh SIEM + Dashboard</h4><p>Central logging, alerting, visualization</p></div></div>
-        <div class="lstep"><div class="snum2">3</div><div><h4>Connect Kali Linux as attacker VM</h4><p>Red team node for attack simulations</p></div></div>
-        <div class="lstep"><div class="snum2">4</div><div><h4>Add Windows Server as endpoint</h4><p>Wazuh agent + Windows event collection</p></div></div>
-      </div>
-      <div>
-        <div style="font-size:12px;font-weight:700;color:var(--soft);margin-bottom:10px;letter-spacing:0.05em">PHASE 2 — ATTACK &amp; DETECT</div>
-        <div class="lstep"><div class="snum2">5</div><div><h4>Run Nmap scan — watch alerts fire</h4><p>Network reconnaissance detection</p></div></div>
-        <div class="lstep"><div class="snum2">6</div><div><h4>Simulate SSH brute force attack</h4><p>10+ password attacks in 60 seconds (150+ alerts generated)</p></div></div>
-        <div class="lstep"><div class="snum2">7</div><div><h4>Triage alerts in Wazuh dashboard</h4><p>Full SOC analyst workflow</p></div></div>
-        <div class="lstep"><div class="snum2">8</div><div><h4>Document + publish to GitHub</h4><p>Screenshots · IR write‑up · timeline</p></div></div>
-      </div>
-    </div>
-    <div style="margin-top:16px;padding:14px 20px;border:1px solid rgba(0,255,136,0.13);border-radius:11px;background:rgba(0,255,136,0.04);font-size:13px;color:var(--muted)">
-      🧠 <strong style="color:var(--soft)">Why this matters:</strong> Most candidates applying to SOC roles at ManTech, Leidos and CACI have zero hands‑on SIEM experience. A documented Wazuh home lab with real attack simulations puts me in the top tier of applicants.
-    </div>
-    <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:10px">
-      <span class="chip"><span class="cd"></span>VMs: 4</span>
-      <span class="chip"><span class="cd"></span>Attacks Simulated: 10+</span>
-      <span class="chip"><span class="cd"></span>Alerts Generated: 150+</span>
-      <span class="chip"><span class="cd"></span>Write‑ups: 8</span>
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<!-- STATS -->
-<section style="padding:50px 0">
-  <div class="wrap">
-    <div class="g4 reveal">
-      <div class="stat"><span class="sn g">9+</span><span class="sl">Years U.S. Navy</span></div>
-      <div class="stat"><span class="sn">5</span><span class="sl">Security Projects</span></div>
-      <div class="stat"><span class="sn a">IAT II</span><span class="sl">DoD 8570 Compliant</span></div>
-      <div class="stat"><span class="sn g">SECRET</span><span class="sl">Active Clearance</span></div>
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<!-- SKILLS -->
-<section style="padding:60px 0">
-  <div class="wrap reveal">
-    <div class="spanel">
-      <div class="lbl">Technical Stack</div>
-      <h2 style="font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:6px">What I work with</h2>
-      <p style="color:var(--muted);font-size:0.95rem">Tools and technologies across cybersecurity, cloud, networking, and scripting — all relevant to SOC and cloud security roles.</p>
-      <div class="chips">
-        <span class="chip"><span class="cd g"></span>CompTIA Security+ (IAT II)</span>
-        <span class="chip"><span class="cd"></span>Wazuh SIEM</span>
-        <span class="chip"><span class="cd"></span>Wireshark</span>
-        <span class="chip"><span class="cd"></span>Nmap</span>
-        <span class="chip"><span class="cd g"></span>AWS (EC2 · S3 · IAM)</span>
-        <span class="chip"><span class="cd"></span>Linux / Kali Linux</span>
-        <span class="chip"><span class="cd"></span>Python 3</span>
-        <span class="chip"><span class="cd"></span>Bash Scripting</span>
-        <span class="chip"><span class="cd"></span>Windows Server</span>
-        <span class="chip"><span class="cd"></span>GitHub / Git</span>
-        <span class="chip"><span class="cd a"></span>Threat Detection</span>
-        <span class="chip"><span class="cd a"></span>Incident Response</span>
-        <span class="chip"><span class="cd a"></span>NIST CSF / 800-53</span>
-        <span class="chip"><span class="cd"></span>TCP/IP · DNS · DHCP · ARP</span>
-        <span class="chip"><span class="cd"></span>Vulnerability Assessment</span>
-        <span class="chip"><span class="cd"></span>Log Analysis</span>
-        <span class="chip"><span class="cd"></span>VirtualBox / VMware</span>
-        <span class="chip"><span class="cd a"></span>DoD 8570 IAT Level II</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<!-- HOME LAB MOVED TO ABOVE STATS -->
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="wrap">
-    <div class="reveal">
-      <div class="lbl">Featured Projects &amp; Case Studies</div>
-      <h2>Python Security Tools &amp; SOC Write‑ups</h2>
-      <p class="sub">Real security tools and documented case studies demonstrating threat detection, network analysis, integrity verification, and authentication hardening — each accompanied by detailed write‑ups using the Situation–Task–Action–Result methodology to showcase my problem‑solving approach.</p>
-    </div>
-    <div class="g3" style="margin-top:30px">
-      <div class="card reveal d1">
-        <div class="clbl g">SOC · Threat Detection</div>
-        <h3>Log Analyzer</h3>
-        <p>500 lines of Python; parsed 2k auth log entries; detected 10 brute force attempts with 95% accuracy and generated structured threat reports with source IPs, timestamps and severity scoring.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Regex</span><span class="tag g">Brute Force Detection</span><span class="tag g">SOC Relevant</span></div>
-        <div style="margin-top:18px"><a href="https://github.com/johvin4014/log-analyzer" target="_blank" rel="noopener" class="btn btns" style="font-size:12.5px;padding:9px 17px">GitHub →</a></div>
-      </div>
-      <div class="card reveal d2">
-        <div class="clbl">Networking · Recon</div>
-        <h3>Basic Port Scanner</h3>
-        <p>250 lines of Python; scanned 65k ports in under 60 seconds; enumerated 15 services across 3 hosts and flagged potentially vulnerable entry points — replicates core Nmap recon methodology.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Sockets</span><span class="tag">Nmap Concepts</span><span class="tag">Network Recon</span></div>
-        <div style="margin-top:18px"><a href="https://github.com/johvin4014/basic-port-scanner" target="_blank" rel="noopener" class="btn btns" style="font-size:12.5px;padding:9px 17px">GitHub →</a></div>
-      </div>
-      <div class="card reveal d3">
-        <div class="clbl a">Integrity · Forensics</div>
-        <h3>File Hash Verifier</h3>
-        <p>150 lines of code; verified integrity of 100+ files using MD5, SHA‑1 and SHA‑256 and detected tampering — core skill for malware triage, chain‑of‑custody verification and digital forensics.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Hashing</span><span class="tag a">Malware Analysis</span><span class="tag a">Forensics</span></div>
-        <div style="margin-top:18px"><a href="https://github.com/johvin4014/file-hash-verifier" target="_blank" rel="noopener" class="btn btns" style="font-size:12.5px;padding:9px 17px">GitHub →</a></div>
-      </div>
-      <div class="card reveal d1">
-        <div class="clbl r">Threat Intel · Phishing</div>
-        <h3>URL Scanner</h3>
-        <p>300 lines of Python; analyzed hundreds of URLs and flagged 50 malicious links using 10 pattern signatures — supports SOC analyst triage of reported phishing emails.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">URL Analysis</span><span class="tag r">Phishing Detection</span><span class="tag">Threat Intel</span></div>
-        <div style="margin-top:18px"><a href="https://github.com/johvin4014/url-scanner" target="_blank" rel="noopener" class="btn btns" style="font-size:12.5px;padding:9px 17px">GitHub →</a></div>
-      </div>
-      <div class="card reveal d2">
-        <div class="clbl">Auth Security · NIST</div>
-        <h3>Password Strength Checker</h3>
-        <p>200 lines of Python; assessed 30 test passwords and flagged 80% as weak; enforces NIST SP 800‑63B guidelines for password strength and security policy enforcement.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">NIST 800-63B</span><span class="tag">Authentication</span><span class="tag">Input Validation</span></div>
-        <div style="margin-top:18px"><a href="https://github.com/johvin4014/password-strength-checker" target="_blank" rel="noopener" class="btn btns" style="font-size:12.5px;padding:9px 17px">GitHub →</a></div>
-      </div>
-      <div class="card reveal d3" style="border-color:rgba(0,255,136,0.16);background:linear-gradient(155deg,rgba(0,255,136,0.06),rgba(0,229,255,0.03))">
-        <div class="clbl g">Coming Soon</div>
-        <h3>Wazuh SOC Lab Docs</h3>
-        <p>Full documentation of a 4‑VM Wazuh SIEM lab — 10 attack simulations generating 150+ alerts; includes screenshots, alert analysis and step‑by‑step incident response write‑ups.</p>
-        <div class="tags"><span class="tag g">Wazuh</span><span class="tag g">SIEM</span><span class="tag g">SOC Operations</span><span class="tag">Linux</span></div>
-        <div style="margin-top:18px"><a href="https://github.com/johvin4014" target="_blank" rel="noopener" class="btn btns" style="font-size:12.5px;padding:9px 17px">View GitHub →</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<!-- CERTS -->
-<section id="certs">
-  <div class="wrap reveal">
-    <div class="g32">
-      <div>
-        <div class="lbl">Certifications</div>
-        <h2>Cert Roadmap</h2>
-        <p class="sub" style="margin-bottom:26px">Structured progression from DoD 8570 compliance through full cloud security expertise.</p>
-        <div class="citem"><div class="cico dn">✅</div><div style="flex:1"><div class="cnm">CompTIA Security+ (SY0-701)</div><div class="cdt">Completed · DoD 8570 IAT Level II · Active</div></div><span class="cbadge dn">COMPLETE</span></div>
-        <div class="citem"><div class="cico ac">📚</div><div style="flex:1"><div class="cnm">AWS Cloud Practitioner (CLF-C02)</div><div class="cdt">In Progress · Target: July 2026</div></div><span class="cbadge ac">STUDYING</span></div>
-        <div class="citem"><div class="cico ac">🎯</div><div style="flex:1"><div class="cnm">CompTIA CySA+</div><div class="cdt">Planned · Target: Oct 2026</div></div><span class="cbadge ac">NEXT UP</span></div>
-        <div class="citem"><div class="cico pl">☁️</div><div style="flex:1"><div class="cnm">AWS Solutions Architect Associate</div><div class="cdt">Planned · Target: Dec 2026</div></div><span class="cbadge pl">PLANNED</span></div>
-        <div class="citem"><div class="cico pl">🔐</div><div style="flex:1"><div class="cnm">CEH — Certified Ethical Hacker</div><div class="cdt">Planned · Target: Q2 2027</div></div><span class="cbadge pl">PLANNED</span></div>
-      </div>
-      <div>
-        <div class="lbl" style="margin-bottom:16px">Skill Levels</div>
-        <div style="border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:22px">
-          <div class="prog"><div class="ph"><span>Network Security</span><span class="pp g">75%</span></div><div class="pb"><div class="pf g" style="width:75%"></div></div></div>
-          <div class="prog"><div class="ph"><span>Linux Administration</span><span class="pp g">65%</span></div><div class="pb"><div class="pf g" style="width:65%"></div></div></div>
-          <div class="prog"><div class="ph"><span>Python Security Scripting</span><span class="pp">60%</span></div><div class="pb"><div class="pf" style="width:60%"></div></div></div>
-          <div class="prog"><div class="ph"><span>Wireshark / Packet Analysis</span><span class="pp">55%</span></div><div class="pb"><div class="pf" style="width:55%"></div></div></div>
-          <div class="prog"><div class="ph"><span>Threat Detection / SIEM</span><span class="pp">50%</span></div><div class="pb"><div class="pf" style="width:50%"></div></div></div>
-          <div class="prog"><div class="ph"><span>AWS Cloud</span><span class="pp a">40%</span></div><div class="pb"><div class="pf a" style="width:40%"></div></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<!-- TARGET COMPANIES -->
-<section style="padding:70px 0">
-  <div class="wrap reveal">
-    <div class="lbl a">Career Target</div>
-    <h2>Target Employers</h2>
-    <p class="sub" style="margin-bottom:26px">Focused on DoD contractor roles in Hampton Roads — where Active Secret Clearance is a primary requirement and veteran status is a direct advantage.</p>
-    <div class="cogrid">
-      <div class="cocard"><div class="coname">ManTech</div><div class="cosub">DoD Contractor · Norfolk Area</div><span class="tag" style="font-size:11px;display:inline-flex">SOC Analyst</span></div>
-      <div class="cocard"><div class="coname">Leidos</div><div class="cosub">DoD Contractor · Remote/Norfolk</div><span class="tag" style="font-size:11px;display:inline-flex">Cyber Analyst</span></div>
-      <div class="cocard"><div class="coname">CACI</div><div class="cosub">Clearance Required</div><span class="tag" style="font-size:11px;display:inline-flex">Cloud Security</span></div>
-      <div class="cocard"><div class="coname">SAIC</div><div class="cosub">Hampton Roads · Veteran Hiring</div><span class="tag" style="font-size:11px;display:inline-flex">Cyber Engineer</span></div>
-    </div>
-    <div style="margin-top:14px;padding:14px 20px;border:1px solid rgba(245,166,35,0.14);border-radius:11px;background:rgba(245,166,35,0.04);font-size:13px;color:var(--muted)">
-      🎖 <strong style="color:var(--soft)">My hiring advantage:</strong> Active Secret Clearance eliminates the 6–18 month clearance wait. DoD 8570 IAT Level II compliant. Veteran hiring preferences apply at all four companies. Available to start immediately.
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<!-- RECRUITERS -->
-<section id="recruiters">
-  <div class="wrap reveal">
-    <div class="lbl g">For Recruiters</div>
-    <h2>Hiring Details at a Glance</h2>
-    <p class="sub" style="margin-bottom:24px">Everything you need to assess my fit for your DoD or commercial cybersecurity role — clearance, location, and availability.</p>
-    <div class="g2">
-      <div>
-        <div class="card">
-          <div class="clbl g">Clearance &amp; Certifications</div>
-          <p style="font-size:0.92rem;line-height:1.7;color:var(--muted)">
-            <strong>Active Secret Clearance</strong> — eligible for DoD and IC missions.<br>
-            <strong>CompTIA Security+ (SY0‑701)</strong> — DoD 8570 IAT Level II compliant.<br>
-            <strong>BS in Cybersecurity</strong> — completed May 2026.<br>
-            <strong>AWS Cloud Practitioner</strong> — hands‑on labs completed; exam scheduled July 2026.
-          </p>
-        </div>
-      </div>
-      <div>
-        <div class="card">
-          <div class="clbl g">Logistics &amp; Availability</div>
-          <p style="font-size:0.92rem;line-height:1.7;color:var(--muted)">
-            <strong>Location:</strong> Chesapeake/Hampton Roads, VA.<br>
-            <strong>Remote:</strong> Open to fully remote roles.<br>
-            <strong>Relocation:</strong> Willing to relocate for the right opportunity.<br>
-            <strong>Citizenship:</strong> U.S. citizen and Navy veteran.<br>
-            <strong>Start Date:</strong> Available immediately.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap reveal">
-    <div class="lbl">About Me</div>
-    <h2>Mission-driven security engineering.</h2>
-    <p class="sub" style="margin-bottom:26px">Nine years of Navy service built the operational foundation. Now I'm engineering the technical future.</p>
-    <div class="g2">
-      <div class="apanel">
-        <div class="clbl" style="margin-bottom:10px">Professional Summary</div>
-        <p style="color:var(--muted);line-height:1.82;font-size:0.96rem">I am a U.S. Navy veteran with an Active Secret Clearance transitioning into cybersecurity and cloud security engineering. With 9 years of military service in systems administration, database management, and operational security, I bring mission-critical discipline and accountability to every technical challenge.</p>
-        <p style="color:var(--muted);line-height:1.82;font-size:0.96rem;margin-top:12px">Completed my BS in Cybersecurity at ECPI University (May 2026) while building a home SOC environment, earning cloud certifications, and targeting SOC Analyst and Cloud Security roles with DoD contractors throughout Hampton Roads and remotely.</p>
-        <div class="trow">Python · Wazuh · Nmap · Wireshark · Linux · AWS · Bash · Git · VS Code</div>
-      </div>
-      <div class="apanel">
-        <div class="clbl" style="margin-bottom:14px">Key Advantages</div>
-        <div style="display:flex;flex-direction:column;gap:16px">
-          <div><div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:4px">🔐 Active Secret Clearance</div><div style="font-size:12.5px;color:var(--muted)">Eliminates 6–18 month clearance wait. Immediately deployable on DoD contracts.</div></div>
-          <div><div style="font-size:13px;font-weight:700;color:var(--cyan);margin-bottom:4px">🎖 9 Years Military Discipline</div><div style="font-size:12.5px;color:var(--muted)">Navy-trained: operational security mindset, works under pressure, follows protocol.</div></div>
-          <div><div style="font-size:13px;font-weight:700;color:var(--amber);margin-bottom:4px">🛠 Active Builder — Not Just a Student</div><div style="font-size:12.5px;color:var(--muted)">5 live GitHub projects + home SOC lab in active development.</div></div>
-          <div><div style="font-size:13px;font-weight:700;color:var(--cyan);margin-bottom:4px">📍 Hampton Roads Local</div><div style="font-size:12.5px;color:var(--muted)">Based in Chesapeake — ideal for Norfolk/VB DoD contractor roles.</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<!-- WHY ME -->
-<section id="why-me" style="padding:70px 0">
-  <div class="wrap reveal">
-    <div class="lbl">Why Me</div>
-    <h2>Three things that set me apart.</h2>
-    <div class="g3" style="margin-top:28px">
-      <div class="wcard">
-        <div class="wnum">01</div>
-        <div class="clbl g" style="margin-bottom:8px">Clearance + Veteran</div>
-        <h3 style="font-family:var(--fh);font-size:1.1rem;margin-bottom:10px">No onboarding delay</h3>
-        <p style="color:var(--muted);font-size:0.93rem;line-height:1.75">Active Secret Clearance + DoD 8570 IAT Level II means immediate contract placement. No 6–18 month wait. That's a measurable cost saving for any DoD contractor.</p>
-      </div>
-      <div class="wcard">
-        <div class="wnum">02</div>
-        <div class="clbl" style="margin-bottom:8px">Hands-On Evidence</div>
-        <h3 style="font-family:var(--fh);font-size:1.1rem;margin-bottom:10px">I build, not just study</h3>
-        <p style="color:var(--muted);font-size:0.93rem;line-height:1.75">Five public Python security tools, a Wazuh SOC home lab in active development, and consistent GitHub commits. I practice cybersecurity in real lab environments every day.</p>
-      </div>
-      <div class="wcard">
-        <div class="wnum">03</div>
-        <div class="clbl a" style="margin-bottom:8px">Military Execution</div>
-        <h3 style="font-family:var(--fh);font-size:1.1rem;margin-bottom:10px">Mission over everything</h3>
-        <p style="color:var(--muted);font-size:0.93rem;line-height:1.75">Nine years in the Navy built accountability, operational security instincts, and the ability to perform under pressure — all of which transfer directly to incident response and SOC operations.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<!-- BLOG / LAB NOTES -->
-<section id="blog">
-  <div class="wrap reveal">
-    <div class="lbl a">Blog &amp; Lab Notes</div>
-    <h2>Recent Posts</h2>
-    <p class="sub" style="margin-bottom:26px">Insights, tutorials, and lab write‑ups documenting my journey, challenges, and discoveries. Regular updates show continuous learning and reflection.</p>
-    <div class="g3" style="margin-top:30px">
-      <div class="card">
-        <div class="clbl">SIEM &amp; Detection</div>
-        <h3>Detecting SSH Brute Force Attacks with Wazuh</h3>
-        <p>A step‑by‑step write‑up of my Wazuh home lab simulation where I executed a brute force attack from Kali Linux and tuned Wazuh rules to detect it.</p>
-        <div style="margin-top:18px"><a href="posts/ssh-brute-force.html" class="btn btns" style="font-size:12.5px;padding:9px 17px">Read More →</a></div>
-      </div>
-      <div class="card">
-        <div class="clbl g">Python Tooling</div>
-        <h3>Building a Log Parser for Incident Response</h3>
-        <p>How I developed a Python script to parse Linux auth logs, extract failed SSH attempts, and generate threat intelligence reports.</p>
-        <div style="margin-top:18px"><a href="posts/log-parser.html" class="btn btns" style="font-size:12.5px;padding:9px 17px">Read More →</a></div>
-      </div>
-      <div class="card">
-        <div class="clbl a">Career Reflections</div>
-        <h3>From Navy Veteran to Cybersecurity Engineer</h3>
-        <p>My transition story from military service to cybersecurity, lessons learned, and advice for other veterans entering the field.</p>
-        <div style="margin-top:18px"><a href="posts/veteran-to-cyber.html" class="btn btns" style="font-size:12.5px;padding:9px 17px">Read More →</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="wrap reveal">
-    <div class="g21">
-      <div class="cbox">
-        <div class="lbl">Contact</div>
-        <h2 style="margin-bottom:12px">Let's work together.</h2>
-        <p style="color:var(--muted);font-size:1rem;line-height:1.78;max-width:480px">Reach out for cybersecurity and cloud security opportunities, technical collaborations, or conversations. Based in Chesapeake / Hampton Roads — open to remote roles nationwide.</p>
-        <form id="cform" class="fgrid" novalidate action="https://formspree.io/f/your-form-id" method="POST">
-          <div class="ff"><label for="fn">Your Name *</label><input type="text" id="fn" name="name" placeholder="Jane Smith" required autocomplete="name"/></div>
-          <div class="ff"><label for="fe">Email Address *</label><input type="email" id="fe" name="email" placeholder="jane@company.com" required autocomplete="email"/></div>
-          <div class="ff"><label for="fc">Company</label><input type="text" id="fc" name="company" placeholder="ManTech, Leidos, etc." autocomplete="organization"/></div>
-          <div class="ff"><label for="ft">Inquiry Type</label>
-            <select id="ft" name="type">
-              <option value="">Select...</option>
-              <option>Job Opportunity</option><option>Contract / DoD Role</option>
-              <option>Collaboration</option><option>General Inquiry</option>
-            </select>
-          </div>
-          <div class="ff full"><label for="fm">Message *</label><textarea id="fm" name="message" rows="4" placeholder="Tell me about the role or opportunity..." required></textarea></div>
-          <div class="ff full">
-            <button type="submit" class="btn btnp" style="width:100%;justify-content:center;font-size:15px;padding:14px">Send Message →</button>
-            <div class="fsuccess" id="fsuccess">✅ Message sent! I'll respond within 24 hours.</div>
-          </div>
-        </form>
-        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-          <a href="mailto:johnson.m.vincent17@gmail.com" class="btn btns" style="font-size:13px;padding:10px 18px">✉ Email Directly</a>
-          <a href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank" rel="noopener" class="btn btns" style="font-size:13px;padding:10px 18px">LinkedIn</a>
-          <a href="https://github.com/johvin4014" target="_blank" rel="noopener" class="btn btns" style="font-size:13px;padding:10px 18px">GitHub</a>
-        </div>
-      </div>
-      <div>
-        <div class="rbox">
-          <div class="clbl g" style="margin-bottom:10px">Resume</div>
-          <h3>Download My Resume</h3>
-          <p style="color:var(--muted);font-size:0.93rem;margin-bottom:20px">DoD-optimized PDF — clearance status, IAT Level II, military experience, certifications, and project work.</p>
-          <a href="resume.pdf" target="_blank" rel="noopener" class="btn btnp" style="width:100%;justify-content:center;display:flex;padding:14px">Download PDF ↓</a>
-          <div style="margin-top:13px;padding:13px 15px;border:1px solid var(--line);border-radius:10px;font-size:12.5px;color:var(--muted)">Formatted for DoD ATS. Highlights clearance, IAT Level II compliance, and hands-on technical experience.</div>
-        </div>
-        <div style="margin-top:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:22px">
-          <div class="clbl" style="margin-bottom:12px">Quick Contact</div>
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <div style="font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px"><span style="color:var(--cyan)">✉</span><a href="mailto:johnson.m.vincent17@gmail.com" style="color:var(--soft);transition:.2s" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--soft)'">johnson.m.vincent17@gmail.com</a></div>
-            <div style="font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px"><span style="color:var(--cyan)">🔗</span><a href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank" rel="noopener" style="color:var(--soft);transition:.2s" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--soft)'">linkedin.com/in/johnson-vincent-cyber</a></div>
-            <div style="font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px"><span style="color:var(--cyan)">💻</span><a href="https://github.com/johvin4014" target="_blank" rel="noopener" style="color:var(--soft);transition:.2s" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--soft)'">github.com/johvin4014</a></div>
-            <div style="font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px"><span style="color:var(--green)">📍</span><span style="color:var(--soft)">Chesapeake / Norfolk, VA · Remote OK</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="frow">
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="wrap nav">
       <div class="brand">
-        <div class="blogo" style="width:38px;height:38px"><img src="images/jmv-logo.png" alt="" loading="lazy" onerror="this.style.display='none';this.parentNode.innerHTML='JMV'"></div>
-        <div class="bname" style="font-size:0.85rem">Johnson Vincent<small>Cybersecurity Portfolio</small></div>
+        <div class="blogo"><img src="images/jmv-logo.png" alt="JMV logo" onerror="this.style.display='none';this.parentNode.innerHTML='JMV'"></div>
+        <div class="bname">Johnson Vincent<small>Cybersecurity Portfolio</small></div>
       </div>
-      <nav class="flinks" aria-label="Footer navigation">
-        <a href="#home">Home</a><a href="#projects">Projects</a><a href="#homelab">Home Lab</a><a href="#blog">Blog</a>
-        <a href="#certs">Certs</a><a href="#about">About</a><a href="#contact">Contact</a>
-        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <nav class="nlinks" aria-label="Primary navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="lab.html">Home Lab</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills &amp; Certs</a>
+        <a href="about.html">About</a>
+        <a href="recruiters.html">Recruiters</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <div style="display:flex;gap:9px">
-        <a href="https://github.com/johvin4014" target="_blank" rel="noopener" class="ibtn" aria-label="GitHub" style="width:36px;height:36px">
-          <svg viewBox="0 0 24 24" style="width:16px;height:16px" fill="currentColor"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.46-2.37 1.22-3.2-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.22A11.5 11.5 0 0 1 12 6.32c1.02 0 2.05.14 3.01.42 2.29-1.54 3.29-1.22 3.29-1.22.66 1.65.25 2.87.12 3.17.76.83 1.22 1.9 1.22 3.2 0 4.58-2.8 5.59-5.48 5.88.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.69.83.57A12.02 12.02 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank" rel="noopener" class="ibtn" aria-label="LinkedIn" style="width:36px;height:36px">
-          <svg viewBox="0 0 24 24" style="width:16px;height:16px" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6A2.5 2.5 0 0 1 0 3.5C0 2.12 1.11 1 2.49 1a2.5 2.5 0 0 1 2.49 2.5ZM.5 8h4V24h-4V8Zm7 0h3.83v2.19h.05c.53-1.01 1.84-2.08 3.79-2.08 4.05 0 4.8 2.67 4.8 6.14V24h-4v-6.96c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.8-2.66 3.67V24h-4V8Z"/></svg>
-        </a>
+      <div style="display:flex;align-items:center;gap:12px">
+        <button id="themeToggle" class="ibtn" style="width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line)"><span id="themeIcon">🌙</span></button>
       </div>
     </div>
-    <div class="fcopy">© 2026 Johnson Vincent · Chesapeake, Virginia · Cybersecurity · Cloud · Veteran · All Rights Reserved</div>
-  </div>
-</footer>
+  </header>
 
-<button class="btt" id="btt" aria-label="Back to top">↑</button>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="wrap hgrid">
+      <div>
+        <div class="eyebrow">Active Secret Clearance · Security+</div>
+        <h1>Cybersecurity Professional</h1>
+        <div class="hrole">U.S. Navy Veteran · SOC &amp; Cloud Security Engineer</div>
+        <p class="hsub">I build and operate a 4‑VM Wazuh SIEM lab, write Python tools, and document real incident response case studies. Explore my work and learn how I can help secure your organization.</p>
+        <div class="actions">
+          <a href="lab.html" class="btn btnp">View Home Lab →</a>
+          <a href="projects.html" class="btn btns">Explore Projects</a>
+        </div>
+      </div>
+      <div>
+        <!-- Placeholder for hero image -->
+        <img src="images/profile-photo.jpg" alt="Johnson Vincent" style="border-radius:var(--r);border:1px solid var(--line);background:var(--panel);box-shadow:0 8px 24px rgba(0,0,0,0.4)">
+      </div>
+    </div>
+  </section>
 
-<!-- AI Chatbot Widget -->
-<div id="chat-widget" style="position:fixed;bottom:80px;right:22px;z-index:150;max-width:320px;font-family:var(--fb);">
-  <button id="chatToggle" class="btn btnp" style="padding:10px 16px;font-size:12px">Ask My AI →</button>
-  <div id="chatWindow" style="display:none;margin-top:10px;border:1px solid var(--line);border-radius:12px;background:var(--panel);max-height:400px;overflow:auto">
-    <div id="chatMessages" style="padding:12px;font-size:13px;color:var(--text);max-height:300px;overflow-y:auto"></div>
-    <div style="display:flex;border-top:1px solid var(--line)">
-      <input id="chatInput" type="text" placeholder="Ask a question..." style="flex:1;border:none;background:transparent;padding:10px;color:var(--text);font-size:13px;outline:none">
-      <button id="chatSend" style="border:none;background:transparent;padding:10px 12px;color:var(--cyan);font-size:16px;cursor:pointer">➤</button>
+  <!-- Feature Links Section -->
+  <section class="features">
+    <div class="wrap">
+      <h2 style="font-family:var(--fh);font-weight:800;font-size:clamp(1.85rem,4vw,3rem);line-height:1.05;letter-spacing:-0.03em;margin-bottom:10px">Explore My Portfolio</h2>
+      <p class="hsub" style="max-width:700px">Dive deeper into my work by exploring dedicated pages for my SOC lab, technical projects, skills, certifications, background, recruiter info, blog posts and contact options.</p>
+      <div class="fgrid">
+        <a href="lab.html" class="fcard"><h3>Home SOC Lab</h3><p>Detailed build steps, metrics and screenshots of my 4‑VM Wazuh SIEM environment.</p></a>
+        <a href="projects.html" class="fcard"><h3>Projects &amp; Case Studies</h3><p>Python tools and documented SOC cases with metrics and GitHub links.</p></a>
+        <a href="skills.html" class="fcard"><h3>Skills &amp; Certifications</h3><p>My technical stack, progress indicators and certifications (Security+, AWS, more).</p></a>
+        <a href="about.html" class="fcard"><h3>About &amp; Experience</h3><p>My background, U.S. Navy service and why I’m ready for your team.</p></a>
+        <a href="recruiters.html" class="fcard"><h3>For Recruiters</h3><p>Clearance status, location, availability and resume highlights in one place.</p></a>
+        <a href="blog.html" class="fcard"><h3>Blog &amp; Lab Notes</h3><p>Short posts and lab notes documenting my continuous learning journey.</p></a>
+        <a href="contact.html" class="fcard"><h3>Contact Me</h3><p>Get in touch, download my resume and connect on LinkedIn or GitHub.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="frow">
+        <div class="brand">
+          <div class="blogo" style="width:38px;height:38px"><img src="images/jmv-logo.png" alt="" loading="lazy" onerror="this.style.display='none';this.parentNode.innerHTML='JMV'"></div>
+          <div class="bname" style="font-size:0.85rem">Johnson Vincent<small>Cybersecurity Portfolio</small></div>
+        </div>
+        <nav class="flinks" aria-label="Footer navigation">
+          <a href="index.html">Home</a><a href="lab.html">Home Lab</a><a href="projects.html">Projects</a><a href="skills.html">Skills</a><a href="about.html">About</a><a href="recruiters.html">Recruiters</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+        </nav>
+        <div style="display:flex;gap:9px">
+          <a href="https://github.com/johvin4014" target="_blank" rel="noopener" class="ibtn" aria-label="GitHub" style="width:36px;height:36px"><svg viewBox="0 0 24 24" style="width:16px;height:16px" fill="currentColor"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.46-2.37 1.22-3.2-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.22A11.5 11.5 0 0 1 12 6.32c1.02 0 2.05.14 3.01.42 2.29-1.54 3.29-1.22 3.29-1.22.66 1.65.25 2.87.12 3.17.76.83 1.22 1.9 1.22 3.2 0 4.58-2.8 5.59-5.48 5.88.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.69.83.57A12.02 12.02 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg></a>
+          <a href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank" rel="noopener" class="ibtn" aria-label="LinkedIn" style="width:36px;height:36px"><svg viewBox="0 0 24 24" style="width:16px;height:16px" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6A2.5 2.5 0 0 1 0 3.5C0 2.12 1.11 1 2.49 1a2.5 2.5 0 0 1 2.49 2.5ZM.5 8h4V24h-4V8Zm7 0h3.83v2.19h.05c.53-1.01 1.84-2.08 3.79-2.08 4.05 0 4.8 2.67 4.8 6.14V24h-4v-6.96c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.8-2.66 3.67V24h-4V8Z"/></svg></a>
+        </div>
+      </div>
+      <div class="fcopy">© 2026 Johnson Vincent · Chesapeake, Virginia · Cybersecurity · Cloud · Veteran · All Rights Reserved</div>
+    </div>
+  </footer>
+
+  <!-- AI Chatbot Widget -->
+  <div id="chat-widget" style="position:fixed;bottom:80px;right:22px;z-index:150;max-width:320px;font-family:var(--fb);">
+    <button id="chatToggle" class="btn btnp" style="padding:10px 16px;font-size:12px">Ask My AI →</button>
+    <div id="chatWindow" style="display:none;margin-top:10px;border:1px solid var(--line);border-radius:12px;background:var(--panel);max-height:400px;overflow:auto">
+      <div id="chatMessages" style="padding:12px;font-size:13px;color:var(--text);max-height:300px;overflow-y:auto"></div>
+      <div style="display:flex;border-top:1px solid var(--line)">
+        <input id="chatInput" type="text" placeholder="Ask a question..." style="flex:1;border:none;background:transparent;padding:10px;color:var(--text);font-size:13px;outline:none">
+        <button id="chatSend" style="border:none;background:transparent;padding:10px 12px;color:var(--cyan);font-size:16px;cursor:pointer">➤</button>
+      </div>
     </div>
   </div>
-</div>
-<script>
-/* PARTICLES */
-const cv=document.getElementById('cv'),ctx=cv.getContext('2d');let pts=[];
-function rsz(){cv.width=innerWidth;cv.height=innerHeight;pts=Array.from({length:Math.min(70,Math.floor(innerWidth/20))},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height,dx:(Math.random()-.5)*.38,dy:(Math.random()-.5)*.38,r:Math.random()*1.7+0.5}))}
-function drw(){ctx.clearRect(0,0,cv.width,cv.height);for(const p of pts){p.x+=p.dx;p.y+=p.dy;if(p.x<0||p.x>cv.width)p.dx*=-1;if(p.y<0||p.y>cv.height)p.dy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(0,229,255,0.22)';ctx.fill()}for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const d=Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y);if(d<125){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(0,229,255,${(1-d/125)*0.09})`;ctx.lineWidth=1;ctx.stroke()}}requestAnimationFrame(drw)}
-rsz();drw();window.addEventListener('resize',rsz);
 
-/* TYPING */
-const phrases=['built_home_lab --VMs=4 --alerts=150','python_tools --repos=5 --lines=1400','cloud_labs --AWS=IAM+EC2+S3 --hours=100','clearance --level=SECRET --active','certifications --Security+ --IAT_II','mission --ready_for_hire'];
-const tel=document.getElementById('typed');let pi=0,ci=0,del=false;
-function type(){if(!tel)return;const w=phrases[pi];if(!del){tel.textContent=w.slice(0,++ci);if(ci===w.length){del=true;setTimeout(type,1800);return}}else{tel.textContent=w.slice(0,--ci);if(ci===0){del=false;pi=(pi+1)%phrases.length}}setTimeout(type,del?38:78)}
-type();
-
-/* REVEAL */
-const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show')}),{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
-
-/* NAV ACTIVE */
-const nl=document.querySelectorAll('.nlinks a');
-const no=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){nl.forEach(l=>l.classList.remove('active'));const lk=document.querySelector(`.nlinks a[href="#${x.target.id}"]`);if(lk)lk.classList.add('active')}})},{threshold:0.4});
-document.querySelectorAll('section[id],header[id]').forEach(s=>no.observe(s));
-
-/* HAMBURGER */
-const hbg=document.getElementById('hbg'),mm=document.getElementById('mmenu');
-hbg.addEventListener('click',()=>{const o=mm.classList.toggle('open');hbg.classList.toggle('open',o);hbg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''});
-document.querySelectorAll('.mml').forEach(l=>l.addEventListener('click',()=>{mm.classList.remove('open');hbg.classList.remove('open');hbg.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
-
-/* BACK TO TOP */
-const btt=document.getElementById('btt');
-window.addEventListener('scroll',()=>btt.classList.toggle('show',scrollY>500),{passive:true});
-btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-/* CONTACT FORM */
-const frm=document.getElementById('cform'),fok=document.getElementById('fsuccess');
-if(frm){
-  frm.addEventListener('submit',e=>{
-    e.preventDefault();
-    // simple form validation
-    const data=new FormData(frm);
-    if(!data.get('name') || !data.get('email') || !data.get('message')){
-      alert('Please fill in your name, email, and message.');
-      return;
-    }
-    // send via Formspree or your preferred endpoint
-    fetch(frm.action,{method:frm.method,body:data,headers:{'Accept':'application/json'}})
-      .then(res=>{
-        if(res.ok){
-          fok.style.display='block';
-          frm.reset();
-          setTimeout(()=>fok.style.display='none',5000);
-        } else {
-          res.json().then(d=>{alert(d.error || 'There was an error sending your message.');});
-        }
-      })
-      .catch(()=>alert('There was an error sending your message. Please try again later.'));
-  });
-}
-
-/* THEME TOGGLE */
-const themeToggle=document.getElementById('themeToggle');
-const themeIcon=document.getElementById('themeIcon');
-function applyTheme(t){
-  document.body.classList.toggle('light',t==='light');
-  localStorage.setItem('theme',t);
-  themeIcon.textContent=t==='light'?'☀️':'🌙';
-}
-// initial theme based on saved pref or OS setting
-(()=>{
-  let t=localStorage.getItem('theme');
-  if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}
-  applyTheme(t);
-})();
-if(themeToggle){
-  themeToggle.addEventListener('click',()=>{
-    const current=document.body.classList.contains('light')?'light':'dark';
-    applyTheme(current==='light'?'dark':'light');
-  });
-}
-
-/* SIMPLE AI CHATBOT */
-const chatToggle=document.getElementById('chatToggle');
-const chatWindow=document.getElementById('chatWindow');
-const chatMessages=document.getElementById('chatMessages');
-const chatInput=document.getElementById('chatInput');
-const chatSend=document.getElementById('chatSend');
-if(chatToggle){
-  chatToggle.addEventListener('click',()=>{
-    const visible=chatWindow.style.display==='block';
-    chatWindow.style.display=visible?'none':'block';
-    if(!visible){chatInput.focus();}
-  });
-}
-function appendMessage(msg,isUser){
-  const div=document.createElement('div');
-  div.style.marginBottom='8px';
-  div.style.color=isUser?getComputedStyle(document.documentElement).getPropertyValue('--cyan'):getComputedStyle(document.documentElement).getPropertyValue('--muted');
-  div.textContent=(isUser?'You: ':'AI: ')+msg;
-  chatMessages.appendChild(div);
-  chatWindow.scrollTop=chatWindow.scrollHeight;
-}
-function getChatResponse(msg){
-  const pairs=[
-    {p:/clearance|secret/i,a:'I hold an Active Secret Clearance (DoD/IC Eligible).'},
-    {p:/security\+|sy0|cert/i,a:'My current certification is CompTIA Security+ (SY0‑701), IAT Level II compliant.'},
-    {p:/projects?|tools?|lab|home\s?lab/i,a:'You can view my projects and home lab details in the Projects and Home Lab sections above.'},
-    {p:/experience|background|military/i,a:'I served 9 years in the U.S. Navy performing systems administration and security duties.'},
-    {p:/location|where|based/i,a:'I am based in Chesapeake/Norfolk, Virginia, and open to remote roles.'},
-    {p:/contact|reach/i,a:'You can contact me via the form on this page or email me directly at johnson.m.vincent17@gmail.com.'},
-    {p:/blog|posts|write/i,a:'I periodically share lab notes and articles in the Blog section below to document my learning journey.'},
-    {p:/certs?|certifications|roadmap/i,a:'Check the Certifications section to see my completed and upcoming certifications.'}
-  ];
-  for(const item of pairs){
-    if(item.p.test(msg)) return item.a;
+  <!-- Scripts: Theme toggle and AI chat -->
+  <script>
+  // Theme Toggle
+  const themeToggle=document.getElementById('themeToggle');
+  const themeIcon=document.getElementById('themeIcon');
+  function applyTheme(t){
+    document.body.classList.toggle('light',t==='light');
+    localStorage.setItem('theme',t);
+    if(themeIcon){themeIcon.textContent=t==='light'?'☀️':'🌙';}
   }
-  return 'I can answer questions about my clearance, certifications, experience, projects, location, or contact information. Try asking me about those!';
-}
-function sendChat(){
-  const msg=(chatInput.value||'').trim();
-  if(!msg) return;
-  appendMessage(msg,true);
-  chatInput.value='';
-  const reply=getChatResponse(msg);
-  setTimeout(()=>appendMessage(reply,false),400);
-}
-if(chatSend){
-  chatSend.addEventListener('click',sendChat);
-  chatInput.addEventListener('keypress',e=>{
-    if(e.key==='Enter'){
-      e.preventDefault();
-      sendChat();
+  (function(){
+    let t=localStorage.getItem('theme');
+    if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}
+    applyTheme(t);
+  })();
+  if(themeToggle){
+    themeToggle.addEventListener('click',()=>{
+      const current=document.body.classList.contains('light')?'light':'dark';
+      applyTheme(current==='light'?'dark':'light');
+    });
+  }
+  // AI Chatbot
+  const chatToggle=document.getElementById('chatToggle');
+  const chatWindow=document.getElementById('chatWindow');
+  const chatMessages=document.getElementById('chatMessages');
+  const chatInput=document.getElementById('chatInput');
+  const chatSend=document.getElementById('chatSend');
+  if(chatToggle){
+    chatToggle.addEventListener('click',()=>{
+      const visible=chatWindow.style.display==='block';
+      chatWindow.style.display=visible?'none':'block';
+      if(!visible){chatInput.focus();}
+    });
+  }
+  function appendMessage(msg,isUser){
+    const div=document.createElement('div');
+    div.style.marginBottom='8px';
+    div.style.color=isUser?getComputedStyle(document.documentElement).getPropertyValue('--cyan'):getComputedStyle(document.documentElement).getPropertyValue('--muted');
+    div.textContent=(isUser?'You: ':'AI: ')+msg;
+    chatMessages.appendChild(div);
+    chatWindow.scrollTop=chatWindow.scrollHeight;
+  }
+  function getChatResponse(msg){
+    const pairs=[
+      {p:/clearance|secret/i,a:'I hold an Active Secret Clearance with DoD eligibility.'},
+      {p:/security\+|certifications?|cert/i,a:'I currently have CompTIA Security+ (IAT Level II) and I’m planning AWS certs next.'},
+      {p:/projects?|tools?|case studies?/i,a:'You’ll find detailed write‑ups and Python tools on the Projects page.'},
+      {p:/lab|home\s?lab|siem/i,a:'My Home Lab page covers the 4‑VM Wazuh SIEM environment with metrics, steps and screenshots.'},
+      {p:/skills?|tech/i,a:'Check out the Skills & Certs page for my technical stack, progress indicators and certifications.'},
+      {p:/experience|background|navy/i,a:'I served 9 years in the U.S. Navy as a systems and database administrator before pivoting full‑time into cybersecurity.'},
+      {p:/location|where/i,a:'I’m based in Chesapeake/Norfolk, Virginia and open to remote roles.'},
+      {p:/contact|connect|reach/i,a:'Use the Contact page to send a message or email me at johnson.m.vincent17@gmail.com.'},
+      {p:/blog|posts?|notes/i,a:'My Blog page contains lab notes and posts documenting my learning journey.'},
+      {p:/recruiters?|hire|availability/i,a:'The Recruiters page lists my clearance, location, availability and resume highlights.'},
+      {p:/joke/i,a:'Why did the hacker stay healthy? Because he had lots of anti‑viruses!'},
+      {p:/fact|random/i,a:'Did you know? The first computer virus, “Creeper,” appeared in the early 1970s and simply displayed the message: “I’m the creeper: catch me if you can.”'},
+      {p:/hello|hi|hey/i,a:'Hello! Feel free to ask about my lab, projects, skills or anything cybersecurity related.'},
+      {p:/help|what can you do/i,a:'I can answer questions about my portfolio sections, tell jokes, share fun facts or direct you to the right page.'}
+    ];
+    for(const item of pairs){
+      if(item.p.test(msg)) return item.a;
     }
-  });
-}
-</script>
+    return 'I can answer questions about my lab, projects, skills, experience, or provide a fun fact. Try asking me about those!';
+  }
+  function sendChat(){
+    const msg=(chatInput.value||'').trim();
+    if(!msg) return;
+    appendMessage(msg,true);
+    chatInput.value='';
+    const reply=getChatResponse(msg);
+    setTimeout(()=>appendMessage(reply,false),400);
+  }
+  if(chatSend){
+    chatSend.addEventListener('click',sendChat);
+    chatInput.addEventListener('keypress',e=>{
+      if(e.key==='Enter'){
+        e.preventDefault();
+        sendChat();
+      }
+    });
+  }
+  </script>
 </body>
 </html>
