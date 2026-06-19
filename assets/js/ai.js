@@ -59,7 +59,7 @@
   }
 
   async function callOpenAI(message) {
-    const apiKey = 'YOUR_OPENAI_API_KEY'; // ← Replace with your real API key
+    const apiKey = 'images/profile-photo.jpg'; // ← Replace with your real API key
     try {
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
