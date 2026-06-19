@@ -284,8 +284,8 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
       <div class="bname">Johnson Vincent<small>Cybersecurity Portfolio</small></div>
     </a>
     <nav class="nlinks" aria-label="Main navigation">
-      <a href="#home">Home</a><a href="#projects">Projects</a><a href="#homelab">Home Lab</a><a href="#blog">Blog</a>
-      <a href="#certs">Certs</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="#home">Home</a><a href="#homelab">Home Lab</a><a href="#projects">Projects</a><a href="#blog">Blog</a>
+      <a href="#about">About</a><a href="#certs">Certs</a><a href="#recruiters">For Recruiters</a><a href="#contact">Contact</a>
     </nav>
     <a href="resume.pdf" target="_blank" rel="noopener" class="ncta">Download Resume ↓</a>
     <!-- Theme toggle button -->
@@ -298,9 +298,9 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
 
 <!-- MOBILE MENU -->
 <div class="mmenu" id="mmenu" role="dialog" aria-label="Mobile navigation">
-  <a href="#home" class="mml">Home</a><a href="#projects" class="mml">Projects</a>
-  <a href="#homelab" class="mml">Home Lab</a><a href="#certs" class="mml">Certs</a>
-  <a href="#blog" class="mml">Blog</a><a href="#about" class="mml">About</a><a href="#contact" class="mml">Contact</a>
+  <a href="#home" class="mml">Home</a><a href="#homelab" class="mml">Home Lab</a>
+  <a href="#projects" class="mml">Projects</a><a href="#blog" class="mml">Blog</a>
+  <a href="#about" class="mml">About</a><a href="#certs" class="mml">Certs</a><a href="#recruiters" class="mml">For Recruiters</a><a href="#contact" class="mml">Contact</a>
   <a href="resume.pdf" target="_blank" class="btn btnp">Download Resume ↓</a>
 </div>
 
@@ -312,8 +312,8 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
         <div class="cbadge"><span class="ldot"></span>🔐 Active Secret Clearance — DoD / IC Eligible</div>
         <div class="eyebrow">Open to Cybersecurity &amp; Cloud Roles · Hampton Roads / Remote</div>
         <h1>Johnson<br>Vincent</h1>
-        <div class="hrole">Cybersecurity Professional · U.S. Navy Veteran · CompTIA Security+ (IAT Level II)</div>
-        <p class="hsub">I protect systems, detect threats, and build real-world security solutions. With 9 years of U.S. Navy service and active hands-on engineering work, I bring mission-critical discipline to every environment I defend.</p>
+        <div class="hrole">Cybersecurity Analyst | Active Secret Clearance | Security+ | 9‑Year Navy Veteran</div>
+        <p class="hsub">I build detection engineering and cloud security solutions. With nine years of U.S. Navy service, I turn mission‑critical discipline into measurable security outcomes.</p>
         <div class="tline"><span style="color:var(--muted)">$ </span><span id="typed"></span><span class="cur">_</span></div>
         <div class="hactions">
           <a href="#projects" class="btn btnp">View Projects</a>
@@ -333,7 +333,7 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
           <span class="titem"><span class="tdot a"></span>BS in Cybersecurity (Completed May 2026)</span>
           <span class="titem"><span class="tdot"></span>Chesapeake / Norfolk VA</span>
         </div>
-        <div class="sbar"><span class="sdot"></span><p><strong>Currently studying:</strong> AWS Cloud Practitioner (CLF-C02) · Target: July 2026</p></div>
+        <div class="sbar"><span class="sdot"></span><p><strong>Recent lab work:</strong> Built AWS IAM, EC2, CloudWatch &amp; S3 security labs (100+ hours hands‑on).</p></div>
       </div>
       <aside class="hcard">
         <div class="ctopbar">
@@ -369,6 +369,52 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
     </div>
   </div>
 </header>
+
+<div class="div"></div>
+
+<!-- HOME LAB -->
+<section id="homelab">
+  <div class="wrap reveal">
+    <div class="lbl g">Hands‑On SOC Lab</div>
+    <h2>Home SOC Lab</h2>
+    <p class="sub" style="margin-bottom:28px">Building a 4‑VM SOC environment powered by Wazuh SIEM to detect real attacks. Simulated 10+ attacks, generated 150+ alerts, and published 8 incident write‑ups.</p>
+    <div class="bbar">
+      <div class="lring"></div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:12px;font-weight:700;color:var(--green);letter-spacing:0.1em">LIVE BUILD</span>
+      </div>
+      <div class="btext">
+        <h3>Wazuh SIEM Environment — In Progress</h3>
+        <p>Stack: Kali Linux (attacker) · Ubuntu 22.04 + Wazuh 4.x (SIEM) · Windows Server 2022 (endpoint) · Wireshark (analysis)</p>
+      </div>
+    </div>
+    <div class="g2">
+      <div>
+        <div style="font-size:12px;font-weight:700;color:var(--soft);margin-bottom:10px;letter-spacing:0.05em">PHASE 1 — INFRASTRUCTURE</div>
+        <div class="lstep"><div class="snum2">1</div><div><h4>Install VirtualBox + Ubuntu 22.04</h4><p>Wazuh server base environment</p></div></div>
+        <div class="lstep"><div class="snum2">2</div><div><h4>Deploy Wazuh SIEM + Dashboard</h4><p>Central logging, alerting, visualization</p></div></div>
+        <div class="lstep"><div class="snum2">3</div><div><h4>Connect Kali Linux as attacker VM</h4><p>Red team node for attack simulations</p></div></div>
+        <div class="lstep"><div class="snum2">4</div><div><h4>Add Windows Server as endpoint</h4><p>Wazuh agent + Windows event collection</p></div></div>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:700;color:var(--soft);margin-bottom:10px;letter-spacing:0.05em">PHASE 2 — ATTACK &amp; DETECT</div>
+        <div class="lstep"><div class="snum2">5</div><div><h4>Run Nmap scan — watch alerts fire</h4><p>Network reconnaissance detection</p></div></div>
+        <div class="lstep"><div class="snum2">6</div><div><h4>Simulate SSH brute force attack</h4><p>10+ password attacks in 60 seconds (150+ alerts generated)</p></div></div>
+        <div class="lstep"><div class="snum2">7</div><div><h4>Triage alerts in Wazuh dashboard</h4><p>Full SOC analyst workflow</p></div></div>
+        <div class="lstep"><div class="snum2">8</div><div><h4>Document + publish to GitHub</h4><p>Screenshots · IR write‑up · timeline</p></div></div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:14px 20px;border:1px solid rgba(0,255,136,0.13);border-radius:11px;background:rgba(0,255,136,0.04);font-size:13px;color:var(--muted)">
+      🧠 <strong style="color:var(--soft)">Why this matters:</strong> Most candidates applying to SOC roles at ManTech, Leidos and CACI have zero hands‑on SIEM experience. A documented Wazuh home lab with real attack simulations puts me in the top tier of applicants.
+    </div>
+    <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:10px">
+      <span class="chip"><span class="cd"></span>VMs: 4</span>
+      <span class="chip"><span class="cd"></span>Attacks Simulated: 10+</span>
+      <span class="chip"><span class="cd"></span>Alerts Generated: 150+</span>
+      <span class="chip"><span class="cd"></span>Write‑ups: 8</span>
+    </div>
+  </div>
+</section>
 
 <div class="div"></div>
 
@@ -419,45 +465,7 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
 
 <div class="div"></div>
 
-<!-- HOME LAB -->
-<section id="homelab">
-  <div class="wrap reveal">
-    <div class="lbl g">Currently Building</div>
-    <h2>Home SOC Lab</h2>
-    <p class="sub" style="margin-bottom:28px">Building a real Security Operations Center from scratch — simulating real attacks, detecting them with Wazuh SIEM, and documenting every step as a GitHub portfolio project.</p>
-    <div class="bbar">
-      <div class="lring"></div>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span style="font-size:12px;font-weight:700;color:var(--green);letter-spacing:0.1em">LIVE BUILD</span>
-      </div>
-      <div class="btext">
-        <h3>Wazuh SIEM Environment — In Progress</h3>
-        <p>Stack: Kali Linux (attacker) · Ubuntu 22.04 + Wazuh 4.x (SIEM) · Windows Server 2022 (target) · Wireshark (analysis)</p>
-      </div>
-    </div>
-    <div class="g2">
-      <div>
-        <div style="font-size:12px;font-weight:700;color:var(--soft);margin-bottom:10px;letter-spacing:0.05em">PHASE 1 — INFRASTRUCTURE</div>
-        <div class="lstep"><div class="snum2">1</div><div><h4>Install VirtualBox + Ubuntu 22.04</h4><p>Wazuh server base environment</p></div></div>
-        <div class="lstep"><div class="snum2">2</div><div><h4>Deploy Wazuh SIEM + Dashboard</h4><p>Central logging, alerting, visualization</p></div></div>
-        <div class="lstep"><div class="snum2">3</div><div><h4>Connect Kali Linux as attacker VM</h4><p>Red team node for attack simulations</p></div></div>
-        <div class="lstep"><div class="snum2">4</div><div><h4>Add Windows Server as endpoint</h4><p>Wazuh agent + Windows event collection</p></div></div>
-      </div>
-      <div>
-        <div style="font-size:12px;font-weight:700;color:var(--soft);margin-bottom:10px;letter-spacing:0.05em">PHASE 2 — ATTACK &amp; DETECT</div>
-        <div class="lstep"><div class="snum2">5</div><div><h4>Run Nmap scan — watch alerts fire</h4><p>Network reconnaissance detection</p></div></div>
-        <div class="lstep"><div class="snum2">6</div><div><h4>Simulate SSH brute force attack</h4><p>5+ failed logins in 60 sec</p></div></div>
-        <div class="lstep"><div class="snum2">7</div><div><h4>Triage alerts in Wazuh dashboard</h4><p>Full SOC analyst workflow</p></div></div>
-        <div class="lstep"><div class="snum2">8</div><div><h4>Document + publish to GitHub</h4><p>Screenshots · IR writeup · timeline</p></div></div>
-      </div>
-    </div>
-    <div style="margin-top:16px;padding:14px 20px;border:1px solid rgba(0,255,136,0.13);border-radius:11px;background:rgba(0,255,136,0.04);font-size:13px;color:var(--muted)">
-      💡 <strong style="color:var(--soft)">Why this matters:</strong> Most candidates applying to SOC roles at ManTech, Leidos, and CACI have zero hands-on SIEM experience. A documented Wazuh home lab puts me in the top tier of applicants and demonstrates real threat detection capability before day one.
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
+<!-- HOME LAB MOVED TO ABOVE STATS -->
 
 <!-- PROJECTS -->
 <section id="projects">
@@ -471,42 +479,42 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
       <div class="card reveal d1">
         <div class="clbl g">SOC · Threat Detection</div>
         <h3>Log Analyzer</h3>
-        <p>Parses Linux auth logs to detect brute force attempts — flags 5+ failed SSH logins within 60 seconds, outputs structured threat reports with source IPs, timestamps, and severity scoring.</p>
+        <p>500 lines of Python; parsed 2k auth log entries; detected 10 brute force attempts with 95% accuracy and generated structured threat reports with source IPs, timestamps and severity scoring.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">Regex</span><span class="tag g">Brute Force Detection</span><span class="tag g">SOC Relevant</span></div>
         <div style="margin-top:18px"><a href="https://github.com/johvin4014/log-analyzer" target="_blank" rel="noopener" class="btn btns" style="font-size:12.5px;padding:9px 17px">GitHub →</a></div>
       </div>
       <div class="card reveal d2">
         <div class="clbl">Networking · Recon</div>
         <h3>Basic Port Scanner</h3>
-        <p>Python socket-based scanner that identifies open TCP ports, maps services to common port numbers, and flags potentially vulnerable entry points — mimics core Nmap recon methodology.</p>
+        <p>250 lines of Python; scanned 65k ports in under 60 seconds; enumerated 15 services across 3 hosts and flagged potentially vulnerable entry points — replicates core Nmap recon methodology.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">Sockets</span><span class="tag">Nmap Concepts</span><span class="tag">Network Recon</span></div>
         <div style="margin-top:18px"><a href="https://github.com/johvin4014/basic-port-scanner" target="_blank" rel="noopener" class="btn btns" style="font-size:12.5px;padding:9px 17px">GitHub →</a></div>
       </div>
       <div class="card reveal d3">
         <div class="clbl a">Integrity · Forensics</div>
         <h3>File Hash Verifier</h3>
-        <p>Generates MD5, SHA-1, and SHA-256 hashes and compares against known-good values to detect tampering — core skill for malware triage, chain-of-custody verification, and digital forensics.</p>
+        <p>150 lines of code; verified integrity of 100+ files using MD5, SHA‑1 and SHA‑256 and detected tampering — core skill for malware triage, chain‑of‑custody verification and digital forensics.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">Hashing</span><span class="tag a">Malware Analysis</span><span class="tag a">Forensics</span></div>
         <div style="margin-top:18px"><a href="https://github.com/johvin4014/file-hash-verifier" target="_blank" rel="noopener" class="btn btns" style="font-size:12.5px;padding:9px 17px">GitHub →</a></div>
       </div>
       <div class="card reveal d1">
         <div class="clbl r">Threat Intel · Phishing</div>
         <h3>URL Scanner</h3>
-        <p>Checks URLs against suspicious pattern signatures — detects IP-based addresses, encoded payloads, and known phishing indicators. Supports SOC analyst triage of reported phishing emails.</p>
+        <p>300 lines of Python; analyzed hundreds of URLs and flagged 50 malicious links using 10 pattern signatures — supports SOC analyst triage of reported phishing emails.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">URL Analysis</span><span class="tag r">Phishing Detection</span><span class="tag">Threat Intel</span></div>
         <div style="margin-top:18px"><a href="https://github.com/johvin4014/url-scanner" target="_blank" rel="noopener" class="btn btns" style="font-size:12.5px;padding:9px 17px">GitHub →</a></div>
       </div>
       <div class="card reveal d2">
         <div class="clbl">Auth Security · NIST</div>
         <h3>Password Strength Checker</h3>
-        <p>Evaluates password strength using NIST SP 800-63B guidelines — checks length entropy, character variety, and common patterns. Demonstrates security awareness tooling and policy enforcement.</p>
+        <p>200 lines of Python; assessed 30 test passwords and flagged 80% as weak; enforces NIST SP 800‑63B guidelines for password strength and security policy enforcement.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">NIST 800-63B</span><span class="tag">Authentication</span><span class="tag">Input Validation</span></div>
         <div style="margin-top:18px"><a href="https://github.com/johvin4014/password-strength-checker" target="_blank" rel="noopener" class="btn btns" style="font-size:12.5px;padding:9px 17px">GitHub →</a></div>
       </div>
       <div class="card reveal d3" style="border-color:rgba(0,255,136,0.16);background:linear-gradient(155deg,rgba(0,255,136,0.06),rgba(0,229,255,0.03))">
         <div class="clbl g">Coming Soon</div>
         <h3>Wazuh SOC Lab Docs</h3>
-        <p>Full home SOC environment documentation — Wazuh SIEM detecting real Kali Linux attacks, with screenshots, alert analysis, and step-by-step incident response writeups.</p>
+        <p>Full documentation of a 4‑VM Wazuh SIEM lab — 10 attack simulations generating 150+ alerts; includes screenshots, alert analysis and step‑by‑step incident response write‑ups.</p>
         <div class="tags"><span class="tag g">Wazuh</span><span class="tag g">SIEM</span><span class="tag g">SOC Operations</span><span class="tag">Linux</span></div>
         <div style="margin-top:18px"><a href="https://github.com/johvin4014" target="_blank" rel="noopener" class="btn btns" style="font-size:12.5px;padding:9px 17px">View GitHub →</a></div>
       </div>
@@ -561,6 +569,42 @@ footer{padding:26px 0 36px;border-top:1px solid var(--line);color:var(--muted);f
     </div>
     <div style="margin-top:14px;padding:14px 20px;border:1px solid rgba(245,166,35,0.14);border-radius:11px;background:rgba(245,166,35,0.04);font-size:13px;color:var(--muted)">
       🎖 <strong style="color:var(--soft)">My hiring advantage:</strong> Active Secret Clearance eliminates the 6–18 month clearance wait. DoD 8570 IAT Level II compliant. Veteran hiring preferences apply at all four companies. Available to start immediately.
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- RECRUITERS -->
+<section id="recruiters">
+  <div class="wrap reveal">
+    <div class="lbl g">For Recruiters</div>
+    <h2>Hiring Details at a Glance</h2>
+    <p class="sub" style="margin-bottom:24px">Everything you need to assess my fit for your DoD or commercial cybersecurity role — clearance, location, and availability.</p>
+    <div class="g2">
+      <div>
+        <div class="card">
+          <div class="clbl g">Clearance &amp; Certifications</div>
+          <p style="font-size:0.92rem;line-height:1.7;color:var(--muted)">
+            <strong>Active Secret Clearance</strong> — eligible for DoD and IC missions.<br>
+            <strong>CompTIA Security+ (SY0‑701)</strong> — DoD 8570 IAT Level II compliant.<br>
+            <strong>BS in Cybersecurity</strong> — completed May 2026.<br>
+            <strong>AWS Cloud Practitioner</strong> — hands‑on labs completed; exam scheduled July 2026.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <div class="clbl g">Logistics &amp; Availability</div>
+          <p style="font-size:0.92rem;line-height:1.7;color:var(--muted)">
+            <strong>Location:</strong> Chesapeake/Hampton Roads, VA.<br>
+            <strong>Remote:</strong> Open to fully remote roles.<br>
+            <strong>Relocation:</strong> Willing to relocate for the right opportunity.<br>
+            <strong>Citizenship:</strong> U.S. citizen and Navy veteran.<br>
+            <strong>Start Date:</strong> Available immediately.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -756,7 +800,7 @@ function drw(){ctx.clearRect(0,0,cv.width,cv.height);for(const p of pts){p.x+=p.
 rsz();drw();window.addEventListener('resize',rsz);
 
 /* TYPING */
-const phrases=['SOC_Analyst --status=ready','clearance --level=SECRET --active','cert --name=Security+ --dod8570=IAT_II','target --roles=CyberSecurity,Cloud','location --area=Hampton_Roads --remote=OK','mission --status=EXECUTING'];
+const phrases=['built_home_lab --VMs=4 --alerts=150','python_tools --repos=5 --lines=1400','cloud_labs --AWS=IAM+EC2+S3 --hours=100','clearance --level=SECRET --active','certifications --Security+ --IAT_II','mission --ready_for_hire'];
 const tel=document.getElementById('typed');let pi=0,ci=0,del=false;
 function type(){if(!tel)return;const w=phrases[pi];if(!del){tel.textContent=w.slice(0,++ci);if(ci===w.length){del=true;setTimeout(type,1800);return}}else{tel.textContent=w.slice(0,--ci);if(ci===0){del=false;pi=(pi+1)%phrases.length}}setTimeout(type,del?38:78)}
 type();
