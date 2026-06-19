@@ -1,79 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home SOC Lab | Johnson Vincent</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-<header class="topbar">
-  <div class="wrap nav">
-    <div class="brand">
-      <div class="blogo"><img src="assets/images/bear.png" alt="" onerror="this.parentNode.textContent='JMV'"></div>
-      <div class="bname">Johnson Vincent<small>Cybersecurity Portfolio</small></div>
-    </div>
-    <nav class="nlinks">
-      <a href="index.html">Home</a><a href="lab.html" class="active">Home Lab</a><a href="projects.html">Projects</a><a href="skills.html">Skills & Certs</a><a href="about.html">About</a><a href="recruiters.html">Recruiters</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
-    </nav>
-    <button id="themeToggle" class="ibtn"><span id="themeIcon">🌙</span></button>
-  </div>
-</header>
-
-<main>
-  <section class="hero small">
-    <div class="wrap">
-      <h1>Home SOC Lab</h1>
-      <p class="hsub">A 4‑VM SIEM environment detecting Nmap scans, brute‑force attacks and Windows event logs. Here you'll find build steps, metrics, screenshots and lessons learned.</p>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap">
-      <h2>Lab Metrics & Components</h2>
-      <div class="fgrid">
-        <div class="fcard"><h3>4 Virtual Machines</h3><p>Ubuntu Wazuh server, Windows 10 host, Kali attacker and Sysmon collector.</p></div>
-        <div class="fcard"><h3>150+ Alerts Generated</h3><p>Realistic attack simulations including Nmap scans, brute force and malicious downloads.</p></div>
-        <div class="fcard"><h3>10+ Attack Scenarios</h3><p>Documented test cases such as XSS, SQLi, password spraying and malware detection.</p></div>
-        <div class="fcard"><h3>8 Detailed Write‑ups</h3><p>Step‑by‑step notes covering detection, mitigation and forensic analysis.</p></div>
-      </div>
-      <h3>What You'll Find</h3>
-      <p class="hsub">I built this lab from scratch using VirtualBox and Ubuntu, integrated Wazuh SIEM, Suricata IDS, Sysmon and Osquery, and captured logs into the Elastic Stack. Each attack scenario is documented with screenshots and detection outcomes.</p>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="frow">
+  <header class="topbar">
+    <div class="wrap nav">
       <div class="brand">
-        <div class="blogo"><img src="assets/images/bear.png" alt="" onerror="this.parentNode.textContent='JMV'"></div>
-        <div class="bname">Johnson Vincent<small>Cybersecurity Portfolio</small></div>
+        <div class="blogo">
+          <img src="assets/images/bear.png" alt="" onerror="this.parentNode.textContent='JMV'" />
+        </div>
+        <div class="bname">
+          Johnson Vincent
+          <small>Cybersecurity Portfolio</small>
+        </div>
       </div>
-      <nav class="flinks">
-        <a href="index.html">Home</a><a href="lab.html">Home Lab</a><a href="projects.html">Projects</a><a href="skills.html">Skills</a><a href="about.html">About</a><a href="recruiters.html">Recruiters</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+
+      <button id="navToggle" class="nav-hamburger" aria-label="Toggle navigation">☰</button>
+
+      <nav id="mainNav" class="nlinks">
+        <a href="index.html">Home</a>
+        <a href="lab.html" class="active">Home Lab</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills &amp; Certs</a>
+        <a href="about.html">About</a>
+        <a href="recruiters.html">Recruiters</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <div class="socials">
-        <a href="https://github.com/johvin4014" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.46-2.37 1.22-3.2-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.22A11.5 11.5 0 0 1 12 6.32c1.02 0 2.05.14 3.01.42 2.29-1.54 3.29-1.22 3.29-1.22.66 1.65.25 2.87.12 3.17.76.83 1.22 1.9 1.22 3.2 0 4.58-2.8 5.59-5.48 5.88.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.69.83.57A12.02 12.02 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg></a>
-        <a href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6A2.5 2.5 0 0 1 0 3.5C0 2.12 1.11 1 2.49 1a2.5 2.5 0 0 1 2.49 2.5ZM.5 8h4V24h-4V8Zm7 0h3.83v2.19h.05c.53-1.01 1.84-2.08 3.79-2.08 4.05 0 4.8 2.67 4.8 6.14V24h-4v-6.96c0-1.66-.03-3.79-2.31 0-3.79-2.66 1.8-2.66 3.67V24h-4V8Z"/></svg></a>
+
+      <button id="themeToggle" class="ibtn" aria-label="Toggle dark/light mode">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero small">
+      <div class="wrap">
+        <h1>Home SOC Lab</h1>
+        <p class="hsub">
+          A 4‑VM SIEM environment detecting Nmap scans, brute‑force attacks and Windows event logs. Here you'll find build steps, metrics, screenshots and lessons learned.
+        </p>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="wrap">
+        <h2>Lab Metrics &amp; Components</h2>
+        <div class="fgrid">
+          <div class="fcard">
+            <h3>4 Virtual Machines</h3>
+            <p>Ubuntu Wazuh server, Windows 10 host, Kali attacker and Sysmon collector.</p>
+          </div>
+          <div class="fcard">
+            <h3>150+ Alerts Generated</h3>
+            <p>Realistic attack simulations including Nmap scans, brute force and malicious downloads.</p>
+          </div>
+          <div class="fcard">
+            <h3>10+ Attack Scenarios</h3>
+            <p>Documented test cases such as XSS, SQLi, password spraying and malware detection.</p>
+          </div>
+          <div class="fcard">
+            <h3>8 Detailed Write‑ups</h3>
+            <p>Step‑by‑step notes covering detection, mitigation and forensic analysis.</p>
+          </div>
+        </div>
+
+        <h3>What You'll Find</h3>
+        <p class="hsub">
+          I built this lab from scratch using VirtualBox and Ubuntu, integrated Wazuh SIEM, Suricata IDS, Sysmon and Osquery, and captured logs into the Elastic Stack. Each attack scenario is documented with screenshots and detection outcomes.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="frow">
+        <div class="brand">
+          <div class="blogo">
+            <img src="assets/images/bear.png" alt="" onerror="this.parentNode.textContent='JMV'" />
+          </div>
+          <div class="bname">
+            Johnson Vincent
+            <small>Cybersecurity Portfolio</small>
+          </div>
+        </div>
+        <nav class="flinks">
+          <a href="index.html">Home</a>
+          <a href="lab.html">Home Lab</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="about.html">About</a>
+          <a href="recruiters.html">Recruiters</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="socials">
+          <a href="https://github.com/johvin4014" target="_blank" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 .5C5.37 .5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.38.6 .1 .82-.26 .82-.58 0-.28-.01-1.04-.02-2.04-3.34 .73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74 .08-.73 .08-.73 1.2 .08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 .99 .11-.78 .42-1.31 .76-1.61-2.66-.3-5.46-1.33-5.46-5.9 0-1.3 .46-2.37 1.22-3.2-.12-.3-.53-1.52 .12-3.17 0 0 1-.32 3.3 1.22A11.5 11.5 0 0 1 12 6.32c1.02 0 2.05 .14 3.01 .42 2.29-1.54 3.29-1.22 3.29-1.22 .66 1.65 .25 2.87 .12 3.17 .76 .83 1.22 1.9 1.22 3.2 0 4.58-2.8 5.59-5.48 5.88 .43 .37 .81 1.1 .81 2.22 0 1.6-.01 2.88-.01 3.27 0 .32 .22 .69 .83 .57A12.02 12.02 0 0 0 24 12.5C24 5.87 18.63 .5 12 .5Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/johnson-vincent-cyber" target="_blank" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6A2.5 2.5 0 0 1 0 3.5C0 2.12 1.11 1 2.49 1a2.5 2.5 0 0 1 2.49 2.5ZM.5 8h4V24h-4V8Zm7 0h3.83v2.19h .05 c.53-1.01 1.84-2.08 3.79-2.08 4.05 0 4.8 2.67 4.8 6.14V24h-4v-6.96c0-1.66-.03-3.79-2.31 0-3.79-2.66 1.8-2.66 3.67V24h-4V8Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="fcopy">© 2026 Johnson Vincent · Chesapeake, Virginia · Cybersecurity · Veteran · All Rights Reserved</div>
+    </div>
+  </footer>
+
+  <div id="chat-widget">
+    <button id="chatToggle">Ask My AI &rarr;</button>
+    <div id="chatWindow">
+      <div id="chatMessages"></div>
+      <div class="chat-input-row">
+        <input id="chatInput" type="text" placeholder="Ask a question..." />
+        <button id="chatSend">&nbsp;&nbsp;➤&nbsp;&nbsp;</button>
       </div>
     </div>
-    <div class="fcopy">© 2026 Johnson Vincent · Chesapeake, Virginia · Cybersecurity · Veteran · All Rights Reserved</div>
   </div>
-</footer>
 
-<div id="chat-widget">
-  <button id="chatToggle">Ask My AI →</button>
-  <div id="chatWindow">
-    <div id="chatMessages"></div>
-    <div class="chat-input-row">
-      <input id="chatInput" type="text" placeholder="Ask a question...">
-      <button id="chatSend">➤</button>
-    </div>
-  </div>
-</div>
-
-<script src="assets/js/theme.js"></script>
-<script src="assets/js/ai.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/ai.js"></script>
 </body>
 </html>
