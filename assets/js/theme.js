@@ -1,4 +1,4 @@
-// Dark/light theme toggle
+// Dark/light theme + mobile nav toggle
 (function () {
   const toggle = document.getElementById('themeToggle');
   const icon = document.getElementById('themeIcon');
@@ -20,4 +20,16 @@
       applyTheme(current);
     });
   }
+
+  // hamburger nav toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = mainNav.style.display === 'block';
+        mainNav.style.display = isOpen ? 'none' : 'block';
+      });
+    }
+  });
 })();
