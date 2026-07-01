@@ -1,20 +1,28 @@
-# Johnson Vincent Portfolio
+# Johnson Vincent Enterprise Portal v2.0
 
-Professional portfolio website for Johnson Vincent.
+Professional multi-page portfolio for Enterprise IT and Cybersecurity roles.
 
-## Focus
-Enterprise IT, Cybersecurity, Systems Administration, Database Administration, Information Assurance, SOC Operations, and Defense Contractor roles.
+## Pages
+- Home: `index.html`
+- About: `about.html`
+- Projects: `projects.html`
+- JHE Lab: `lab.html`
+- Skills: `skills.html`
+- Recruiters: `recruiters.html`
+- Blog: `blog.html`
+- Contact: `contact.html`
 
-## Main Files
-- `index.html` — Landing page
-- `about.html` — Background and experience
-- `projects.html` — GitHub projects
-- `lab.html` — JHE Enterprise Lab roadmap
-- `skills.html` — Skills and certifications
-- `recruiters.html` — Recruiter snapshot
-- `blog.html` — Technical blog
-- `contact.html` — Contact information
-- `assets/css/style.css` — Master site styling
-- `assets/js/theme.js` — Theme and mobile navigation
-- `assets/js/ai.js` — Lightweight portfolio assistant
-- `JV Resume.docx` — Current resume file
+## Resume links
+The site links to both:
+- `JV Resume.docx` using `JV%20Resume.docx`
+- `resume.pdf`
+
+Keep both files in the repository root.
+
+## Required folders
+Keep your existing `images/` folder with:
+- `images/profile-photo.jpg`
+- `images/jmv-logo.png`
+
+## Deploy
+Upload these files to the root of the GitHub Pages repository and keep existing `CNAME`, `_headers`, and `security.txt`.
