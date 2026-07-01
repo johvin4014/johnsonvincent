@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://johnsonvincent.com/sitemap.xml
+Sitemap: https://www.johnsonvincent.com/sitemap.xml
